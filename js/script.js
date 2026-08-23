@@ -372,9 +372,11 @@ document.addEventListener("DOMContentLoaded", function () {
       : [];
 
   if (careerFeatureGrid) {
+
     careerFeatureGrid.innerHTML =
       careerFeatures
         .map(function (feature) {
+
           return (
             '<article class="career-feature-card">' +
 
@@ -386,8 +388,13 @@ document.addEventListener("DOMContentLoaded", function () {
             escapeHTML(feature.title) +
             "</h3>" +
 
+            "<p>" +
+            escapeHTML(feature.description) +
+            "</p>" +
+
             "</article>"
           );
+
         })
         .join("");
   }
