@@ -10,10 +10,10 @@ const LILI_CONTENT = {
     venue: "セガサミーグループ本社",
 
     address:
-      "〒141-0033 東京都品川区西品川一丁目1-1 住友不動産大崎ガーデンタワー",
+      "〒141-0033 東京都品川区西品川一丁目1－1 住友不動産大崎ガーデンタワー 9F",
+    access:
+      "大崎駅南口から徒歩6分（JR線・りんかい線）",
 
-    station:
-      "JR線・りんかい線 大崎駅 南口から徒歩6分",
 
     accessUrl:
       "https://www.segasammy.co.jp/ja/corp/profile/access/",
