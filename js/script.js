@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return document.getElementById(id);
   }
 
+
   function setText(id, value) {
     const element = getElement(id);
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       element.textContent = value || "";
     }
   }
+
 
   function escapeHTML(value) {
     return String(value || "")
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
   }
+
 
   function safeUrl(value) {
     if (!value) {
@@ -102,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const eventHighlightsElement =
     getElement("eventHighlights");
 
+
   if (eventHighlightsElement) {
     eventHighlightsElement.innerHTML =
       eventHighlights
@@ -121,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const officialAccessUrl =
     safeUrl(content.event.accessUrl);
+
 
   if (
     accessOfficialLink &&
@@ -150,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
 
-  // ==================== 話せる人 ====================
+  // ==================== 当日出会える人 ====================
 
   const speakerGrid =
     getElement("speakerGrid");
@@ -160,23 +165,26 @@ document.addEventListener("DOMContentLoaded", function () {
       ? content.speakers
       : [];
 
+
   if (speakerGrid) {
     speakerGrid.innerHTML =
       speakers
         .map(function (speaker) {
 
-          const themes =
-            Array.isArray(speaker.themes)
-              ? speaker.themes
+          const career =
+            Array.isArray(speaker.career)
+              ? speaker.career
               : [];
 
-          const themeHTML =
-            themes
-              .map(function (theme) {
+          const careerHTML =
+            career
+              .map(function (step, index) {
                 return (
-                  "<li>" +
-                  escapeHTML(theme) +
-                  "</li>"
+                  '<li><span>' +
+                  String(index + 1).padStart(2, "0") +
+                  '</span><strong>' +
+                  escapeHTML(step) +
+                  "</strong></li>"
                 );
               })
               .join("");
@@ -185,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
             '<article class="speaker-card">' +
 
             '<div class="speaker-symbol" aria-hidden="true">' +
-            "LiLi" +
+            escapeHTML(speaker.initial) +
             "</div>" +
 
             '<div class="speaker-body">' +
@@ -195,16 +203,26 @@ document.addEventListener("DOMContentLoaded", function () {
             "</p>" +
 
             "<h3>" +
-            escapeHTML(speaker.title) +
+            escapeHTML(speaker.name) +
             "</h3>" +
 
-            "<p>" +
+            '<p class="speaker-role">' +
+            escapeHTML(speaker.role) +
+            "</p>" +
+
+            '<ol class="career-path">' +
+            careerHTML +
+            "</ol>" +
+
+            '<p class="speaker-description">' +
+            "<strong>今の仕事</strong>" +
             escapeHTML(speaker.description) +
             "</p>" +
 
-            "<ul>" +
-            themeHTML +
-            "</ul>" +
+            '<p class="speaker-talk">' +
+            "<strong>当日聞けること</strong>" +
+            escapeHTML(speaker.talk) +
+            "</p>" +
 
             "</div>" +
 
@@ -225,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? content.companies
       : [];
 
+
   if (companyGrid) {
     companyGrid.innerHTML =
       companies
@@ -235,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           let companyName =
             escapeHTML(company.name);
+
 
           if (companyUrl) {
             companyName =
@@ -247,6 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
               escapeHTML(company.name) +
               "</a>";
           }
+
 
           return (
             '<article class="company-card">' +
@@ -267,8 +288,12 @@ document.addEventListener("DOMContentLoaded", function () {
             companyName +
             "</h3>" +
 
-            "<p>" +
-            escapeHTML(company.theme) +
+            '<p class="company-point">' +
+
+            "<span>魅力ポイント</span>" +
+
+            escapeHTML(company.appeal) +
+
             "</p>" +
 
             "</article>"
@@ -278,76 +303,157 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  // ==================== セミナー ====================
+  // ==================== イベントチラシ ====================
 
-  const seminarList =
-    getElement("seminarList");
+  const flyer =
+    content.flyer || {};
 
-  const seminars =
-    Array.isArray(content.seminars)
-      ? content.seminars
-      : [];
+  const flyerFrontPreview =
+    getElement("flyerFrontPreview");
 
-  if (seminarList) {
-    seminarList.innerHTML =
-      seminars
-        .map(function (seminar) {
-          return (
-            '<div class="seminar-item">' +
+  const flyerBackPreview =
+    getElement("flyerBackPreview");
 
-            "<time>" +
-            escapeHTML(seminar.time) +
-            "</time>" +
+  const flyerLink =
+    getElement("flyerLink");
 
-            "<div>" +
+  const flyerStatus =
+    getElement("flyerStatus");
 
-            "<strong>" +
-            escapeHTML(seminar.title) +
-            "</strong>" +
 
-            "<small>" +
-            escapeHTML(seminar.speaker) +
-            "</small>" +
+  function safeContentPath(value) {
+    const absoluteUrl =
+      safeUrl(value);
 
-            "</div>" +
+    if (absoluteUrl) {
+      return absoluteUrl;
+    }
 
-            "</div>"
-          );
-        })
-        .join("");
+    if (
+      value &&
+      !/^[a-z][a-z0-9+.-]*:/i.test(value)
+    ) {
+      return String(value);
+    }
+
+    return "";
   }
 
 
-  // ==================== 企業座談会 ====================
+  const flyerFrontImage =
+    safeContentPath(flyer.frontImage);
 
-  const roundtableList =
-    getElement("roundtableList");
+  const flyerBackImage =
+    safeContentPath(flyer.backImage);
 
-  const roundtables =
-    Array.isArray(content.roundtables)
-      ? content.roundtables
-      : [];
+  const flyerPdfUrl =
+    safeContentPath(flyer.pdfUrl);
 
-  if (roundtableList) {
-    roundtableList.innerHTML =
-      roundtables
-        .map(function (roundtable) {
-          return (
-            '<div class="roundtable-item">' +
 
-            "<span>" +
-            escapeHTML(roundtable.round) +
-            "</span>" +
-
-            "<strong>" +
-            escapeHTML(roundtable.time) +
-            "</strong>" +
-
-            "</div>"
-          );
-        })
-        .join("");
+  if (
+    flyerFrontPreview &&
+    flyerFrontImage
+  ) {
+    flyerFrontPreview.innerHTML =
+      '<img src="' +
+      escapeHTML(flyerFrontImage) +
+      '" alt="LiLi EXPO イベントチラシ 表面">';
   }
+
+
+  if (
+    flyerBackPreview &&
+    flyerBackImage
+  ) {
+    flyerBackPreview.innerHTML =
+      '<img src="' +
+      escapeHTML(flyerBackImage) +
+      '" alt="LiLi EXPO イベントチラシ 裏面">';
+  }
+
+
+  if (
+    flyerLink &&
+    flyerPdfUrl
+  ) {
+    flyerLink.href =
+      flyerPdfUrl;
+
+    flyerLink.target =
+      "_blank";
+
+    flyerLink.rel =
+      "noopener noreferrer";
+
+    flyerLink.hidden =
+      false;
+
+
+    if (flyerStatus) {
+      flyerStatus.hidden =
+        true;
+    }
+  }
+
+
+  // ==================== 当日のプログラム ====================
+
+  function renderProgram(
+    program,
+    descriptionId,
+    pointsId
+  ) {
+    if (!program) {
+      return;
+    }
+
+
+    setText(
+      descriptionId,
+      program.description
+    );
+
+
+    const pointsElement =
+      getElement(pointsId);
+
+    const points =
+      Array.isArray(program.points)
+        ? program.points
+        : [];
+
+
+    if (pointsElement) {
+      pointsElement.innerHTML =
+        points
+          .map(function (point) {
+            return (
+              "<li>" +
+              escapeHTML(point) +
+              "</li>"
+            );
+          })
+          .join("");
+    }
+  }
+
+
+  const programs =
+    content.programs || {};
+
+
+  renderProgram(
+    programs.seminar,
+    "seminarProgramDescription",
+    "seminarProgramPoints"
+  );
+
+
+  renderProgram(
+    programs.roundtable,
+    "roundtableProgramDescription",
+    "roundtableProgramPoints"
+  );
 
 
   // ==================== LiLi Career ====================
@@ -371,12 +477,11 @@ document.addEventListener("DOMContentLoaded", function () {
       ? content.about.features
       : [];
 
-  if (careerFeatureGrid) {
 
+  if (careerFeatureGrid) {
     careerFeatureGrid.innerHTML =
       careerFeatures
         .map(function (feature) {
-
           return (
             '<article class="career-feature-card">' +
 
@@ -388,13 +493,8 @@ document.addEventListener("DOMContentLoaded", function () {
             escapeHTML(feature.title) +
             "</h3>" +
 
-            "<p>" +
-            escapeHTML(feature.description) +
-            "</p>" +
-
             "</article>"
           );
-
         })
         .join("");
   }
@@ -428,6 +528,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const organizationWebsiteUrl =
     safeUrl(content.organization.website);
+
 
   if (organizationWebsite) {
 
@@ -467,6 +568,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? content.socials
       : [];
 
+
   if (socialLinks) {
     socialLinks.innerHTML =
       socials
@@ -475,13 +577,17 @@ document.addEventListener("DOMContentLoaded", function () {
           const socialUrl =
             safeUrl(social.url);
 
+
           if (socialUrl) {
             return (
               '<a class="social-link"' +
+
               ' href="' +
               escapeHTML(socialUrl) +
               '"' +
+
               ' target="_blank"' +
+
               ' rel="noopener noreferrer">' +
 
               "<span>" +
@@ -493,6 +599,7 @@ document.addEventListener("DOMContentLoaded", function () {
               "</a>"
             );
           }
+
 
           return (
             '<span class="social-link is-pending">' +
@@ -519,6 +626,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Array.isArray(content.faq)
       ? content.faq
       : [];
+
 
   if (faqList) {
     faqList.innerHTML =
@@ -550,6 +658,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const registrationUrl =
     safeUrl(registration.url);
 
+
   setText(
     "entryNote",
     registration.note
@@ -563,6 +672,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.textContent =
         registration.buttonText ||
         "無料で参加予約する";
+
 
       if (registrationUrl) {
 
@@ -602,9 +712,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeMenu() {
 
-    if (!menuButton || !globalNav) {
+    if (
+      !menuButton ||
+      !globalNav
+    ) {
       return;
     }
+
 
     menuButton.classList.remove(
       "is-open"
@@ -625,7 +739,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  if (menuButton && globalNav) {
+  if (
+    menuButton &&
+    globalNav
+  ) {
 
     menuButton.addEventListener(
       "click",
@@ -636,15 +753,18 @@ document.addEventListener("DOMContentLoaded", function () {
             "is-open"
           );
 
+
         menuButton.classList.toggle(
           "is-open",
           isOpen
         );
 
+
         menuButton.setAttribute(
           "aria-expanded",
           String(isOpen)
         );
+
 
         document.body.classList.toggle(
           "menu-open",
@@ -669,7 +789,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "resize",
       function () {
 
-        if (window.innerWidth > 760) {
+        if (
+          window.innerWidth > 760
+        ) {
           closeMenu();
         }
       }

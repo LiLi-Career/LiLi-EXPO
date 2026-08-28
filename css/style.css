@@ -745,7 +745,11 @@ summary:focus-visible {
   position: relative;
   z-index: 1;
   margin: 90px 0 24px;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.75rem, 2.6vw, 3rem);
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .experience-card>p:not(.experience-english) {
@@ -853,14 +857,23 @@ summary:focus-visible {
 
 .speaker-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
+.profile-note {
+  margin: -20px 0 32px;
+  padding: 13px 18px;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 72%);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
 .speaker-card {
-  display: grid;
-  min-height: 340px;
-  grid-template-columns: 150px 1fr;
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid #cfeaf3;
   border-radius: 30px;
@@ -868,20 +881,24 @@ summary:focus-visible {
 }
 
 .speaker-symbol {
-  display: flex;
+  display: grid;
+  width: 82px;
+  height: 82px;
   align-items: center;
   justify-content: center;
+  margin: 30px 30px 0;
+  border-radius: 50%;
   background:
     linear-gradient(145deg,
       var(--pink-light),
       var(--blue-light));
   color: var(--pink-dark);
-  font-size: 4rem;
+  font-size: 2.2rem;
   font-weight: 900;
 }
 
 .speaker-body {
-  padding: 35px;
+  padding: 22px 30px 32px;
 }
 
 .speaker-type {
@@ -893,31 +910,79 @@ summary:focus-visible {
 }
 
 .speaker-body h3 {
-  margin: 14px 0;
+  margin: 10px 0 4px;
   font-size: 1.65rem;
   line-height: 1.45;
 }
 
-.speaker-body>p:not(.speaker-type) {
+.speaker-role,
+.speaker-description,
+.speaker-talk {
+  margin: 0;
   color: var(--ink-soft);
 }
 
-.speaker-body ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 25px 0 0;
+.speaker-role {
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.career-path {
+  display: grid;
+  gap: 0;
+  margin: 24px 0;
   padding: 0;
   list-style: none;
 }
 
-.speaker-body li {
-  padding: 6px 11px;
-  border-radius: 999px;
+.career-path li {
+  position: relative;
+  display: grid;
+  min-height: 43px;
+  grid-template-columns: 32px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.career-path li:not(:last-child)::after {
+  position: absolute;
+  bottom: -5px;
+  left: 14px;
+  width: 1px;
+  height: 15px;
+  background: #e0cbd2;
+  content: "";
+}
+
+.career-path span {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border-radius: 50%;
   background: var(--pink-light);
   color: var(--pink-dark);
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.career-path strong {
+  font-size: 0.82rem;
+}
+
+.speaker-description,
+.speaker-talk {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.speaker-description strong,
+.speaker-talk strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 0.74rem;
 }
 
 
@@ -927,6 +992,10 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+}
+
+.companies-introduction {
+  max-width: 600px;
 }
 
 .company-card {
@@ -985,6 +1054,138 @@ summary:focus-visible {
   margin: auto 0 0;
   color: var(--ink-soft);
   font-size: 0.9rem;
+}
+
+.company-point span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+
+/* ==================== イベントチラシ ==================== */
+
+.flyer-section {
+  width: 100%;
+  max-width: none;
+  padding-right: max(24px, calc((100vw - var(--max-width)) / 2));
+  padding-left: max(24px, calc((100vw - var(--max-width)) / 2));
+  background:
+    linear-gradient(140deg,
+      var(--pink-light),
+      var(--white) 55%,
+      var(--blue-light));
+}
+
+.flyer-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 52px;
+}
+
+.flyer-copy h2 {
+  margin-bottom: 0;
+}
+
+.flyer-description>p {
+  margin: 0 0 24px;
+  color: var(--ink-soft);
+}
+
+.flyer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.flyer-side {
+  padding: 24px;
+  border: 1px solid rgb(211 151 167 / 28%);
+  border-radius: 30px;
+  background: rgb(255 255 255 / 62%);
+}
+
+.flyer-side-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.flyer-side-label span {
+  color: var(--pink-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.flyer-side-label strong {
+  font-size: 1rem;
+}
+
+.flyer-preview {
+  display: grid;
+  place-items: center;
+}
+
+.flyer-preview>img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 28px 70px rgb(77 65 72 / 18%);
+}
+
+.flyer-placeholder {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 0.707;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 38px;
+  border: 1px dashed #d991a2;
+  border-radius: 22px;
+  background:
+    repeating-linear-gradient(-45deg,
+      rgb(255 255 255 / 75%) 0 14px,
+      rgb(255 240 245 / 75%) 14px 28px);
+  text-align: center;
+}
+
+.flyer-placeholder span {
+  color: var(--pink-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+}
+
+.flyer-placeholder strong {
+  margin: 20px 0 10px;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.flyer-placeholder p {
+  color: var(--ink-soft);
+}
+
+.flyer-status {
+  display: inline-flex;
+  padding: 12px 17px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--pink-dark);
+  font-size: 0.8rem;
+  font-weight: 900;
+  box-shadow: 0 10px 25px rgb(92 61 74 / 8%);
+}
+
+.flyer-link {
+  margin-top: 10px;
 }
 
 
@@ -1086,82 +1287,6 @@ summary:focus-visible {
 }
 
 
-/* ==================== アクセス ==================== */
-
-.access-section {
-  display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: 80px;
-  align-items: stretch;
-}
-
-.access-copy>p:not(.section-label) {
-  color: var(--ink-soft);
-}
-
-.access-copy dl {
-  margin: 40px 0 0;
-}
-
-.access-copy dl>div {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 20px;
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.access-copy dt {
-  color: var(--blue);
-  font-weight: 900;
-}
-
-.access-copy dd {
-  margin: 0;
-}
-
-.access-card {
-  display: flex;
-  min-height: 420px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  border-radius: 40px;
-  background:
-    radial-gradient(circle at 20% 20%,
-      rgb(255 255 255 / 85%),
-      transparent 25%),
-    linear-gradient(145deg,
-      var(--blue-light),
-      #d4f1fa);
-  text-align: center;
-}
-
-.access-card span {
-  color: var(--blue);
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-}
-
-.access-card strong {
-  margin-top: 25px;
-  font-size: 2rem;
-}
-
-.access-card p {
-  margin: 10px 0 30px;
-}
-
-.access-card a {
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--blue);
-  font-weight: 900;
-}
-
 
 /* ==================== FAQ ==================== */
 
@@ -1216,6 +1341,118 @@ summary:focus-visible {
   color: var(--ink-soft);
 }
 
+/* ==================== アクセス ==================== */
+
+.access-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(420px, 0.8fr);
+  gap: 55px;
+  align-items: stretch;
+}
+
+.access-copy>p:not(.section-label) {
+  margin: 28px 0 0;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+.access-copy dl {
+  margin: 40px 0 0;
+}
+
+.access-copy dl>div {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 20px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.access-copy dt {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.access-copy dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+#accessAddress {
+  line-height: 1.8;
+}
+
+.access-map-card {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  background: var(--blue-light);
+  box-shadow: var(--shadow);
+}
+
+.google-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  border: 0;
+}
+
+.access-map-link {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgb(58 51 56 / 15%);
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.access-map-link:hover {
+  color: var(--pink-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .access-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .access-map-card,
+  .google-map {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 560px) {
+  .access-copy dl>div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .access-map-card,
+  .google-map {
+    min-height: 340px;
+  }
+
+  .access-map-card {
+    border-radius: 24px;
+  }
+
+  .access-map-link {
+    right: 14px;
+    bottom: 14px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
 
 /* ==================== LiLi Career ==================== */
 
@@ -1542,12 +1779,21 @@ summary:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .flyer-section {
+    padding-right: max(24px, calc((100vw - var(--max-width)) / 2));
+    padding-left: max(24px, calc((100vw - var(--max-width)) / 2));
+  }
+
 }
 
 
 /* ==================== スマートフォン ==================== */
 
 @media (max-width: 760px) {
+
+  .experience-card h3 {
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+  }
 
   .mobile-break {
     display: block;
@@ -1556,6 +1802,26 @@ summary:focus-visible {
   .section {
     width: min(calc(100% - 32px), var(--max-width));
     padding: 85px 0;
+  }
+
+  .flyer-section {
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .flyer-heading,
+  .flyer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .flyer-heading {
+    margin-bottom: 38px;
+  }
+
+  .flyer-side {
+    padding: 16px;
   }
 
   .site-header {
@@ -1768,11 +2034,11 @@ summary:focus-visible {
   }
 
   .speaker-card {
-    grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .speaker-symbol {
-    min-height: 150px;
+    min-height: 82px;
   }
 
   .company-card {
@@ -1789,6 +2055,24 @@ summary:focus-visible {
   .roundtable-item {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+
+  .dance-program {
+    grid-template-columns: 1fr;
+  }
+
+  .dance-program-logo {
+    min-height: 240px;
+    padding: 28px;
+  }
+
+  .dance-program h3 {
+    font-size: 1.65rem;
+  }
+
+  .access-map-card,
+  .google-map {
+    min-height: 350px;
   }
 
   .access-card {
@@ -1831,953 +2115,178 @@ summary:focus-visible {
 
 }
 
-/* ==================================================
-   表示崩れ・改行・ロゴ・タイムスケジュール修正
-================================================== */
+/* ==================== LuXダンスイベント ==================== */
 
-
-/* ==================== 自然な改行 ==================== */
-
-h1,
-h2,
-h3 {
-  line-break: strict;
-  overflow-wrap: break-word;
-  text-wrap: balance;
-  word-break: auto-phrase;
-}
-
-p {
-  text-wrap: pretty;
-}
-
-
-/* ==================== ヘッダー ==================== */
-
-.site-header {
-  min-height: 105px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-.header-logo {
-  width: clamp(280px, 23vw, 390px);
-}
-
-.header-logo img {
-  width: 100%;
-  height: 76px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-.global-nav {
-  gap: clamp(13px, 1.4vw, 27px);
-}
-
-.global-nav>a {
-  font-size: clamp(0.78rem, 1vw, 0.95rem);
-}
-
-
-/* ==================== ファーストビュー ==================== */
-
-.hero {
-  grid-template-columns:
-    minmax(0, 1.05fr) minmax(0, 0.95fr);
-}
-
-.hero-copy,
-.hero-visual {
-  min-width: 0;
-}
-
-.hero-title {
-  font-size: clamp(3.8rem, 5.7vw, 6.5rem);
-}
-
-.hero-title-main {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 0.22em;
-}
-
-.hero-title-main>span {
-  white-space: nowrap;
-}
-
-.hero-title em {
-  display: block;
-  margin-top: 0.05em;
-}
-
-.hero-description {
-  max-width: 750px;
-}
-
-.hero-description>span {
-  display: block;
-}
-
-.hero-card-brand {
-  width: 100%;
-}
-
-.hero-card-mark {
-  width: clamp(125px, 12vw, 175px);
-}
-
-.hero-card-wordmark {
-  width: min(100%, 570px);
-}
-
-
-/* ==================== 話せる人 ==================== */
-
-.speaker-grid {
-  min-width: 0;
-}
-
-.speaker-card {
-  min-width: 0;
-}
-
-.speaker-body {
-  min-width: 0;
-}
-
-.speaker-body h3 {
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
-  line-height: 1.55;
-  word-break: auto-phrase;
-}
-
-
-/* ==================== タイムスケジュール ==================== */
-
-.day-timeline {
+.lux-card {
   position: relative;
   display: grid;
-  gap: 24px;
-}
-
-.day-timeline::before {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  bottom: 0;
-  left: 88px;
-  width: 2px;
-  background:
-    linear-gradient(var(--pink),
-      var(--blue),
-      var(--yellow),
-      var(--purple));
-  content: "";
-}
-
-.timeline-card {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  min-width: 0;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 35px;
-  padding: 40px;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  background: var(--white);
-  box-shadow: 0 14px 40px rgb(91 61 74 / 7%);
-}
-
-.timeline-time {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.timeline-time strong {
-  color: var(--pink-dark);
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
-  line-height: 1.35;
-}
-
-.timeline-time span {
-  color: var(--ink-soft);
-  font-size: 0.74rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
-
-.timeline-content {
-  min-width: 0;
-}
-
-.timeline-label {
-  margin: 0;
-  color: var(--blue);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-}
-
-.timeline-content h3 {
-  margin: 10px 0 13px;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 1.4;
-}
-
-.timeline-content>p:not(.timeline-label):not(.schedule-note) {
-  max-width: 770px;
-  margin: 0;
-  color: var(--ink-soft);
-}
-
-.timeline-seminar {
-  background:
-    linear-gradient(135deg,
-      var(--blue-light),
-      var(--white) 70%);
-}
-
-.timeline-parallel {
-  background:
-    linear-gradient(135deg,
-      var(--pink-light),
-      var(--white) 65%);
-}
-
-.timeline-dance {
-  grid-template-columns:
-    180px minmax(0, 1fr) 210px;
-
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 50px;
   align-items: center;
-
+  padding: 55px;
+  overflow: hidden;
+  border: 1px solid #e8cd72;
+  border-radius: 30px;
   background:
+    radial-gradient(circle at 10% 20%,
+      rgba(244, 199, 57, 0.22),
+      transparent 35%),
     linear-gradient(135deg,
-      var(--yellow-light),
-      var(--white));
+      #fffdf5 0%,
+      #fff9df 100%);
+  color: #403e44;
 }
 
-.timeline-party {
-  background:
-    linear-gradient(135deg,
-      var(--pink-light),
-      var(--blue-light));
-}
-
-.schedule-status {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--blue);
-  font-size: 0.8rem;
+.lux-card::after {
+  position: absolute;
+  right: -25px;
+  bottom: -95px;
+  color: rgba(221, 180, 31, 0.09);
+  font-size: 13rem;
   font-weight: 900;
-}
-
-.parallel-programs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 13px;
-  margin-top: 32px;
-}
-
-.parallel-programs>div {
-  min-width: 0;
-  padding: 22px;
-  border: 1px solid rgb(243 111 145 / 20%);
-  border-radius: 20px;
-  background: rgb(255 255 255 / 85%);
-}
-
-.parallel-programs span {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--pink);
-  font-size: 0.75rem;
-  font-weight: 900;
-}
-
-.parallel-programs strong {
-  display: block;
-  font-size: 1.1rem;
-}
-
-.parallel-programs p {
-  margin: 8px 0 0;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-}
-
-.rotation-schedule {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-top: 26px;
-}
-
-.rotation-schedule>div {
-  padding: 15px 9px;
-  border-radius: 14px;
-  background: var(--white);
-  text-align: center;
-}
-
-.rotation-schedule span {
-  display: block;
-  color: var(--blue);
-  font-size: 0.72rem;
-  font-weight: 900;
-}
-
-.rotation-schedule strong {
-  display: block;
-  margin-top: 3px;
-  font-size: 0.85rem;
-}
-
-.schedule-note {
-  margin: 14px 0 0;
-  color: var(--ink-soft);
-  font-size: 0.76rem;
+  line-height: 1;
+  content: "LUX";
+  pointer-events: none;
 }
 
 .lux-logo-area {
-  display: flex;
-  min-height: 150px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border: 2px dashed #edbd3e;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  padding: 25px;
   border-radius: 24px;
-  background: var(--white);
+  background: #ffffff;
+  box-shadow:
+    0 20px 45px rgba(79, 63, 13, 0.09);
 }
 
-.lux-logo-area span {
-  color: var(--ink);
-  font-size: 2.5rem;
-  font-weight: 900;
-}
-
-.lux-logo-area small {
-  color: var(--ink-soft);
-  font-size: 0.7rem;
-}
-
-
-/* ==================== 明るいフッター ==================== */
-
-.site-footer {
-  min-height: 260px;
-  border-top: 1px solid var(--line);
-  background:
-    linear-gradient(135deg,
-      var(--pink-light),
-      var(--white) 48%,
-      var(--blue-light));
-  color: var(--ink);
-}
-
-.site-footer>img {
-  width: clamp(330px, 29vw, 500px);
-  max-height: 120px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-.site-footer nav a {
-  color: var(--ink-soft);
-  font-weight: 700;
-}
-
-.site-footer nav a:hover {
-  color: var(--pink-dark);
-}
-
-.site-footer>p {
-  color: var(--ink-soft);
-}
-
-
-/* ==================== 中間サイズ ==================== */
-
-@media (max-width: 1250px) {
-
-  .menu-button {
-    position: relative;
-    z-index: 1100;
-    display: block;
-  }
-
-  .global-nav {
-    position: fixed;
-    z-index: 1050;
-    inset: 0;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding: 100px 35px 45px;
-    background: rgb(255 253 253 / 98%);
-  }
-
-  .global-nav.is-open {
-    display: flex;
-  }
-
-  .global-nav>a,
-  .global-nav>a:not(.nav-entry) {
-    display: block;
-    padding: 14px;
-    border-bottom: 1px solid var(--line);
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .nav-entry {
-    margin-top: 15px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    max-width: 900px;
-  }
-
-  .hero-visual {
-    min-height: 650px;
-  }
-
-  .speaker-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-
-/* ==================== スマホ ==================== */
-
-@media (max-width: 760px) {
-
-  .header-logo {
-    width: 230px;
-  }
-
-  .header-logo img {
-    height: 55px;
-  }
-
-  .hero-title {
-    font-size: clamp(3rem, 15vw, 4.7rem);
-  }
-
-  .hero-title-main {
-    display: block;
-  }
-
-  .hero-title-main>span {
-    display: block;
-    white-space: nowrap;
-  }
-
-  .hero-visual {
-    min-height: 500px;
-  }
-
-  .timeline-card,
-  .timeline-dance {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    padding: 28px;
-  }
-
-  .day-timeline::before {
-    display: none;
-  }
-
-  .timeline-time {
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .parallel-programs {
-    grid-template-columns: 1fr;
-  }
-
-  .rotation-schedule {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .rotation-schedule>div:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .lux-logo-area {
-    min-height: 120px;
-  }
-
-  .site-footer>img {
-    width: min(100%, 360px);
-    object-position: center;
-  }
-
-}
-
-/* ==================================================
-   ロゴサイズ・改行・限定200名の最終調整
-================================================== */
-
-
-/* ==================== ヘッダーロゴを大きくする ==================== */
-
-.site-header {
-  min-height: 112px;
-  overflow: visible;
-}
-
-.header-logo {
-  width: min(34vw, 500px);
-  min-width: 350px;
-}
-
-.header-logo img {
+.lux-logo-area a {
+  display: block;
   width: 100%;
+  text-align: center;
+}
+
+.lux-logo-area img {
+  display: block;
+  width: min(100%, 240px);
   height: auto;
-  max-height: none;
+  margin: 0 auto;
   object-fit: contain;
-  object-position: left center;
 }
 
-
-/* ==================== 不自然な改行を防ぐ ==================== */
-
-.about-lead>span {
-  display: block;
-}
-
-.experience-card h3 {
-  white-space: nowrap;
-  font-size: clamp(1.65rem, 2.5vw, 2.7rem);
-}
-
-.section-heading h2,
-.timeline-content h3,
-.company-card h3,
-.speaker-body h3,
-.career-feature-card h3 {
-  line-break: strict;
-  text-wrap: balance;
-  word-break: auto-phrase;
-}
-
-.hero-description>span {
-  display: block;
-  max-width: 100%;
-}
-
-.about-copy,
-.timeline-content,
-.speaker-body,
-.company-card {
+.lux-content {
+  position: relative;
+  z-index: 1;
   min-width: 0;
 }
 
-
-/* ==================== 限定200名 ==================== */
-
-.fun-limited {
-  position: relative;
-  display: grid;
-  width: min(calc(100% - 48px), var(--max-width));
-  margin: 110px auto 0;
-  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
-  gap: clamp(45px, 7vw, 95px);
-  align-items: center;
-  padding: clamp(45px, 6vw, 80px);
-  overflow: hidden;
-  border: 1px solid #f7d5df;
-  border-radius: 50px;
-  background:
-    radial-gradient(circle at 6% 12%,
-      rgb(243 200 79 / 38%),
-      transparent 18%),
-    radial-gradient(circle at 94% 8%,
-      rgb(53 169 211 / 22%),
-      transparent 20%),
-    radial-gradient(circle at 88% 94%,
-      rgb(243 111 145 / 25%),
-      transparent 22%),
-    linear-gradient(135deg,
-      #fff0f5,
-      #fffdf6 52%,
-      #edf9fd);
-  box-shadow: 0 25px 70px rgb(108 69 85 / 12%);
-}
-
-.limited-visual {
-  position: relative;
-  display: flex;
-  min-height: 390px;
-  align-items: center;
-  justify-content: center;
-}
-
-.limited-ticket {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  width: min(100%, 360px);
-  min-height: 315px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 35px;
-  border: 2px solid rgb(243 111 145 / 35%);
-  border-radius: 38px;
-  background: rgb(255 255 255 / 94%);
-  box-shadow: 0 22px 55px rgb(114 72 90 / 15%);
-  transform: rotate(-3deg);
-}
-
-.limited-ticket::before,
-.limited-ticket::after {
-  position: absolute;
-  top: 50%;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #fff2f6;
-  content: "";
-  transform: translateY(-50%);
-}
-
-.limited-ticket::before {
-  left: -20px;
-}
-
-.limited-ticket::after {
-  right: -20px;
-}
-
-.limited-ticket>p {
-  margin: 0;
-  color: var(--blue);
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-}
-
-.limited-ticket>div {
-  display: flex;
-  align-items: flex-end;
-  margin: 17px 0 8px;
-}
-
-.limited-ticket strong {
-  color: var(--pink-dark);
-  font-size: clamp(6rem, 10vw, 9rem);
-  line-height: 0.85;
-  letter-spacing: -0.08em;
-}
-
-.limited-ticket span {
-  margin: 0 0 8px 13px;
-  font-size: 1.15rem;
-  font-weight: 900;
-  writing-mode: vertical-rl;
-}
-
-.limited-ticket small {
-  color: var(--purple);
-  font-size: 0.7rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-}
-
-.limited-spark {
-  position: absolute;
-  z-index: 3;
-  line-height: 1;
-}
-
-.limited-spark-one {
-  top: 7%;
-  right: 2%;
-  color: var(--pink);
-  font-size: 3rem;
-}
-
-.limited-spark-two {
-  bottom: 10%;
-  left: 0;
-  color: var(--blue);
-  font-size: 2.3rem;
-}
-
-.fun-limited .limited-eyebrow {
-  margin: 0 0 15px;
-  color: var(--blue);
-  font-size: 0.83rem;
+.lux-label {
+  margin: 0 0 22px;
+  color: #b48600;
+  font-size: 0.8rem;
   font-weight: 900;
   letter-spacing: 0.18em;
 }
 
-.fun-limited .limited-copy h2 {
-  margin: 0;
-  font-size: clamp(2.5rem, 4.3vw, 4.7rem);
-  line-height: 1.3;
-  letter-spacing: -0.045em;
+.lux-heading {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
 }
 
-.fun-limited .limited-copy h2>span {
-  display: block;
+.lux-time {
+  flex-shrink: 0;
+  margin: 5px 0 0;
+  padding: 9px 17px;
+  border-radius: 999px;
+  background: #f3c844;
+  color: #403e44;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   white-space: nowrap;
 }
 
-.fun-limited .limited-copy .limited-accent {
-  color: var(--pink-dark);
+.lux-card h3 {
+  margin: 0;
+  color: #403e44;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
 }
 
-.limited-description {
-  max-width: 680px;
+.lux-card h3 span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.72em;
+  letter-spacing: 0;
+}
+
+.lux-description {
+  max-width: 700px;
   margin: 28px 0 0;
-  color: var(--ink-soft);
+  color: #67636d;
   font-size: 1rem;
   line-height: 2;
 }
 
-.limited-benefits {
+.lux-points {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
-  margin: 27px 0 30px;
-  padding: 0;
-  list-style: none;
+  gap: 10px;
+  margin-top: 28px;
 }
 
-.limited-benefits li {
-  padding: 8px 15px;
-  border: 1px solid rgb(53 169 211 / 24%);
+.lux-points span {
+  padding: 8px 14px;
+  border: 1px solid #e5ca6a;
   border-radius: 999px;
-  background: rgb(255 255 255 / 80%);
-  color: var(--blue);
-  font-size: 0.84rem;
-  font-weight: 900;
+  background: rgba(255, 255, 255, 0.7);
+  color: #544d39;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
-
-.fun-limited .button {
-  min-width: 260px;
-}
-
-.limited-note {
-  display: block;
-  margin-top: 15px;
-  color: var(--ink-soft);
-  font-size: 0.75rem;
-}
-
-
-/* ==================== フッターロゴもさらに大きく ==================== */
-
-.site-footer>img {
-  width: min(38vw, 580px);
-  max-height: none;
-}
-
-
-/* ==================== タブレット ==================== */
-
-@media (max-width: 1250px) {
-
-  .header-logo {
-    width: min(66vw, 440px);
-    min-width: 0;
-  }
-
-  .fun-limited {
-    grid-template-columns: minmax(270px, 0.75fr) minmax(0, 1.25fr);
-  }
-
-  .fun-limited .limited-copy h2 {
-    font-size: clamp(2.15rem, 4.3vw, 3.7rem);
-  }
-
-}
-
-
-/* ==================== スマートフォン ==================== */
 
 @media (max-width: 760px) {
-
-  .site-header {
-    min-height: 92px;
-  }
-
-  .header-logo {
-    width: min(72vw, 380px);
-    min-width: 0;
-  }
-
-  .header-logo img {
-    height: auto;
-  }
-
-  .fun-limited {
-    width: calc(100% - 32px);
-    margin-top: 75px;
+  .lux-card {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 32px 22px 42px;
-    border-radius: 34px;
+    gap: 30px;
+    padding: 28px 22px;
+    border-radius: 24px;
   }
 
-  .limited-visual {
-    min-height: 300px;
+  .lux-logo-area {
+    min-height: 220px;
+    padding: 20px;
   }
 
-  .limited-ticket {
-    width: min(92%, 320px);
-    min-height: 270px;
+  .lux-logo-area img {
+    width: min(100%, 200px);
   }
 
-  .limited-ticket strong {
+  .lux-heading {
+    display: block;
+  }
+
+  .lux-time {
+    display: inline-flex;
+    margin: 0 0 18px;
+  }
+
+  .lux-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .lux-description {
+    margin-top: 22px;
+    line-height: 1.85;
+  }
+
+  .lux-card::after {
+    right: -15px;
+    bottom: -35px;
     font-size: 7rem;
-  }
-
-  .fun-limited .limited-copy {
-    text-align: center;
-  }
-
-  .fun-limited .limited-copy h2 {
-    font-size: clamp(2rem, 9.2vw, 3rem);
-  }
-
-  .fun-limited .limited-copy h2>span {
-    white-space: normal;
-  }
-
-  .limited-description {
-    text-align: left;
-  }
-
-  .limited-benefits {
-    justify-content: center;
-  }
-
-  .fun-limited .button {
-    width: 100%;
-  }
-
-  .experience-card h3 {
-    font-size: clamp(1.6rem, 7vw, 2.15rem);
-  }
-
-  .site-footer>img {
-    width: min(90vw, 430px);
-  }
-
-}
-
-/* ==================== LiLi Careerの特徴 ==================== */
-
-.career-feature-card {
-  display: flex;
-  min-height: 350px;
-  flex-direction: column;
-}
-
-.career-feature-card h3 {
-  margin: 45px 0 15px;
-  line-height: 1.65;
-  word-break: auto-phrase;
-}
-
-.career-feature-card p {
-  margin: auto 0 0;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.9;
-}
-
-/* アクセス住所を1行で表示 */
-.access-address {
-  white-space: nowrap;
-  font-size: clamp(0.9rem, 1.3vw, 1.15rem);
-}
-
-/* スマホでは画面からはみ出さないように折り返す */
-@media (max-width: 760px) {
-  .access-address {
-    white-space: normal;
-  }
-}
-
-.access-address {
-  white-space: nowrap;
-}
-
-@media (max-width: 760px) {
-  .access-address {
-    white-space: normal;
-  }
-}
-
-/* 大きなアクセスマップ */
-.access-map {
-  width: min(94%, 1400px);
-  margin: 40px auto 0;
-  overflow: hidden;
-  border: 1px solid rgba(0, 174, 230, 0.2);
-  border-radius: 32px;
-  box-shadow: 0 20px 50px rgba(78, 70, 82, 0.1);
-}
-
-.access-map iframe {
-  display: block;
-  width: 100%;
-  height: clamp(460px, 52vw, 650px);
-  border: 0;
-}
-
-@media (max-width: 760px) {
-  .access-map {
-    width: calc(100% - 32px);
-    border-radius: 22px;
-  }
-
-  .access-map iframe {
-    height: 420px;
-  }
-}
-
-.access-map {
-  width: min(94%, 1400px);
-  margin: 40px auto 0;
-  overflow: hidden;
-  border-radius: 32px;
-  box-shadow: 0 20px 50px rgba(78, 70, 82, 0.12);
-}
-
-.access-map iframe {
-  display: block;
-  width: 100%;
-  height: 600px;
-  border: 0;
-}
-
-@media (max-width: 760px) {
-  .access-map {
-    width: 100%;
-    border-radius: 22px;
-  }
-
-  .access-map iframe {
-    height: 420px;
   }
 }
