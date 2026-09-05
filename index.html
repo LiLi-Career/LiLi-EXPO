@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="css/style.css?v=1">
 
-  <script src="js/content.js?v=1" defer></script>
+  <script src="js/content.js?v=2" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -34,6 +34,7 @@
     h1,
     h2,
     h3,
+    h4,
     p,
     li,
     summary,
@@ -48,7 +49,8 @@
 
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       text-wrap: balance;
     }
 
@@ -516,6 +518,156 @@
       outline-offset: 3px;
     }
 
+    /* ==================== 気軽に参加・参加までの流れ ==================== */
+
+    .join-guide-section {
+      overflow: hidden;
+      padding: clamp(38px, 6vw, 76px);
+      background: linear-gradient(135deg, #fff0f7 0%, #fff9db 52%, #eaf8ff 100%);
+      border: 1px solid #f4dce7;
+      border-radius: 36px;
+    }
+
+    .join-guide-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    .join-guide-heading h2 {
+      margin: 0;
+      color: #403743;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+
+    .join-guide-heading h2 em {
+      color: #ef5ca0;
+      font-style: normal;
+    }
+
+    .join-guide-lead {
+      margin: 0;
+      color: #645a62;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .join-easy-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .join-easy-grid li {
+      min-width: 0;
+      padding: 19px 13px;
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid rgba(239, 92, 160, .18);
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 9px 24px rgba(90, 61, 79, .05);
+    }
+
+    .join-easy-grid span {
+      display: block;
+      margin-bottom: 8px;
+      color: #ef5ca0;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .join-easy-grid strong {
+      display: block;
+      color: #403743;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .join-flow {
+      margin-top: 48px;
+      padding-top: 42px;
+      border-top: 1px solid rgba(90, 61, 79, .13);
+    }
+
+    .join-flow-title {
+      margin-bottom: 24px;
+    }
+
+    .join-flow-title h3 {
+      margin: 5px 0 0;
+      color: #403743;
+      font-size: clamp(26px, 3vw, 40px);
+    }
+
+    .join-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .join-flow-card {
+      position: relative;
+      min-width: 0;
+      padding: 26px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(90, 61, 79, .07);
+    }
+
+    .join-flow-card:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      z-index: 1;
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      color: #ef5ca0;
+      background: #fff;
+      border-radius: 50%;
+      font-weight: 900;
+      transform: translateY(-50%);
+      box-shadow: 0 5px 15px rgba(90, 61, 79, .08);
+    }
+
+    .join-flow-number {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #ef5ca0;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .join-flow-card h4 {
+      margin: 0 0 9px;
+      color: #403743;
+      font-size: 19px;
+    }
+
+    .join-flow-card p {
+      margin: 0;
+      color: #6c616b;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .join-guide-action {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+    }
+
     @media (max-width: 760px) {
 
       .timetable-guide,
@@ -553,7 +705,8 @@
 
       h1,
       h2,
-      h3 {
+      h3,
+      h4 {
         text-wrap: pretty;
       }
 
@@ -573,6 +726,38 @@
       .lili-chat-options {
         grid-template-columns: 1fr;
         overflow-y: auto;
+      }
+
+      .join-guide-section {
+        border-radius: 26px;
+      }
+
+      .join-guide-heading {
+        display: block;
+      }
+
+      .join-guide-lead {
+        margin-top: 20px;
+      }
+
+      .join-easy-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .join-easy-grid li:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .join-flow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .join-flow-card:not(:last-child)::after {
+        top: auto;
+        right: 50%;
+        bottom: -24px;
+        content: "↓";
+        transform: translateX(50%);
       }
     }
 
@@ -677,6 +862,11 @@
         <p class="capacity-label" id="eventCapacity"></p>
 
         <ul class="hero-highlights" id="eventHighlights" aria-label="参加条件">
+          <li>大学生・大学院生対象</li>
+          <li>参加無料</li>
+          <li>顔出しなしOK</li>
+          <li>服装自由</li>
+          <li>1人参加歓迎</li>
         </ul>
 
       </div>
@@ -790,6 +980,102 @@
       </div>
 
       <p>当日の参加方法と各授業のURLは、参加予約後にご案内します。</p>
+
+    </section>
+
+
+    <!-- ==================== 気軽に参加・参加までの流れ ==================== -->
+
+    <section class="section join-guide-section" id="join-guide">
+
+      <div class="join-guide-heading">
+
+        <div>
+          <p class="section-label">
+            EASY TO JOIN
+          </p>
+
+          <h2>
+            カメラOFFで、<br>
+            <em>気軽に参加。</em>
+          </h2>
+        </div>
+
+        <p class="join-guide-lead">
+          すべての時間に参加しなくても大丈夫。
+          気になる企業説明や就活講座だけを選び、自分のペースで参加できます。
+        </p>
+
+      </div>
+
+
+      <ul class="join-easy-grid" aria-label="参加しやすい5つのポイント">
+        <li>
+          <span>CAMERA</span>
+          <strong>顔出しなし・<br>カメラOFF</strong>
+        </li>
+
+        <li>
+          <span>FREE</span>
+          <strong>参加無料</strong>
+        </li>
+
+        <li>
+          <span>FLEXIBLE</span>
+          <strong>途中参加・<br>途中退出OK</strong>
+        </li>
+
+        <li>
+          <span>STYLE</span>
+          <strong>服装自由</strong>
+        </li>
+
+        <li>
+          <span>WELCOME</span>
+          <strong>1人参加歓迎</strong>
+        </li>
+      </ul>
+
+
+      <div class="join-flow">
+
+        <div class="join-flow-title">
+          <p class="section-label">
+            HOW TO JOIN
+          </p>
+
+          <h3>参加までの3ステップ</h3>
+        </div>
+
+        <div class="join-flow-grid">
+
+          <article class="join-flow-card">
+            <span class="join-flow-number">STEP 01</span>
+            <h4>無料で参加予約</h4>
+            <p>このサイトの参加予約ボタンから申し込みます。</p>
+          </article>
+
+          <article class="join-flow-card">
+            <span class="join-flow-number">STEP 02</span>
+            <h4>案内メールを確認</h4>
+            <p>参加方法と当日の視聴URLをメールで受け取ります。</p>
+          </article>
+
+          <article class="join-flow-card">
+            <span class="join-flow-number">STEP 03</span>
+            <h4>当日オンラインで参加</h4>
+            <p>参加したい時間になったら、案内されたURLへアクセスします。</p>
+          </article>
+
+        </div>
+
+        <div class="join-guide-action">
+          <a class="button button-primary registration-link" href="#entry">
+            無料で参加予約する
+          </a>
+        </div>
+
+      </div>
 
     </section>
 
@@ -1426,6 +1712,11 @@
         </details>
 
         <details>
+          <summary>カメラをオンにする必要はありますか？</summary>
+          <p>いいえ。顔出しなし・カメラOFFで気軽にご参加いただけます。</p>
+        </details>
+
+        <details>
           <summary>オンラインイベントへの参加方法はいつ分かりますか？</summary>
           <p>参加予約をした方へ、当日の参加方法と各授業の案内をお送りします。</p>
         </details>
@@ -1598,6 +1889,7 @@
       <ul class="entry-benefits">
         <li>参加無料</li>
         <li>服装自由</li>
+        <li>カメラOFFで参加OK</li>
         <li>1人参加歓迎</li>
       </ul>
 
@@ -1643,6 +1935,7 @@
       <button class="lili-chat-option" type="button" data-chat-question="schedule">当日の時間割</button>
       <button class="lili-chat-option" type="button" data-chat-question="companies">参加企業について</button>
       <button class="lili-chat-option" type="button" data-chat-question="join">途中参加・退出について</button>
+      <button class="lili-chat-option" type="button" data-chat-question="camera">顔出しは必要？</button>
       <button class="lili-chat-option" type="button" data-chat-question="november">11月15日のイベント</button>
       <button class="lili-chat-option" type="button" data-chat-question="entry">参加予約について</button>
     </div>
@@ -1711,6 +2004,18 @@
           element.textContent = onlineEventContent[id];
         }
       });
+
+      var eventHighlights = document.getElementById("eventHighlights");
+
+      if (eventHighlights) {
+        eventHighlights.innerHTML = `
+          <li>大学生・大学院生対象</li>
+          <li>参加無料</li>
+          <li>顔出しなしOK</li>
+          <li>服装自由</li>
+          <li>1人参加歓迎</li>
+        `;
+      }
 
       var companyGrid = document.getElementById("companyGrid");
 
@@ -1788,6 +2093,10 @@
         join: {
           label: "途中参加・退出について",
           answer: "途中参加・途中退出が可能です。気になる企業説明や就活講座の時間に合わせてご参加ください。"
+        },
+        camera: {
+          label: "顔出しは必要？",
+          answer: "顔出しは必要ありません。カメラOFFのまま、気になる企業説明や就活講座へ気軽にご参加いただけます。"
         },
         november: {
           label: "11月15日のイベント",

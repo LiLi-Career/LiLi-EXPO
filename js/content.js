@@ -24,6 +24,7 @@ const LILI_CONTENT = {
     highlights: [
       "大学生・大学院生対象",
       "参加無料",
+      "顔出しなしOK",
       "服装自由",
       "1人参加歓迎"
     ]
