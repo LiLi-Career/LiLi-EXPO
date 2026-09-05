@@ -2290,3 +2290,26 @@ summary:focus-visible {
     font-size: 7rem;
   }
 }
+
+.november-event-section h2 em {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(32px, 4.2vw, 58px);
+  letter-spacing: -.06em;
+}
+
+.november-mobile-break {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .november-event-section h2 em {
+    display: block;
+    white-space: normal;
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .november-mobile-break {
+    display: initial;
+  }
+}

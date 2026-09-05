@@ -6,12 +6,12 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="LiLi EXPO for women。企業や社会人との対話を通じて、まだ知らないキャリアと出会う女性向けキャリアイベントです。">
+  <meta name="description" content="LiLi EXPO for women。9月13日は好きな授業を自由に選べるオンラインイベント、11月15日はリアルイベントを開催します。">
 
   <!-- 公開時、Google検索に表示したい場合はこの1行を削除してください -->
   <meta name="robots" content="noindex, nofollow">
 
-  <title>LiLi EXPO for women</title>
+  <title>LiLi EXPO for women｜9.13 ONLINE</title>
 
   <link rel="icon" href="assets/logo_dake.png">
 
@@ -20,6 +20,370 @@
   <script src="js/content.js?v=1" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
+
+  <!-- オンライン時間割・11月イベント案内の追加スタイル -->
+  <style>
+    /* ==================== 日本語の改行調整 ==================== */
+
+    body {
+      word-break: auto-phrase;
+      line-break: strict;
+      overflow-wrap: normal;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    li,
+    summary,
+    dt,
+    dd,
+    strong,
+    small,
+    a {
+      word-break: auto-phrase;
+      line-break: strict;
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+    }
+
+    p,
+    li,
+    summary,
+    dd {
+      text-wrap: pretty;
+    }
+
+    .nowrap,
+    .button,
+    .global-nav a,
+    .online-format-note,
+    .capacity-label,
+    .lesson-timetable time {
+      white-space: nowrap;
+    }
+
+    .online-format-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      padding: 8px 16px;
+      color: #a92c68;
+      background: #ffe3f0;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .online-format-note::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      background: #ef5ca0;
+      border-radius: 50%;
+    }
+
+    .timetable-guide {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      margin: 0 0 24px;
+      padding: 22px 26px;
+      background: #fff4f9;
+      border: 1px solid #ffd5e8;
+      border-radius: 20px;
+    }
+
+    .timetable-guide strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .timetable-guide p {
+      margin: 0;
+      color: #6c616b;
+    }
+
+    .timetable-guide span {
+      flex: 0 0 auto;
+      padding: 7px 13px;
+      color: #fff;
+      background: #ef5ca0;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .timetable-scroll {
+      overflow-x: auto;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .lesson-timetable {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: separate;
+      border-spacing: 8px;
+      table-layout: fixed;
+    }
+
+    .lesson-timetable th,
+    .lesson-timetable td {
+      padding: 18px;
+      border-radius: 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .lesson-timetable thead th {
+      color: #fff;
+      background: #403743;
+      font-size: 14px;
+      letter-spacing: .05em;
+    }
+
+    .lesson-timetable thead th:first-child {
+      width: 150px;
+      text-align: center;
+    }
+
+    .lesson-timetable tbody th {
+      color: #a92c68;
+      background: #ffe3f0;
+      text-align: center;
+    }
+
+    .lesson-timetable tbody tr:nth-child(even) th {
+      color: #2878a4;
+      background: #dff3ff;
+    }
+
+    .lesson-timetable tbody td {
+      background: #fff;
+      border: 1px solid #eadfe6;
+      box-shadow: 0 8px 25px rgba(90, 61, 79, .06);
+    }
+
+    .lesson-timetable .period-number {
+      display: block;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .lesson-timetable time {
+      display: block;
+      margin-top: 5px;
+      color: #6c616b;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .lesson-timetable td span {
+      display: block;
+      margin-bottom: 7px;
+      color: #ef5ca0;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .lesson-timetable td strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .lesson-timetable td small {
+      display: block;
+      margin-top: 8px;
+      color: #7a7078;
+      font-size: 13px;
+    }
+
+    .timetable-edit-note {
+      margin: 18px 0 0;
+      color: #7a7078;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .confirmed-company-card {
+      padding: 28px;
+      background: #fff;
+      border: 1px solid #eadfe6;
+      border-radius: 22px;
+      box-shadow: 0 12px 32px rgba(90, 61, 79, .07);
+    }
+
+    .confirmed-company-card span {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #ef5ca0;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .confirmed-company-card h3 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .november-event-section {
+      position: relative;
+      overflow: hidden;
+      margin-top: 72px;
+      padding: clamp(36px, 6vw, 72px);
+      color: #403743;
+      background: linear-gradient(135deg, #ffe2ef 0%, #fff3bd 50%, #dff3ff 100%);
+      border-radius: 36px;
+    }
+
+    .november-event-section::after {
+      content: "11.15";
+      position: absolute;
+      right: -18px;
+      bottom: -55px;
+      color: rgba(255, 255, 255, .65);
+      font-size: clamp(110px, 18vw, 230px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.08em;
+      pointer-events: none;
+    }
+
+    .november-event-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .november-event-section h2 {
+      margin: 0 0 18px;
+      font-size: clamp(34px, 5vw, 66px);
+      line-height: 1.16;
+      letter-spacing: -.04em;
+    }
+
+    .november-event-section h2 em {
+      display: inline-block;
+      color: #ef5ca0;
+      font-style: normal;
+      font-size: clamp(32px, 4.2vw, 58px);
+      letter-spacing: -.06em;
+      white-space: nowrap;
+    }
+
+    .november-mobile-break {
+      display: none;
+    }
+
+    .november-lead {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .november-details {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 24px;
+      background: rgba(255, 255, 255, .86);
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(90, 61, 79, .10);
+    }
+
+    .november-details div {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+    }
+
+    .november-details dt {
+      color: #ef5ca0;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .november-details dd {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .november-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .november-note {
+      position: relative;
+      z-index: 1;
+      margin: 16px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+
+      .timetable-guide,
+      .november-event-content {
+        display: block;
+      }
+
+      .timetable-guide span {
+        display: inline-block;
+        margin-top: 14px;
+      }
+
+      .november-details {
+        margin-top: 28px;
+      }
+
+      .november-event-section {
+        margin-top: 44px;
+        border-radius: 26px;
+      }
+
+      .november-event-section::after {
+        opacity: .45;
+      }
+
+      .november-event-section h2 em {
+        display: block;
+        font-size: clamp(32px, 10vw, 44px);
+        white-space: normal;
+      }
+
+      .november-mobile-break {
+        display: initial;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-wrap: pretty;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -42,10 +406,11 @@
     <nav class="global-nav" id="globalNav" aria-label="メインメニュー">
 
       <a href="#about">LiLi EXPOとは</a>
-      <a href="#experience">当日の体験</a>
+      <a href="#experience">オンラインの特徴</a>
       <a href="#people">話せる人</a>
       <a href="#companies">参加企業</a>
-      <a href="#schedule">スケジュール</a>
+      <a href="#schedule">時間割</a>
+      <a href="#november">11月リアル開催</a>
 
       <a class="nav-entry registration-link" href="#entry">
         参加予約する
@@ -73,6 +438,10 @@
           <span>for women</span>
         </p>
 
+        <p class="online-format-note">
+          9.13 SUN｜ONLINE EVENT
+        </p>
+
         <h1>
           まだ知らない<br class="mobile-break">
           <span class="nowrap">キャリアに、</span><br>
@@ -80,8 +449,8 @@
         </h1>
 
         <p class="hero-description">
-          働き方も、会社も、生き方も。<br>
-          企業や社会人との対話から、<br class="mobile-break">
+          気になる授業を、自分で選ぶ。<br>
+          企業や社会人の話をオンラインで聞きながら、<br class="mobile-break">
           自分らしい選択肢を見つける1日。
         </p>
 
@@ -91,8 +460,12 @@
             無料で参加予約する
           </a>
 
-          <a class="button button-outline" href="#experience">
-            当日の体験を見る
+          <a class="button button-outline" href="#schedule">
+            オンライン時間割を見る
+          </a>
+
+          <a class="button button-outline" href="#november">
+            11月15日のリアル開催を見る
           </a>
 
         </div>
@@ -155,8 +528,8 @@
       </div>
 
       <div>
-        <span>VENUE</span>
-        <strong id="eventVenue"></strong>
+        <span>FORMAT</span>
+        <strong id="eventVenue">オンライン開催</strong>
       </div>
 
     </section>
@@ -168,11 +541,11 @@
 
       <div class="limited-number">
 
-        <span>LIMITED</span>
+        <span>LESSONS</span>
 
-        <strong>200</strong>
+        <strong>5</strong>
 
-        <small>名限定</small>
+        <small>時間目まで</small>
 
       </div>
 
@@ -180,17 +553,17 @@
       <div class="limited-copy">
 
         <p>
-          参加無料・女子学生対象
+          参加無料・女子学生対象・オンライン開催
         </p>
 
         <h2>
-          一人ひとりと話せる規模だから、<br>
-          新しいキャリアがもっと身近になる。
+          好きな授業を自分で選べるから、<br>
+          知りたいキャリアを自由に深められる。
         </h2>
 
         <p>
-          定員に達し次第、受付を終了する場合があります。
-          気になる方は早めの参加予約がおすすめです。
+          すべての授業に出る必要はありません。
+          時間割から、気になる授業を選んで参加できます。
         </p>
 
       </div>
@@ -208,11 +581,11 @@
           FRIEND INVITATION
         </p>
 
-        <h2 id="referralTitle"></h2>
+        <h2>好きな授業に、好きな時間から参加。</h2>
 
       </div>
 
-      <p id="referralNote"></p>
+      <p>当日の参加方法と各授業のURLは、参加予約後にご案内します。</p>
 
     </section>
 
@@ -228,8 +601,8 @@
         </p>
 
         <h2>
-          説明会じゃない。<br>
-          選考でもない。
+          決められた説明会じゃない。<br>
+          自分で選べるオンライン授業。
         </h2>
 
       </div>
@@ -238,19 +611,19 @@
       <div class="about-copy">
 
         <p class="about-lead">
-          企業や社会人との対話から、<br>
+          興味のある授業を自由に選びながら、<br>
           自分の選択肢を広げる女性向けキャリアイベント。
         </p>
 
         <p>
-          会社の説明を一方的に聞くのではなく、
-          少人数で直接話すからこそ、仕事内容だけでなく、
-          働き方や迷った経験まで聞くことができます。
+          全員が同じ説明を聞くのではなく、
+          時間割から自分が気になるテーマを選び、
+          オンライン上の好きな教室へ参加できます。
         </p>
 
         <p>
-          個別相談、キャリアセミナー、企業座談会を通じて、
-          まだ知らなかった仕事や生き方に出会えます。
+          企業や社会人による授業を通じて、
+          まだ知らなかった仕事や働き方に出会えます。
         </p>
 
         <div class="target-box">
@@ -273,11 +646,11 @@
 
           <span>01 / DISCOVER</span>
 
-          <h3>知らなかった仕事に出会う</h3>
+          <h3>気になる授業を自分で選ぶ</h3>
 
           <p>
-            業界や職種の名前だけでは分からない、
-            仕事のリアルを知ることができます。
+            時間割を見ながら、今の自分が知りたい
+            テーマの授業へ参加できます。
           </p>
 
         </article>
@@ -287,11 +660,11 @@
 
           <span>02 / DIALOGUE</span>
 
-          <h3>少人数で本音を聞く</h3>
+          <h3>オンラインで本音を聞く</h3>
 
           <p>
-            選考の場では聞きにくいことも、
-            企業や社会人へ直接質問できます。
+            場所に縛られず、企業や社会人の
+            リアルな経験や考え方を聞けます。
           </p>
 
         </article>
@@ -304,8 +677,8 @@
           <h3>自分の選択肢を増やす</h3>
 
           <p>
-            知らなかった働き方や生き方に触れ、
-            次に考えたいことを持ち帰れます。
+            気になる仕事を見つけ、11月のリアルイベントで
+            さらに詳しく聞くきっかけをつくれます。
           </p>
 
         </article>
@@ -315,7 +688,7 @@
     </section>
 
 
-    <!-- ==================== 3つの体験 ==================== -->
+    <!-- ==================== オンラインの3つの特徴 ==================== -->
 
     <section class="section experience-section" id="experience">
 
@@ -328,15 +701,15 @@
           </p>
 
           <h2>
-            対話から広がる、<br>
-            3つの体験
+            自由に選べる、<br>
+            3つの特徴
           </h2>
 
         </div>
 
         <p>
-          個別相談・セミナー・企業座談会を行き来しながら、
-          気になるキャリアを自分のペースで深められます。
+          1時間目から5時間目までの時間割を見ながら、
+          自分の興味に合わせて参加する授業を選べます。
         </p>
 
       </div>
@@ -351,20 +724,20 @@
           </span>
 
           <p class="experience-english">
-            MEET — 1ON1 CAREER TALK
+            CHOOSE — YOUR CLASS
           </p>
 
-          <h3>個別相談会</h3>
+          <h3>授業を自由に選べる</h3>
 
           <p>
-            経験豊富なキャリアのプロと一対一で話せる、
-            LiLi EXPOの中心コンテンツです。
+            時間割の中から、自分が気になるテーマや
+            企業の授業を選んで参加できます。
           </p>
 
           <ul>
-            <li>周囲を気にせず一対一で話せる</li>
-            <li>自分の状況に合わせて相談できる</li>
-            <li>相談内容がまとまっていなくてもOK</li>
+            <li>すべての授業に出なくてもOK</li>
+            <li>気になるテーマだけ選べる</li>
+            <li>途中からの参加も可能</li>
           </ul>
 
         </article>
@@ -377,20 +750,20 @@
           </span>
 
           <p class="experience-english">
-            DISCOVER — CAREER SEMINAR
+            DISCOVER — NEW CAREERS
           </p>
 
-          <h3>キャリアセミナー</h3>
+          <h3>知らない仕事に出会える</h3>
 
           <p>
-            働き方やキャリアを考えるための視点を、
-            テーマごとに学びます。
+            業界や職種、働き方について、
+            テーマの異なる授業から学べます。
           </p>
 
           <ul>
-            <li>キャリアの考え方を学ぶ</li>
-            <li>働く人のリアルを知る</li>
-            <li>新しい価値観と出会う</li>
+            <li>業界や職種の理解が深まる</li>
+            <li>働く人のリアルを知れる</li>
+            <li>新しい興味を見つけられる</li>
           </ul>
 
         </article>
@@ -403,20 +776,20 @@
           </span>
 
           <p class="experience-english">
-            CONNECT — COMPANY ROUNDTABLE
+            CONNECT — NEXT EVENT
           </p>
 
-          <h3>企業座談会</h3>
+          <h3>11月の出会いにつながる</h3>
 
           <p>
-            企業で働く人と少人数で話し、
-            仕事や職場の本音を聞くことができます。
+            オンラインで興味を持った企業や仕事について、
+            11月のリアルイベントでさらに深められます。
           </p>
 
           <ul>
-            <li>企業の雰囲気を知る</li>
-            <li>社員のキャリアを聞く</li>
-            <li>選考ではない対話を楽しむ</li>
+            <li>11月15日にリアル開催</li>
+            <li>企業や社会人と直接話せる</li>
+            <li>オンラインとの両方参加も歓迎</li>
           </ul>
 
         </article>
@@ -442,8 +815,8 @@
         </h2>
 
         <p>
-          きれいに質問をまとめてくる必要はありません。
-          「これが気になる」から対話を始められます。
+          授業を聞くだけでも、質問してもOK。
+          「これが気になる」からキャリアを考え始められます。
         </p>
 
       </div>
@@ -522,12 +895,27 @@
         </div>
 
         <p class="companies-introduction">
-          企業名だけでなく、それぞれの業界と魅力ポイントを分かりやすく紹介します。
+          現時点で参加が決まっている3社です。詳細は決まり次第、順次更新します。
         </p>
 
       </div>
 
-      <div class="company-grid" id="companyGrid"></div>
+      <div class="company-grid" id="companyGrid">
+        <article class="confirmed-company-card">
+          <span>CONSULTING</span>
+          <h3>PwC</h3>
+        </article>
+
+        <article class="confirmed-company-card">
+          <span>IT</span>
+          <h3>東京ガスiネット</h3>
+        </article>
+
+        <article class="confirmed-company-card">
+          <span>HUMAN RESOURCES</span>
+          <h3>パーソル</h3>
+        </article>
+      </div>
 
     </section>
 
@@ -655,7 +1043,7 @@
     </section>
 
 
-    <!-- ==================== スケジュール ==================== -->
+    <!-- ==================== オンライン時間割 ==================== -->
 
     <section class="section schedule-section" id="schedule">
 
@@ -668,188 +1056,136 @@
           </p>
 
           <h2>
-            当日のコンテンツ
+            9月13日の時間割
           </h2>
 
         </div>
 
         <p>
-          開催時間は11:00から18:00を予定しています。
-          詳しい時間は決まり次第更新します。
+          企業説明3コマと就活講座2コマを予定しています。
+          気になる時間だけの参加も可能です。
         </p>
 
       </div>
 
 
-      <!-- 個別相談会 -->
-
-      <article class="program-card main-program">
-
+      <div class="timetable-guide">
         <div>
-
-          <p class="program-label">
-            MEET / MAIN CONTENT
-          </p>
-
-          <h3>
-            個別相談会
-          </h3>
-
-          <p>
-            経験豊富なキャリアのプロと一対一で話せます。
-          </p>
-
+          <strong>各時間目は60分</strong>
+          <p>企業説明のあと、就活に役立つ2つの講座を実施します。各コマには休憩時間を含む予定です。</p>
         </div>
+        <span>途中参加・退出OK</span>
+      </div>
 
-        <ul>
-          <li>相談内容が決まっていなくても参加可能</li>
-          <li>自分の状況に合わせた相談</li>
-          <li>予約方法は決まり次第公開</li>
-        </ul>
+      <!--
+        ==================== 時間割の編集場所 ====================
+        ・「就活講座①（テーマ調整中）」と「就活講座②（テーマ調整中）」を、決定した講座名へ変更
+        ・開催順が変わった場合は、企業名と業界名を入れ替える
+      -->
+      <div class="timetable-scroll" role="region" aria-label="9月13日のオンライン授業時間割" tabindex="0">
+        <table class="lesson-timetable">
+          <thead>
+            <tr>
+              <th scope="col">時間</th>
+              <th scope="col">内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="period-number">朝の会</span><time>11:00–11:30</time></th>
+              <td><span>OPENING</span><strong>LiLiからのご案内・イベント説明</strong><small>当日の参加方法や楽しみ方をご案内します</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">1時間目</span><time>11:30–12:30</time></th>
+              <td><span>COMPANY SESSION / IT</span><strong>東京ガスiネット</strong><small>企業説明・質疑応答を予定</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">2時間目</span><time>12:30–13:30</time></th>
+              <td><span>COMPANY SESSION / CONSULTING</span><strong>PwC</strong><small>企業説明・質疑応答を予定</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">3時間目</span><time>13:30–14:30</time></th>
+              <td><span>COMPANY SESSION / HUMAN RESOURCES</span><strong>パーソル</strong><small>企業説明・質疑応答を予定</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">4時間目</span><time>14:30–15:30</time></th>
+              <td><span>CAREER CLASS 01</span><strong>就活講座①（テーマ調整中）</strong><small>内容は決まり次第公開します</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">5時間目</span><time>15:30–16:30</time></th>
+              <td><span>CAREER CLASS 02</span><strong>就活講座②（テーマ調整中）</strong><small>内容は決まり次第公開します</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">帰りの会</span><time>16:30–17:00</time></th>
+              <td><span>CLOSING / NEXT
+                  EVENT</span><strong>振り返り・11月15日のリアルイベント紹介</strong><small>次の出会いにつながる情報をご案内します</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      </article>
-
-
-      <!-- キャリアセミナー -->
-
-      <article class="program-card">
-
-        <div>
-
-          <p class="program-label">
-            DISCOVER / SEMINAR
-          </p>
-
-          <h3>
-            キャリアセミナー
-          </h3>
-
-          <p id="seminarProgramDescription"></p>
-
-        </div>
-
-        <ul id="seminarProgramPoints"></ul>
-
-      </article>
-
-
-      <!-- 企業座談会 -->
-
-      <article class="program-card">
-
-        <div>
-
-          <p class="program-label">
-            CONNECT / ROUNDTABLE
-          </p>
-
-          <h3>
-            企業座談会
-          </h3>
-
-          <p id="roundtableProgramDescription"></p>
-
-        </div>
-
-        <ul id="roundtableProgramPoints"></ul>
-
-      </article>
-
-
-      <!-- SEGA SAMMY LUX ダンスパフォーマンス -->
-
-      <article class="program-card lux-card">
-        <div class="lux-logo-area">
-          <a href="https://segasammylux.jp/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/lux-logo.png" alt="SEGA SAMMY LUX">
-          </a>
-        </div>
-
-        <div class="lux-content">
-          <p class="lux-label">
-            SPECIAL DANCE PERFORMANCE
-          </p>
-
-          <div class="lux-heading">
-            <p class="lux-time">16:30 START</p>
-
-            <h3>
-              SEGA SAMMY LUX
-              <span>ダンスパフォーマンス</span>
-            </h3>
-          </div>
-
-          <p class="lux-description">
-            プロダンスチーム「SEGA SAMMY LUX」による、
-            スペシャルダンスパフォーマンスを開催します。
-            迫力あるパフォーマンスを間近でお楽しみください。
-          </p>
-
-          <div class="lux-points">
-            <span>イベント参加者限定</span>
-            <span>観覧無料</span>
-            <span>16:30スタート</span>
-          </div>
-        </div>
-      </article>
+      <p class="timetable-edit-note">※ 掲載内容・参加企業・開催順は変更になる場合があります。</p>
 
     </section>
 
 
-    <!-- ==================== アクセス ==================== -->
+    <!-- ==================== 11月15日リアルイベントへの誘導 ==================== -->
 
-    <section class="section access-section" id="access">
+    <section class="section november-event-section" id="november">
 
-      <div class="access-copy">
+      <div class="november-event-content">
 
-        <p class="section-label">
-          ACCESS
-        </p>
+        <div>
+          <p class="section-label">
+            NEXT EVENT / REAL
+          </p>
 
-        <h2>
-          会場アクセス
-        </h2>
+          <h2>
+            次は、画面の外で。<br>
+            <em>11月15日<br class="november-mobile-break">リアル開催。</em>
+          </h2>
 
-        <p>
-          会場はセガサミーグループ本社です。
-          JR線・りんかい線「大崎駅」南口から徒歩6分です。
-        </p>
+          <p class="november-lead">
+            9月のオンライン授業で見つけた興味を、
+            企業や社会人との直接の対話でもっと深められます。
+            オンラインとリアル、どちらか一方だけの参加も、両方への参加も歓迎です。
+          </p>
+        </div>
 
-        <dl>
-
+        <dl class="november-details">
           <div>
-            <dt>会場</dt>
-            <dd id="accessVenue">セガサミーグループ本社</dd>
+            <dt>DATE</dt>
+            <dd>2026年11月15日（日）</dd>
           </div>
-
           <div>
-            <dt>住所</dt>
-            <dd id="accessAddress">〒141-0033 東京都品川区西品川一丁目1-1\n住友不動産大崎ガーデンタワー</dd>
+            <dt>STYLE</dt>
+            <dd>リアルイベント</dd>
           </div>
-
           <div>
-            <dt>最寄駅</dt>
-            <dd id="accessStation">大崎駅</dd>
+            <dt>CONTENT</dt>
+            <dd>企業や社会人と直接話せるイベントを予定</dd>
           </div>
-
+          <div>
+            <dt>DETAIL</dt>
+            <dd>会場・時間・参加企業は順次公開</dd>
+          </div>
         </dl>
 
       </div>
 
-
-      <div class="access-map-card">
-
-        <iframe class="google-map" title="セガサミーグループ本社の地図"
-          src="https://www.google.com/maps?q=〒141-0033+東京都品川区西品川一丁目1-1+住友不動産大崎ガーデンタワー&amp;output=embed" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
-        </iframe>
-
-        <a class="access-map-link" id="accessOfficialLink" href="#">
-
-          公式アクセスを見る ↗
+      <div class="november-actions">
+        <a class="button button-primary" href="#organization">
+          公式SNSで最新情報を見る
         </a>
 
+        <a class="button button-outline" href="#entry">
+          まずは9月のオンラインに参加する
+        </a>
       </div>
+
+      <p class="november-note">
+        ※ 11月15日の詳細・参加予約は、決まり次第このサイトと公式SNSでお知らせします。
+      </p>
 
     </section>
 
@@ -874,7 +1210,27 @@
 
       </div>
 
-      <div class="faq-list" id="faqList"></div>
+      <div class="faq-list">
+        <details>
+          <summary>すべての授業に参加する必要がありますか？</summary>
+          <p>いいえ。時間割から気になる授業を選び、好きな時間に参加できます。</p>
+        </details>
+
+        <details>
+          <summary>途中から参加したり、途中で退出したりできますか？</summary>
+          <p>はい。途中参加・途中退出が可能です。参加したい授業の時間に合わせてご参加ください。</p>
+        </details>
+
+        <details>
+          <summary>オンラインイベントへの参加方法はいつ分かりますか？</summary>
+          <p>参加予約をした方へ、当日の参加方法と各授業の案内をお送りします。</p>
+        </details>
+
+        <details>
+          <summary>11月15日のリアルイベントにも参加できますか？</summary>
+          <p>はい。オンラインとリアルの両方への参加も、どちらか一方のみの参加も歓迎です。</p>
+        </details>
+      </div>
 
     </section>
 
@@ -1028,8 +1384,8 @@
       </p>
 
       <h2>
-        まだ知らない選択肢に、<br>
-        会いにいこう。
+        9月13日、オンラインで<br>
+        新しい選択肢に出会おう。
       </h2>
 
       <strong class="entry-capacity" id="entryCapacity">
@@ -1041,7 +1397,7 @@
         <li>1人参加歓迎</li>
       </ul>
 
-      <p id="entryNote"></p>
+      <p>参加方法と授業ごとの案内は、参加予約後にお知らせします。</p>
 
       <a class="button button-white registration-link" href="#entry">
 
@@ -1069,8 +1425,12 @@
         参加企業
       </a>
 
-      <a href="#access">
-        アクセス
+      <a href="#schedule">
+        オンライン時間割
+      </a>
+
+      <a href="#november">
+        11月リアル開催
       </a>
 
       <a href="#faq">
@@ -1088,6 +1448,76 @@
     </p>
 
   </footer>
+
+  <!--
+    content.jsに以前のリアル開催情報が残っていても、
+    このページでは9月13日のオンライン開催情報を優先して表示します。
+  -->
+  <script>
+    window.addEventListener("load", function () {
+      var onlineEventContent = {
+        eventDate: "2026.09.13 SUN",
+        eventTime: "11:00–17:00（予定）",
+        eventVenue: "オンライン開催",
+        eventCapacity: "好きな授業を選んで参加・途中参加／退出OK",
+        entryCapacity: "9月13日（日）11:00–17:00（予定）"
+      };
+
+      Object.keys(onlineEventContent).forEach(function (id) {
+        var element = document.getElementById(id);
+
+        if (element) {
+          element.textContent = onlineEventContent[id];
+        }
+      });
+
+      var companyGrid = document.getElementById("companyGrid");
+
+      if (companyGrid) {
+        companyGrid.innerHTML = `
+          <article class="confirmed-company-card">
+            <span>CONSULTING</span>
+            <h3>PwC</h3>
+          </article>
+          <article class="confirmed-company-card">
+            <span>IT</span>
+            <h3>東京ガスiネット</h3>
+          </article>
+          <article class="confirmed-company-card">
+            <span>HUMAN RESOURCES</span>
+            <h3>パーソル</h3>
+          </article>
+        `;
+      }
+
+      /*
+        HTMLを読みやすくするためのソース上の改行が、
+        日本語本文で不要な空白として表示されるのを防ぎます。
+      */
+      var textWalker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT
+      );
+      var textNodes = [];
+
+      while (textWalker.nextNode()) {
+        textNodes.push(textWalker.currentNode);
+      }
+
+      textNodes.forEach(function (textNode) {
+        var parentTag = textNode.parentElement
+          ? textNode.parentElement.tagName
+          : "";
+
+        if (["SCRIPT", "STYLE", "PRE", "CODE"].indexOf(parentTag) === -1) {
+          textNode.nodeValue = textNode.nodeValue.replace(
+            /(\S)[\t ]*\r?\n[\t ]*(?=\S)/g,
+            "$1"
+          );
+        }
+      });
+    });
+  </script>
 
 </body>
 
