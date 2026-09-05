@@ -342,6 +342,180 @@
       font-weight: 700;
     }
 
+    /* ==================== LiLi案内チャット ==================== */
+
+    .lili-chat-launcher {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1201;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 20px;
+      color: #fff;
+      background: linear-gradient(135deg, #ef5ca0, #ff7a72);
+      border: 0;
+      border-radius: 999px;
+      box-shadow: 0 14px 35px rgba(169, 44, 104, .28);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .lili-chat-launcher:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(169, 44, 104, .34);
+    }
+
+    .lili-chat-launcher-mark {
+      display: grid;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      color: #ef5ca0;
+      background: #fff;
+      border-radius: 50%;
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .lili-chat-panel {
+      position: fixed;
+      right: 24px;
+      bottom: 94px;
+      z-index: 1200;
+      display: flex;
+      width: min(390px, calc(100vw - 32px));
+      max-height: min(610px, calc(100vh - 130px));
+      overflow: hidden;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #f3d7e4;
+      border-radius: 26px;
+      box-shadow: 0 25px 70px rgba(64, 55, 67, .22);
+    }
+
+    .lili-chat-panel[hidden] {
+      display: none;
+    }
+
+    .lili-chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 19px 20px;
+      color: #fff;
+      background: linear-gradient(135deg, #ef5ca0, #ff8a74);
+    }
+
+    .lili-chat-header p {
+      margin: 0;
+    }
+
+    .lili-chat-title {
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .lili-chat-status {
+      margin-top: 2px !important;
+      font-size: 11px;
+      font-weight: 700;
+      opacity: .9;
+    }
+
+    .lili-chat-close {
+      display: grid;
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      place-items: center;
+      color: #fff;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 50%;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lili-chat-messages {
+      min-height: 170px;
+      padding: 20px;
+      overflow-y: auto;
+      background: #fff9fc;
+      scroll-behavior: smooth;
+    }
+
+    .lili-chat-message {
+      width: fit-content;
+      max-width: 88%;
+      margin: 0 0 12px;
+      padding: 12px 15px;
+      border-radius: 17px;
+      font-size: 14px;
+      line-height: 1.75;
+      text-wrap: pretty;
+      white-space: pre-line;
+    }
+
+    .lili-chat-message.bot {
+      margin-right: auto;
+      color: #4d4148;
+      background: #fff;
+      border: 1px solid #f1dbe5;
+      border-bottom-left-radius: 5px;
+    }
+
+    .lili-chat-message.user {
+      margin-left: auto;
+      color: #fff;
+      background: #ef5ca0;
+      border-bottom-right-radius: 5px;
+    }
+
+    .lili-chat-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 14px;
+      background: #fff;
+      border-top: 1px solid #f1e4ea;
+    }
+
+    .lili-chat-option {
+      min-height: 46px;
+      padding: 9px 10px;
+      color: #a92c68;
+      background: #fff4f9;
+      border: 1px solid #f5c9dc;
+      border-radius: 13px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.4;
+      white-space: normal;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .lili-chat-option:hover {
+      background: #ffe3f0;
+      transform: translateY(-1px);
+    }
+
+    .lili-chat-launcher:focus-visible,
+    .lili-chat-close:focus-visible,
+    .lili-chat-option:focus-visible {
+      outline: 3px solid rgba(40, 120, 164, .36);
+      outline-offset: 3px;
+    }
+
     @media (max-width: 760px) {
 
       .timetable-guide,
@@ -381,6 +555,36 @@
       h2,
       h3 {
         text-wrap: pretty;
+      }
+
+      .lili-chat-launcher {
+        right: 14px;
+        bottom: 14px;
+        padding: 13px 17px;
+      }
+
+      .lili-chat-panel {
+        right: 16px;
+        bottom: 82px;
+        max-height: calc(100vh - 105px);
+        border-radius: 22px;
+      }
+
+      .lili-chat-options {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .lili-chat-launcher,
+      .lili-chat-option {
+        transition: none;
+      }
+
+      .lili-chat-messages {
+        scroll-behavior: auto;
       }
     }
   </style>
@@ -727,7 +931,7 @@
             CHOOSE — YOUR CLASS
           </p>
 
-          <h3>授業を自由に選べる</h3>
+          <h3>授業を自由に<br>選べる</h3>
 
           <p>
             時間割の中から、自分が気になるテーマや
@@ -753,7 +957,7 @@
             DISCOVER — NEW CAREERS
           </p>
 
-          <h3>知らない仕事に出会える</h3>
+          <h3>知らない仕事に<br>出会える</h3>
 
           <p>
             業界や職種、働き方について、
@@ -779,7 +983,7 @@
             CONNECT — NEXT EVENT
           </p>
 
-          <h3>11月の出会いにつながる</h3>
+          <h3>11月の出会いに<br>つながる</h3>
 
           <p>
             オンラインで興味を持った企業や仕事について、
@@ -1409,6 +1613,43 @@
   </main>
 
 
+  <!-- ==================== LiLi案内チャット ==================== -->
+
+  <button class="lili-chat-launcher" id="liliChatLauncher" type="button" aria-controls="liliChatPanel"
+    aria-expanded="false">
+    <span class="lili-chat-launcher-mark" aria-hidden="true">?</span>
+    <span>質問する</span>
+  </button>
+
+  <section class="lili-chat-panel" id="liliChatPanel" aria-label="LiLi EXPO案内チャット" hidden>
+
+    <div class="lili-chat-header">
+      <div>
+        <p class="lili-chat-title">LiLi案内チャット</p>
+        <p class="lili-chat-status">知りたい項目を選んでください</p>
+      </div>
+
+      <button class="lili-chat-close" id="liliChatClose" type="button" aria-label="案内チャットを閉じる">×</button>
+    </div>
+
+    <div class="lili-chat-messages" id="liliChatMessages" aria-live="polite">
+      <p class="lili-chat-message bot">
+        LiLi EXPOについてご案内します。知りたいことを下から選んでください！
+      </p>
+    </div>
+
+    <div class="lili-chat-options" aria-label="質問を選択">
+      <button class="lili-chat-option" type="button" data-chat-question="date">開催日時・参加方法</button>
+      <button class="lili-chat-option" type="button" data-chat-question="schedule">当日の時間割</button>
+      <button class="lili-chat-option" type="button" data-chat-question="companies">参加企業について</button>
+      <button class="lili-chat-option" type="button" data-chat-question="join">途中参加・退出について</button>
+      <button class="lili-chat-option" type="button" data-chat-question="november">11月15日のイベント</button>
+      <button class="lili-chat-option" type="button" data-chat-question="entry">参加予約について</button>
+    </div>
+
+  </section>
+
+
   <!-- ==================== フッター ==================== -->
 
   <footer class="site-footer">
@@ -1517,6 +1758,93 @@
         }
       });
     });
+  </script>
+
+  <script>
+    (function () {
+      var launcher = document.getElementById("liliChatLauncher");
+      var panel = document.getElementById("liliChatPanel");
+      var closeButton = document.getElementById("liliChatClose");
+      var messages = document.getElementById("liliChatMessages");
+      var optionButtons = document.querySelectorAll("[data-chat-question]");
+
+      if (!launcher || !panel || !closeButton || !messages) {
+        return;
+      }
+
+      var chatReplies = {
+        date: {
+          label: "開催日時・参加方法",
+          answer: "2026年9月13日（日）11:00〜17:00に、オンラインで開催予定です。参加方法と視聴URLは、参加予約をした方へご案内します。"
+        },
+        schedule: {
+          label: "当日の時間割",
+          answer: "11:00から朝の会を行います。\nその後、東京ガスiネット・PwC・パーソルの企業説明と、2つの就活講座を予定しています。詳しい時間割はページ内の「時間割」から確認できます。"
+        },
+        companies: {
+          label: "参加企業について",
+          answer: "現時点では、PwC・東京ガスiネット・パーソルの参加を予定しています。参加企業や開催順は変更・追加となる場合があります。"
+        },
+        join: {
+          label: "途中参加・退出について",
+          answer: "途中参加・途中退出が可能です。気になる企業説明や就活講座の時間に合わせてご参加ください。"
+        },
+        november: {
+          label: "11月15日のイベント",
+          answer: "2026年11月15日（日）には、企業や社会人と直接話せるリアルイベントを予定しています。会場・時間・参加方法は、決まり次第このサイトと公式SNSでお知らせします。"
+        },
+        entry: {
+          label: "参加予約について",
+          answer: "参加は無料です。参加予約フォームは現在準備中のため、公開後にこのサイトの「無料で参加予約する」ボタンからお申し込みください。"
+        }
+      };
+
+      function setChatOpen(isOpen) {
+        panel.hidden = !isOpen;
+        launcher.setAttribute("aria-expanded", String(isOpen));
+
+        if (isOpen && optionButtons.length) {
+          optionButtons[0].focus();
+        } else if (!isOpen) {
+          launcher.focus();
+        }
+      }
+
+      function addMessage(text, type) {
+        var message = document.createElement("p");
+        message.className = "lili-chat-message " + type;
+        message.textContent = text;
+        messages.appendChild(message);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      launcher.addEventListener("click", function () {
+        setChatOpen(panel.hidden);
+      });
+
+      closeButton.addEventListener("click", function () {
+        setChatOpen(false);
+      });
+
+      optionButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var reply = chatReplies[button.dataset.chatQuestion];
+
+          if (!reply) {
+            return;
+          }
+
+          addMessage(reply.label, "user");
+          addMessage(reply.answer, "bot");
+        });
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !panel.hidden) {
+          setChatOpen(false);
+        }
+      });
+    })();
   </script>
 
 </body>
