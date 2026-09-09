@@ -31,6 +31,58 @@
       overflow-wrap: normal;
     }
 
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
+    }
+
+    main,
+    section,
+    header,
+    footer,
+    .hero-copy,
+    .hero-visual {
+      min-width: 0;
+    }
+
+    .site-header {
+      min-height: 92px;
+    }
+
+    .header-logo {
+      width: clamp(240px, 20vw, 320px);
+    }
+
+    .header-logo img {
+      width: 100%;
+      height: 66px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .limited-number .limited-number-text {
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+      line-height: 1.1;
+      letter-spacing: -.06em;
+    }
+
+    .limited-number .limited-number-note {
+      margin-top: 12px;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .entry-kicker {
+      margin: 12px 0 0;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
     h1,
     h2,
     h3,
@@ -155,7 +207,7 @@
     }
 
     .lesson-timetable thead th:first-child {
-      width: 150px;
+      width: 180px;
       text-align: center;
     }
 
@@ -180,6 +232,7 @@
       display: block;
       font-size: 20px;
       line-height: 1.2;
+      white-space: nowrap;
     }
 
     .lesson-timetable time {
@@ -217,28 +270,6 @@
       color: #7a7078;
       font-size: 13px;
       text-align: right;
-    }
-
-    .confirmed-company-card {
-      padding: 28px;
-      background: #fff;
-      border: 1px solid #eadfe6;
-      border-radius: 22px;
-      box-shadow: 0 12px 32px rgba(90, 61, 79, .07);
-    }
-
-    .confirmed-company-card span {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: #ef5ca0;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .12em;
-    }
-
-    .confirmed-company-card h3 {
-      margin: 0;
-      font-size: 22px;
     }
 
     .november-event-section {
@@ -670,6 +701,160 @@
 
     @media (max-width: 760px) {
 
+      .site-header {
+        width: 100%;
+        min-height: 78px;
+        gap: 10px;
+        padding: 9px 14px;
+      }
+
+      .header-logo {
+        width: min(220px, calc(100vw - 92px));
+      }
+
+      .header-logo img {
+        width: 100%;
+        height: 58px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .menu-button {
+        flex: 0 0 48px;
+      }
+
+      .hero {
+        width: calc(100% - 28px);
+        gap: 34px;
+        padding: 48px 0 64px;
+        overflow: hidden;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.65rem, 13vw, 4rem);
+        line-height: 1.12;
+        letter-spacing: -.055em;
+      }
+
+      .hero h1 .nowrap {
+        white-space: normal;
+      }
+
+      .hero-description br:not(.mobile-break) {
+        display: none;
+      }
+
+      .capacity-label {
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.5;
+      }
+
+      .hero-highlights {
+        gap: 8px;
+      }
+
+      .hero-highlights li {
+        padding: 6px 11px;
+        font-size: .78rem;
+      }
+
+      .hero-visual {
+        width: 100%;
+        min-height: 365px;
+        overflow: hidden;
+      }
+
+      .hero-card {
+        width: 100%;
+        min-height: 350px;
+        padding: 30px 20px;
+        border-radius: 32px;
+        transform: none;
+      }
+
+      .hero-card-brand {
+        gap: 20px;
+        transform: none;
+      }
+
+      .hero-card-mark {
+        width: 86px;
+      }
+
+      .hero-card-wordmark {
+        width: min(94%, 330px);
+      }
+
+      .orb,
+      .spark {
+        display: none;
+      }
+
+      .timetable-scroll {
+        overflow: visible;
+        padding-bottom: 0;
+      }
+
+      .lesson-timetable,
+      .lesson-timetable tbody,
+      .lesson-timetable tr,
+      .lesson-timetable th,
+      .lesson-timetable td {
+        display: block;
+        width: 100%;
+      }
+
+      .lesson-timetable {
+        min-width: 0;
+        border-spacing: 0;
+      }
+
+      .lesson-timetable thead {
+        display: none;
+      }
+
+      .lesson-timetable tr {
+        margin-bottom: 14px;
+      }
+
+      .lesson-timetable tbody th {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 16px 16px 0 0;
+        text-align: left;
+      }
+
+      .lesson-timetable .period-number,
+      .lesson-timetable time {
+        display: block;
+      }
+
+      .lesson-timetable time {
+        flex: 0 0 auto;
+        margin: 0;
+      }
+
+      .lesson-timetable tbody td {
+        padding: 17px 16px;
+        border-radius: 0 0 16px 16px;
+      }
+
+      .timetable-edit-note {
+        text-align: left;
+      }
+
+      .limited-number .limited-number-text {
+        font-size: 3.1rem;
+      }
+
+      .entry-section h2 {
+        font-size: clamp(2.35rem, 11vw, 3.5rem);
+      }
+
       .timetable-guide,
       .november-event-content {
         display: block;
@@ -782,7 +967,7 @@
   <header class="site-header">
 
     <a class="header-logo" href="#top" aria-label="LiLi EXPO トップへ">
-      <img src="assets/mozi%20dake.png" alt="LiLi EXPO for women">
+      <img src="assets/moziari%20logo.png" alt="キャリアアップしたい女子学生のための就活イベント LiLi EXPO for women">
     </a>
 
     <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false">
@@ -796,12 +981,11 @@
 
       <a href="#about">LiLi EXPOとは</a>
       <a href="#experience">オンラインの特徴</a>
-      <a href="#people">話せる人</a>
-      <a href="#companies">参加企業</a>
       <a href="#schedule">時間割</a>
       <a href="#november">11月リアル開催</a>
 
-      <a class="nav-entry registration-link" href="#entry">
+      <a class="nav-entry registration-link" href="https://tayori.com/form/a88bc2d93807e4d1732eb5f80c5bfc7cc72f8a65"
+        target="_blank" rel="noopener noreferrer">
         参加予約する
       </a>
 
@@ -845,7 +1029,9 @@
 
         <div class="hero-actions">
 
-          <a class="button button-primary registration-link" href="#entry">
+          <a class="button button-primary registration-link"
+            href="https://tayori.com/form/a88bc2d93807e4d1732eb5f80c5bfc7cc72f8a65" target="_blank"
+            rel="noopener noreferrer">
             無料で参加予約する
           </a>
 
@@ -935,11 +1121,11 @@
 
       <div class="limited-number">
 
-        <span>LESSONS</span>
+        <span>ONLINE PROGRAM</span>
 
-        <strong>5</strong>
+        <strong class="limited-number-text">全11枠</strong>
 
-        <small>時間目まで</small>
+        <small class="limited-number-note">気になる時間だけ参加OK</small>
 
       </div>
 
@@ -947,17 +1133,17 @@
       <div class="limited-copy">
 
         <p>
-          参加無料・女子学生対象・オンライン開催
+          9月13日は、企業や仕事について学べるオンラインイベント
         </p>
 
         <h2>
-          好きな授業を自分で選べるから、<br>
-          知りたいキャリアを自由に深められる。
+          企業トークから6つのミニ講座、<br>
+          面接官のホンネまで。
         </h2>
 
         <p>
-          すべての授業に出る必要はありません。
-          時間割から、気になる授業を選んで参加できます。
+          オープニング・クロージングを含む全11プログラム。
+          すべてに出る必要はなく、気になる時間だけ自由に参加できます。
         </p>
 
       </div>
@@ -1003,7 +1189,7 @@
 
         <p class="join-guide-lead">
           すべての時間に参加しなくても大丈夫。
-          気になる企業説明や就活講座だけを選び、自分のペースで参加できます。
+          気になる企業トークやミニ講座だけを選び、自分のペースで参加できます。
         </p>
 
       </div>
@@ -1070,7 +1256,9 @@
         </div>
 
         <div class="join-guide-action">
-          <a class="button button-primary registration-link" href="#entry">
+          <a class="button button-primary registration-link"
+            href="https://tayori.com/form/a88bc2d93807e4d1732eb5f80c5bfc7cc72f8a65" target="_blank"
+            rel="noopener noreferrer">
             無料で参加予約する
           </a>
         </div>
@@ -1198,7 +1386,7 @@
         </div>
 
         <p>
-          1時間目から5時間目までの時間割を見ながら、
+          当日の時間割を見ながら、
           自分の興味に合わせて参加する授業を選べます。
         </p>
 
@@ -1318,7 +1506,11 @@
 
         <p>大企業とベンチャー、どう選んだ？</p>
 
-        <p>結婚・出産とキャリアって実際どう？</p>
+        <p>ライフイベントを見据えたキャリア設計は、どう考える？</p>
+
+        <p>女性が活躍する企業って、どう見分けるの？</p>
+
+        <p>今年の女子学生は、就活で有利なの？</p>
 
         <p>海外で働くには、何から始める？</p>
 
@@ -1326,85 +1518,6 @@
 
         <p>今の仕事、本当に楽しい？</p>
 
-      </div>
-
-    </section>
-
-
-    <!-- ==================== 話せる人 ==================== -->
-
-    <section class="section people-section" id="people">
-
-      <div class="section-heading">
-
-        <div>
-
-          <p class="section-label">
-            WHO YOU’LL MEET
-          </p>
-
-          <h2>
-            当日出会える人たち
-          </h2>
-
-        </div>
-
-        <p>
-          名前はイニシャルなどで伏せながら、
-          一人ひとりの歩みや仕事への思いを紹介します。
-        </p>
-
-      </div>
-
-
-      <p class="profile-note">
-        ※ 下記は差し替え用の掲載イメージです。実際の参加社員情報が決まり次第、内容を更新します。
-      </p>
-
-      <div class="speaker-grid" id="speakerGrid"></div>
-
-    </section>
-
-
-    <!-- ==================== 参加企業 ==================== -->
-
-    <section class="section companies-section" id="companies">
-
-      <div class="section-heading">
-
-        <div>
-
-          <p class="section-label">
-            COMPANIES
-          </p>
-
-          <h2>
-            参加企業
-          </h2>
-
-        </div>
-
-        <p class="companies-introduction">
-          現時点で参加が決まっている3社です。詳細は決まり次第、順次更新します。
-        </p>
-
-      </div>
-
-      <div class="company-grid" id="companyGrid">
-        <article class="confirmed-company-card">
-          <span>CONSULTING</span>
-          <h3>PwC</h3>
-        </article>
-
-        <article class="confirmed-company-card">
-          <span>IT</span>
-          <h3>東京ガスiネット</h3>
-        </article>
-
-        <article class="confirmed-company-card">
-          <span>HUMAN RESOURCES</span>
-          <h3>パーソル</h3>
-        </article>
       </div>
 
     </section>
@@ -1477,7 +1590,7 @@
               </span>
 
               <strong>
-                表面を準備中
+                表面
               </strong>
 
               <p>
@@ -1515,7 +1628,7 @@
               </span>
 
               <strong>
-                裏面を準備中
+                裏面
               </strong>
 
               <p>
@@ -1552,7 +1665,7 @@
         </div>
 
         <p>
-          企業説明3コマと就活講座2コマを予定しています。
+          企業トーク、LiLi Tech Academyの説明、6つのミニ講座などを予定しています。
           気になる時間だけの参加も可能です。
         </p>
 
@@ -1561,16 +1674,16 @@
 
       <div class="timetable-guide">
         <div>
-          <strong>各時間目は60分</strong>
-          <p>企業説明のあと、就活に役立つ2つの講座を実施します。各コマには休憩時間を含む予定です。</p>
+          <strong>11:00開始・17:00終了予定</strong>
+          <p>15分間のオープニングから始まり、途中に10分休憩を挟みながら進行します。</p>
         </div>
         <span>途中参加・退出OK</span>
       </div>
 
       <!--
         ==================== 時間割の編集場所 ====================
-        ・「就活講座①（テーマ調整中）」と「就活講座②（テーマ調整中）」を、決定した講座名へ変更
-        ・開催順が変わった場合は、企業名と業界名を入れ替える
+        ・テーマや登壇内容が確定したら、各タイトルと説明文を変更
+        ・開催時刻が変わった場合は、各time要素を変更
       -->
       <div class="timetable-scroll" role="region" aria-label="9月13日のオンライン授業時間割" tabindex="0">
         <table class="lesson-timetable">
@@ -1582,39 +1695,58 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row"><span class="period-number">朝の会</span><time>11:00–11:30</time></th>
-              <td><span>OPENING</span><strong>LiLiからのご案内・イベント説明</strong><small>当日の参加方法や楽しみ方をご案内します</small></td>
+              <th scope="row"><span class="period-number">オープニング</span><time>11:00–11:15</time></th>
+              <td><span>OPENING</span><strong>オープニング・LiLi EXPO説明</strong><small>イベントの目的と当日の流れをご案内します</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">1時間目</span><time>11:30–12:30</time></th>
-              <td><span>COMPANY SESSION / IT</span><strong>東京ガスiネット</strong><small>企業説明・質疑応答を予定</small></td>
+              <th scope="row"><span class="period-number">企業トーク</span><time>11:15–12:00</time></th>
+              <td><span>COMPANY TALK
+                  SESSION</span><strong>企業トークセッション</strong><small>28卒採用の変化や企業で起きていることを考えるトーク／終了後10分休憩</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">2時間目</span><time>12:30–13:30</time></th>
-              <td><span>COMPANY SESSION / CONSULTING</span><strong>PwC</strong><small>企業説明・質疑応答を予定</small></td>
+              <th scope="row"><span class="period-number">Academy説明</span><time>12:10–12:40</time></th>
+              <td><span>LiLi TECH ACADEMY</span><strong>LiLi Tech
+                  Academyの必要性・学長挨拶</strong><small>学ぶ目的やAcademyの内容、サポートについてご紹介／終了後10分休憩</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">3時間目</span><time>13:30–14:30</time></th>
-              <td><span>COMPANY SESSION / HUMAN RESOURCES</span><strong>パーソル</strong><small>企業説明・質疑応答を予定</small></td>
+              <th scope="row"><span class="period-number">ミニ講座①</span><time>12:50–13:20</time></th>
+              <td><span>BUSINESS SENSE</span><strong>ビジネスセンス</strong><small>仕事や事業を考えるための視点を学ぶミニ講座</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">4時間目</span><time>14:30–15:30</time></th>
-              <td><span>CAREER CLASS 01</span><strong>就活講座①（テーマ調整中）</strong><small>内容は決まり次第公開します</small></td>
+              <th scope="row"><span class="period-number">ミニ講座②</span><time>13:20–13:50</time></th>
+              <td><span>PMO SKILL</span><strong>PMOスキル</strong><small>PMOとは何か、学ぶことがなぜ大切なのかを知る講座</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">5時間目</span><time>15:30–16:30</time></th>
-              <td><span>CAREER CLASS 02</span><strong>就活講座②（テーマ調整中）</strong><small>内容は決まり次第公開します</small></td>
+              <th scope="row"><span class="period-number">ミニ講座③</span><time>13:50–14:20</time></th>
+              <td><span>AI SKILL</span><strong>AIスキル</strong><small>AIでできることを、難しく考えず楽しく学ぶ講座／終了後10分休憩</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">帰りの会</span><time>16:30–17:00</time></th>
-              <td><span>CLOSING / NEXT
-                  EVENT</span><strong>振り返り・11月15日のリアルイベント紹介</strong><small>次の出会いにつながる情報をご案内します</small></td>
+              <th scope="row"><span class="period-number">ミニ講座④</span><time>14:30–15:00</time></th>
+              <td><span>TECH SKILL</span><strong>Techスキル</strong><small>Tech分野で学ぶことを、身近に楽しく知る講座</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">ミニ講座⑤</span><time>15:00–15:30</time></th>
+              <td><span>BUSINESS PLANNING</span><strong>事業企画スキル</strong><small>新しい事業や企画を考えるための基本を学ぶ講座</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">ミニ講座⑥</span><time>15:30–16:00</time></th>
+              <td><span>CAREER DESIGN</span><strong>キャリアデザイン</strong><small>自分らしい働き方やこれからのキャリアを考える講座／終了後10分休憩</small>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">面接官トーク</span><time>16:10–16:40</time></th>
+              <td><span>INTERVIEWER
+                  TALK</span><strong>大手企業面接官のホンネ</strong><small>面接で何を見ているのかを、LiLiの6ポテンシャルなどと結び付けて聞く対談</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="period-number">クロージング</span><time>16:40–17:00</time></th>
+              <td><span>CLOSING</span><strong>クロージング・アンケート</strong><small>クロージングトークと締めのご挨拶、アンケートを実施します</small></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="timetable-edit-note">※ 掲載内容・参加企業・開催順は変更になる場合があります。</p>
+      <p class="timetable-edit-note">※ 掲載内容・開催順は変更になる場合があります。</p>
 
     </section>
 
@@ -1809,7 +1941,7 @@
 
             <div>
               <dt>運営会社</dt>
-              <dd id="organizationName"></dd>
+              <dd id="organizationName">LiLi株式会社</dd>
             </div>
 
             <div>
@@ -1823,14 +1955,24 @@
             </div>
 
             <div>
+              <dt>設立</dt>
+              <dd>2014年3月10日</dd>
+            </div>
+
+            <div>
+              <dt>資本金</dt>
+              <dd>79,253,750円</dd>
+            </div>
+
+            <div>
 
               <dt>
                 公式サイト
               </dt>
 
               <dd>
-                <a id="organizationWebsite">
-                  確認中
+                <a id="organizationWebsite" href="https://lili-inc.jp/" target="_blank" rel="noopener noreferrer">
+                  LiLi株式会社 公式サイト
                 </a>
               </dd>
 
@@ -1857,11 +1999,25 @@
           </h3>
 
           <div class="social-links" id="socialLinks">
-          </div>
+            <a class="social-link" href="https://www.instagram.com/lili.career/?utm_source=ig_web_button_share_sheet"
+              target="_blank" rel="noopener noreferrer">
+              <span>Instagram｜LiLi Career</span>
+              <span aria-hidden="true">↗</span>
+            </a>
 
-          <small>
-            URLが決まったらcontent.jsへ入力してください。
-          </small>
+            <a class="social-link"
+              href="https://www.instagram.com/lili_syukatu_log?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw=="
+              target="_blank" rel="noopener noreferrer">
+              <span>Instagram｜LiLi 就活ログ</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="social-link" href="https://www.tiktok.com/@lili_internship_expo?_r=1&amp;_t=ZS-99a1ub8sHs8"
+              target="_blank" rel="noopener noreferrer">
+              <span>TikTok｜LiLi EXPO</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
 
         </article>
 
@@ -1875,12 +2031,16 @@
     <section class="entry-section" id="entry">
 
       <p class="entry-label">
-        ENTRY
+        9.13 ONLINE EVENT / ENTRY
+      </p>
+
+      <p class="entry-kicker">
+        LiLi EXPO オンラインイベント参加予約
       </p>
 
       <h2>
-        9月13日、オンラインで<br>
-        新しい選択肢に出会おう。
+        好きな授業を選んで、<br>
+        新しいキャリアに出会おう。
       </h2>
 
       <strong class="entry-capacity" id="entryCapacity">
@@ -1895,12 +2055,14 @@
 
       <p>参加方法と授業ごとの案内は、参加予約後にお知らせします。</p>
 
-      <a class="button button-white registration-link" href="#entry">
-
+      <a class="button button-white registration-link"
+        href="https://tayori.com/form/a88bc2d93807e4d1732eb5f80c5bfc7cc72f8a65" target="_blank"
+        rel="noopener noreferrer">
         無料で参加予約する
       </a>
 
     </section>
+
 
   </main>
 
@@ -1925,15 +2087,12 @@
     </div>
 
     <div class="lili-chat-messages" id="liliChatMessages" aria-live="polite">
-      <p class="lili-chat-message bot">
-        LiLi EXPOについてご案内します。知りたいことを下から選んでください！
-      </p>
+      <p class="lili-chat-message bot">LiLi EXPOについてご案内します。<br>知りたいことを下から選んでください！</p>
     </div>
 
     <div class="lili-chat-options" aria-label="質問を選択">
       <button class="lili-chat-option" type="button" data-chat-question="date">開催日時・参加方法</button>
       <button class="lili-chat-option" type="button" data-chat-question="schedule">当日の時間割</button>
-      <button class="lili-chat-option" type="button" data-chat-question="companies">参加企業について</button>
       <button class="lili-chat-option" type="button" data-chat-question="join">途中参加・退出について</button>
       <button class="lili-chat-option" type="button" data-chat-question="camera">顔出しは必要？</button>
       <button class="lili-chat-option" type="button" data-chat-question="november">11月15日のイベント</button>
@@ -1953,10 +2112,6 @@
 
       <a href="#about">
         LiLi EXPOとは
-      </a>
-
-      <a href="#companies">
-        参加企業
       </a>
 
       <a href="#schedule">
@@ -2005,6 +2160,48 @@
         }
       });
 
+      var organizationName = document.getElementById("organizationName");
+
+      if (organizationName) {
+        organizationName.textContent = "LiLi株式会社";
+      }
+
+      var organizationWebsite = document.getElementById("organizationWebsite");
+
+      if (organizationWebsite) {
+        organizationWebsite.textContent = "LiLi株式会社 公式サイト";
+        organizationWebsite.href = "https://lili-inc.jp/";
+        organizationWebsite.target = "_blank";
+        organizationWebsite.rel = "noopener noreferrer";
+      }
+
+      var socialLinks = document.getElementById("socialLinks");
+
+      if (socialLinks) {
+        socialLinks.innerHTML = `
+          <a class="social-link" href="https://www.instagram.com/lili.career/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
+            <span>Instagram｜LiLi Career</span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/lili_syukatu_log?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <span>Instagram｜LiLi 就活ログ</span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@lili_internship_expo?_r=1&_t=ZS-99a1ub8sHs8" target="_blank" rel="noopener noreferrer">
+            <span>TikTok｜LiLi EXPO</span><span aria-hidden="true">↗</span>
+          </a>
+        `;
+      }
+
+      var registrationUrl = "https://tayori.com/form/a88bc2d93807e4d1732eb5f80c5bfc7cc72f8a65";
+
+      document.querySelectorAll(".registration-link").forEach(function (link) {
+        link.href = registrationUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = link.classList.contains("nav-entry")
+          ? "参加予約する"
+          : "無料で参加予約する";
+      });
+
       var eventHighlights = document.getElementById("eventHighlights");
 
       if (eventHighlights) {
@@ -2014,25 +2211,6 @@
           <li>顔出しなしOK</li>
           <li>服装自由</li>
           <li>1人参加歓迎</li>
-        `;
-      }
-
-      var companyGrid = document.getElementById("companyGrid");
-
-      if (companyGrid) {
-        companyGrid.innerHTML = `
-          <article class="confirmed-company-card">
-            <span>CONSULTING</span>
-            <h3>PwC</h3>
-          </article>
-          <article class="confirmed-company-card">
-            <span>IT</span>
-            <h3>東京ガスiネット</h3>
-          </article>
-          <article class="confirmed-company-card">
-            <span>HUMAN RESOURCES</span>
-            <h3>パーソル</h3>
-          </article>
         `;
       }
 
@@ -2084,19 +2262,15 @@
         },
         schedule: {
           label: "当日の時間割",
-          answer: "11:00から朝の会を行います。\nその後、東京ガスiネット・PwC・パーソルの企業説明と、2つの就活講座を予定しています。詳しい時間割はページ内の「時間割」から確認できます。"
-        },
-        companies: {
-          label: "参加企業について",
-          answer: "現時点では、PwC・東京ガスiネット・パーソルの参加を予定しています。参加企業や開催順は変更・追加となる場合があります。"
+          answer: "11:00から15分間のオープニングを行います。\nその後、企業トーク、LiLi Tech Academyの説明、ビジネスセンス・PMO・AI・Tech・事業企画・キャリアデザインの6つのミニ講座、大手企業面接官のホンネを予定しています。16:40からクロージングを行い、17:00終了予定です。"
         },
         join: {
           label: "途中参加・退出について",
-          answer: "途中参加・途中退出が可能です。気になる企業説明や就活講座の時間に合わせてご参加ください。"
+          answer: "途中参加・途中退出が可能です。気になる企業トークやミニ講座の時間に合わせてご参加ください。"
         },
         camera: {
           label: "顔出しは必要？",
-          answer: "顔出しは必要ありません。カメラOFFのまま、気になる企業説明や就活講座へ気軽にご参加いただけます。"
+          answer: "顔出しは必要ありません。カメラOFFのまま、気になる企業トークやミニ講座へ気軽にご参加いただけます。"
         },
         november: {
           label: "11月15日のイベント",
@@ -2104,7 +2278,7 @@
         },
         entry: {
           label: "参加予約について",
-          answer: "参加は無料です。参加予約フォームは現在準備中のため、公開後にこのサイトの「無料で参加予約する」ボタンからお申し込みください。"
+          answer: "参加は無料です。このサイトの「無料で参加予約する」ボタンから、参加予約フォームへ進んでお申し込みください。"
         }
       };
 
