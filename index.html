@@ -1547,17 +1547,8 @@
 
           <p>
             開催概要やイベントの魅力をまとめた表面と、
-            当日の詳細を掲載した裏面の両方を掲載します。
+            当日の詳細を掲載した裏面の両方をご覧いただけます。
           </p>
-
-          <a class="button button-primary flyer-link" id="flyerLink" href="#" hidden>
-
-            チラシをPDFで見る ↗
-          </a>
-
-          <span class="flyer-status" id="flyerStatus">
-            チラシ完成後に公開します
-          </span>
 
         </div>
 
@@ -1582,22 +1573,7 @@
 
 
           <div class="flyer-preview" id="flyerFrontPreview">
-
-            <div class="flyer-placeholder">
-
-              <span>
-                FRONT SIDE
-              </span>
-
-              <strong>
-                表面
-              </strong>
-
-              <p>
-                完成後、こちらに表面を掲載します。
-              </p>
-
-            </div>
+            <img src="assets/LiLi_EXPO_front (1).png" alt="LiLi EXPOオンラインイベント チラシ表面" loading="lazy">
 
           </div>
 
@@ -1620,22 +1596,7 @@
 
 
           <div class="flyer-preview" id="flyerBackPreview">
-
-            <div class="flyer-placeholder">
-
-              <span>
-                BACK SIDE
-              </span>
-
-              <strong>
-                裏面
-              </strong>
-
-              <p>
-                完成後、こちらに裏面を掲載します。
-              </p>
-
-            </div>
+            <img src="assets/LiLi_EXPO_back (1).png" alt="LiLi EXPOオンラインイベント チラシ裏面" loading="lazy">
 
           </div>
 
@@ -2212,6 +2173,17 @@
           <li>服装自由</li>
           <li>1人参加歓迎</li>
         `;
+      }
+
+      var flyerFrontPreview = document.getElementById("flyerFrontPreview");
+      var flyerBackPreview = document.getElementById("flyerBackPreview");
+
+      if (flyerFrontPreview) {
+        flyerFrontPreview.innerHTML = '<img src="assets/LiLi_EXPO_front (1).png" alt="LiLi EXPOオンラインイベント チラシ表面" loading="lazy">';
+      }
+
+      if (flyerBackPreview) {
+        flyerBackPreview.innerHTML = '<img src="assets/LiLi_EXPO_back (1).png" alt="LiLi EXPOオンラインイベント チラシ裏面" loading="lazy">';
       }
 
       /*
