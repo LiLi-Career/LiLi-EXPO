@@ -28,6 +28,10 @@ html {
   scroll-behavior: smooth;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -2450,6 +2454,10 @@ summary:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .button {
+    border-radius: 8px;
+  }
+
   .academy-entry-copy h2 {
     font-size: clamp(2.35rem, 12vw, 3.6rem);
   }

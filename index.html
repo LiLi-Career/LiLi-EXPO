@@ -6,7 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="LiLi EXPO for women。LiLiテックアカデミーで学んだ女子学生と企業をつなぐスカウトイベントを、2026年11月15日にセガサミー本社で開催します。">
+  <meta name="description" content="LiLi EXPO for women。学生の発表と企業との出会いをつなぐスカウトイベント。2026年11月15日、セガサミーグループ本社で開催します。">
 
   <!-- 公開時、Google検索に表示したい場合はこの1行を削除してください -->
   <meta name="robots" content="noindex, nofollow">
@@ -15,9 +15,9 @@
 
   <link rel="icon" href="assets/logo_dake.png">
 
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=5">
 
-  <script src="js/content.js?v=4" defer></script>
+  <script src="js/content.js?v=5" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -617,9 +617,9 @@
     .join-guide-section {
       overflow: hidden;
       padding: clamp(38px, 6vw, 76px);
-      background: linear-gradient(135deg, #fff0f7 0%, #fff9db 52%, #eaf8ff 100%);
-      border: 1px solid #f4dce7;
-      border-radius: 36px;
+      background: #fffdfd;
+      border-top: 1px solid #eadfe3;
+      border-bottom: 1px solid #eadfe3;
     }
 
     .join-guide-heading {
@@ -704,34 +704,25 @@
     .join-flow-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 0;
+      border-top: 1px solid #eadfe3;
+      border-bottom: 1px solid #eadfe3;
     }
 
     .join-flow-card {
       position: relative;
       min-width: 0;
-      padding: 26px;
-      background: #fff;
-      border-radius: 22px;
-      box-shadow: 0 12px 30px rgba(90, 61, 79, .07);
+      padding: 26px 28px;
+      background: transparent;
+      border-right: 1px solid #eadfe3;
     }
 
     .join-flow-card:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      top: 50%;
-      right: -24px;
-      z-index: 1;
-      display: grid;
-      width: 32px;
-      height: 32px;
-      place-items: center;
-      color: #ef5ca0;
-      background: #fff;
-      border-radius: 50%;
-      font-weight: 900;
-      transform: translateY(-50%);
-      box-shadow: 0 5px 15px rgba(90, 61, 79, .08);
+      content: none;
+    }
+
+    .join-flow-card:last-child {
+      border-right: 0;
     }
 
     .join-flow-number {
@@ -760,6 +751,11 @@
       display: flex;
       justify-content: center;
       margin-top: 28px;
+    }
+
+    .join-guide-action .button {
+      border-radius: 4px;
+      box-shadow: none;
     }
 
     @media (max-width: 760px) {
@@ -794,7 +790,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.65rem, 13vw, 4rem);
+        font-size: clamp(2.3rem, 10.5vw, 3.35rem);
         line-height: 1.12;
         letter-spacing: -.055em;
       }
@@ -823,9 +819,7 @@
       }
 
       .hero-visual {
-        width: 100%;
-        min-height: 365px;
-        overflow: hidden;
+        display: none;
       }
 
       .hero-card {
@@ -994,7 +988,7 @@
       }
 
       .join-guide-section {
-        border-radius: 26px;
+        border-radius: 0;
       }
 
       .join-guide-heading {
@@ -1018,11 +1012,17 @@
       }
 
       .join-flow-card:not(:last-child)::after {
-        top: auto;
-        right: 50%;
-        bottom: -24px;
-        content: "↓";
-        transform: translateX(50%);
+        content: none;
+      }
+
+      .join-flow-card,
+      .join-flow-card:last-child {
+        border-right: 0;
+        border-bottom: 1px solid #eadfe3;
+      }
+
+      .join-flow-card:last-child {
+        border-bottom: 0;
       }
     }
 
@@ -1059,7 +1059,7 @@
 
     <nav class="global-nav" id="globalNav" aria-label="メインメニュー">
 
-      <a href="#about">LiLi EXPOとは</a>
+      <a href="#join-guide">イベント概要</a>
       <a href="#experience">スカウトイベントの特徴</a>
       <a href="#schedule">当日の流れ</a>
       <a href="#november">開催概要</a>
@@ -1100,8 +1100,7 @@
         </h1>
 
         <p class="hero-description">
-          LiLiテックアカデミーで磨いたスキルと想いを、学生自身の言葉で企業へ。<br>
-          発表から、新しいキャリアの出会いが始まる1日。
+          学生の発表から、企業との出会いへ。
         </p>
 
         <div class="hero-actions">
@@ -1114,10 +1113,6 @@
             当日の流れを見る
           </a>
 
-          <a class="button button-outline" href="#november">
-            開催概要を見る
-          </a>
-
         </div>
 
         <p class="capacity-label" id="eventCapacity"></p>
@@ -1125,10 +1120,7 @@
         <ul class="hero-highlights" id="eventHighlights" aria-label="参加条件">
           <li>大学生・大学院生対象</li>
           <li>参加無料</li>
-          <li>セガサミー本社で開催</li>
-          <li>服装自由</li>
-          <li>1人参加歓迎</li>
-          <li>登壇なし・見学だけでも歓迎</li>
+          <li>見学だけでも歓迎</li>
         </ul>
 
       </div>
@@ -1184,64 +1176,9 @@
       </div>
 
       <div>
-        <span>FORMAT</span>
-        <strong id="eventVenue">セガサミー本社</strong>
+        <span>VENUE</span>
+        <strong id="eventVenue">セガサミーグループ本社</strong>
       </div>
-
-    </section>
-
-
-    <!-- ==================== 限定・参加条件 ==================== -->
-
-    <section class="limited-section">
-
-      <div class="limited-number">
-
-        <span>REAL SCOUT EVENT</span>
-
-        <strong class="limited-number-text">11.15</strong>
-
-        <small class="limited-number-note">学生発表からスタート</small>
-
-      </div>
-
-
-      <div class="limited-copy">
-
-        <p>
-          LiLiテックアカデミーで学んだ学生と企業をつなぐリアルイベント
-        </p>
-
-        <h2>
-          学びの発表から、<br>
-          企業とのスカウトへ。
-        </h2>
-
-        <p>
-          学生が学びや実践を自分の言葉で伝え、
-          企業からのフィードバックや新しいキャリアの機会につなげます。
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================== 友達紹介 ==================== -->
-
-    <section class="campaign-section">
-
-      <div>
-
-        <p class="section-label light-label">
-          PRESENTATION × SCOUT
-        </p>
-
-        <h2>学びを伝えて、可能性と出会う。</h2>
-
-      </div>
-
-      <p>学生の発表を起点に、企業との対話とスカウトのきっかけをつくります。</p>
 
     </section>
 
@@ -1254,79 +1191,42 @@
 
         <div>
           <p class="section-label">
-            FIRST PROGRAM
+            EVENT CONCEPT
           </p>
 
           <h2>
-            学生の発表から、<br>
-            <em>イベントが始まる。</em>
+            発表が、<br>
+            <em>出会いに変わる。</em>
           </h2>
         </div>
 
         <p class="join-guide-lead">
-          最初に登壇するのは、LiLiテックアカデミーで学んだ学生たち。
-          登壇せず、発表や企業との交流を見学するだけの参加も歓迎です。
+          学生が学びを伝え、企業と話す日。
+          見学だけの参加も歓迎です。
         </p>
 
       </div>
 
 
-      <ul class="join-easy-grid" aria-label="イベントの5つのポイント">
-        <li>
-          <span>PRESENT</span>
-          <strong>学生による<br>学びの発表</strong>
-        </li>
-
-        <li>
-          <span>FEEDBACK</span>
-          <strong>企業からの<br>フィードバック</strong>
-        </li>
-
-        <li>
-          <span>SCOUT</span>
-          <strong>次の挑戦に<br>つながる出会い</strong>
-        </li>
-
-        <li>
-          <span>PERFORMANCE</span>
-          <strong>LUXによる<br>ダンス</strong>
-        </li>
-
-        <li>
-          <span>WELCOME</span>
-          <strong>登壇なし・<br>見学だけでも歓迎</strong>
-        </li>
-      </ul>
-
-
       <div class="join-flow">
-
-        <div class="join-flow-title">
-          <p class="section-label">
-            HOW IT WORKS
-          </p>
-
-          <h3>スカウトにつながる3ステップ</h3>
-        </div>
-
         <div class="join-flow-grid">
 
           <article class="join-flow-card">
             <span class="join-flow-number">STEP 01</span>
             <h4>学びを発表</h4>
-            <p>学生がアカデミーでの学びや実践を自分の言葉で伝えます。</p>
+            <p>学びと挑戦を、自分の言葉で。</p>
           </article>
 
           <article class="join-flow-card">
             <span class="join-flow-number">STEP 02</span>
             <h4>企業と対話</h4>
-            <p>企業からのフィードバックを受け、発表をきっかけに言葉を交わします。</p>
+            <p>発表をきっかけに、直接話す。</p>
           </article>
 
           <article class="join-flow-card">
             <span class="join-flow-number">STEP 03</span>
             <h4>次の機会へ</h4>
-            <p>関心を持った企業とのスカウトや、次のキャリア機会につなげます。</p>
+            <p>スカウトや次の挑戦につなげる。</p>
           </article>
 
         </div>
@@ -1344,7 +1244,7 @@
 
     <!-- ==================== LiLi EXPOとは ==================== -->
 
-    <section class="section about-section" id="about">
+    <section class="section about-section" id="about" hidden>
 
       <div class="section-title">
 
@@ -1441,7 +1341,7 @@
 
     <!-- ==================== スカウトイベントの3つの特徴 ==================== -->
 
-    <section class="section experience-section" id="experience">
+    <section class="section experience-section" id="experience" hidden>
 
       <div class="section-heading">
 
@@ -1550,7 +1450,7 @@
 
     <!-- ==================== 聞いてOK ==================== -->
 
-    <section class="section talk-section" id="talk">
+    <section class="section talk-section" id="talk" hidden>
 
       <div class="talk-title">
 
@@ -1595,7 +1495,7 @@
 
     <!-- ==================== イベントチラシ ==================== -->
 
-    <section class="section flyer-section" id="flyer">
+    <section class="section flyer-section" id="flyer" hidden>
 
       <div class="flyer-heading">
 
@@ -1692,13 +1592,13 @@
           </p>
 
           <h2>
-            11月15日のプログラム
+            当日のプログラム（予定）
           </h2>
 
         </div>
 
         <p>
-          学生プレゼンテーションから始まり、企業との対話、LUXのパフォーマンス、交流へと続きます。
+          内容・順番は調整中です。
         </p>
 
       </div>
@@ -1707,7 +1607,7 @@
       <div class="timetable-guide">
         <div>
           <strong>詳しい開始・終了時刻は調整中</strong>
-          <p>LUXのダンスパフォーマンスは16:30頃を予定しています。</p>
+          <p>LUXは16:30頃の出演を予定しています。</p>
         </div>
         <span>REAL EVENT</span>
       </div>
@@ -1728,11 +1628,11 @@
           <tbody>
             <tr>
               <th scope="row"><span class="period-number">PROGRAM 01</span><time>最初のプログラム</time></th>
-              <td><span>STUDENT PRESENTATION</span><strong>学生プレゼンテーション</strong><small>LiLiテックアカデミーで学んだ学生が、学び・実践・これからの挑戦を企業へ発表します</small></td>
+              <td><span>STUDENT PRESENTATION</span><strong>学生プレゼンテーション</strong><small>学びと挑戦を企業へ発表</small></td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">PROGRAM 02</span><time>発表後</time></th>
-              <td><span>FEEDBACK &amp; SCOUT</span><strong>企業フィードバック＆スカウト</strong><small>企業から発表へのフィードバックを受け、関心を持った学生との対話につなげます</small></td>
+              <td><span>FEEDBACK &amp; SCOUT</span><strong>企業フィードバック＆スカウト</strong><small>発表をきっかけに企業と対話</small></td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">PROGRAM 03</span><time>16:30頃（予定）</time></th>
@@ -1740,20 +1640,20 @@
                 <div class="lux-program-copy">
                   <span>SPECIAL PERFORMANCE</span>
                   <strong>SEGA SAMMY LUX ダンスパフォーマンス</strong>
-                  <small>プロダンスチームによる、この日だけのスペシャルパフォーマンスです</small>
+                  <small>16:30頃を予定</small>
                 </div>
                 <img class="lux-program-logo" src="assets/lux-logo.png" alt="SEGA SAMMY LUX">
               </td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">PROGRAM 04</span><time>パフォーマンス後</time></th>
-              <td><span>NETWORKING</span><strong>学生×企業 交流タイム</strong><small>プレゼンだけでは伝えきれない一人ひとりの魅力を、会話を通して知る時間です</small></td>
+              <td><span>NETWORKING</span><strong>学生×企業 交流タイム</strong><small>学生と企業が直接話す時間</small></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="timetable-edit-note">※ 掲載内容・開催順は変更になる場合があります。</p>
+      <p class="timetable-edit-note">※ すべて予定です。内容・時刻は変更になる場合があります。</p>
 
     </section>
 
@@ -1770,13 +1670,12 @@
           </p>
 
           <h2>
-            学びを、企業へ直接届ける。<br>
-            <em><span>11月15日</span><span>セガサミー本社で開催。</span></em>
+            11月15日、<br>
+            <em><span>大崎で開催。</span></em>
           </h2>
 
           <p class="november-lead">
-            LiLiテックアカデミーで学んだ学生と、
-            これから伸びる才能に出会いたい企業をつなぐリアルスカウトイベントです。
+            学生と企業をつなぐリアルスカウトイベント。
           </p>
         </div>
 
@@ -1787,7 +1686,7 @@
           </div>
           <div>
             <dt>VENUE</dt>
-            <dd>セガサミー本社</dd>
+            <dd>セガサミーホールディングス株式会社 本社</dd>
           </div>
           <div>
             <dt>ADDRESS</dt>
@@ -1804,13 +1703,13 @@
       <div class="november-map-card">
         <iframe
           class="november-map"
-          title="セガサミー本社周辺地図"
+          title="セガサミーホールディングス株式会社 本社周辺地図"
           src="https://www.google.com/maps?q=%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%A4%A7%E5%B4%8E%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC&amp;output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="november-map-caption">
           <div>
-            <strong>セガサミー本社</strong>
+            <strong>セガサミーホールディングス株式会社 本社</strong>
             <span>住友不動産大崎ガーデンタワー／大崎駅 南口から徒歩6分</span>
           </div>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%A4%A7%E5%B4%8E%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener noreferrer">
@@ -1830,7 +1729,7 @@
       </div>
 
       <p class="november-note">
-        ※ 開始・終了時刻、参加企業、参加方法は、決まり次第このサイトと公式SNSでお知らせします。
+        ※ 時刻・参加企業・申込方法は、決まり次第お知らせします。
       </p>
 
     </section>
@@ -1874,7 +1773,7 @@
 
         <details>
           <summary>会場はどこですか？</summary>
-          <p>セガサミー本社（東京都品川区西品川1-1-1 住友不動産大崎ガーデンタワー）です。</p>
+          <p>セガサミーホールディングス株式会社 本社（住友不動産大崎ガーデンタワー）です。</p>
         </details>
 
         <details>
@@ -1904,21 +1803,19 @@
         <p class="section-label">LEARN WITH LiLi</p>
 
         <h2>
-          学ぶことから、<br>
-          次のキャリアをつくる。
+          学びたい人へ。
         </h2>
 
         <p>
-          AI・ITや事業づくりなど、これからのキャリアにつながる力を身につけたい方へ。
-          LiLi tech academyで、自分の可能性を広げてみませんか。
+          AI・ITや事業づくりを学ぶ、学生向けアカデミーです。
         </p>
       </div>
 
       <div class="academy-entry-action">
         <p class="academy-entry-kicker">ACADEMY ENTRY</p>
-        <h3>まずは話を聞くだけでも大丈夫です。</h3>
+        <h3>LiLi tech academy</h3>
         <p>
-          学生は受講費無料。説明を聞いてから参加を検討できます。
+          学生は受講費無料。まずは説明だけでも大丈夫です。
         </p>
         <a href="https://lili-academy.jp/#sec-entry" target="_blank" rel="noopener noreferrer">
           LiLi tech academyへの参加はこちら
@@ -1932,7 +1829,7 @@
 
     <!-- ==================== LiLi Career ==================== -->
 
-    <section class="section career-section" id="career">
+    <section class="section career-section" id="career" hidden>
 
       <div class="career-introduction">
 
@@ -2116,13 +2013,11 @@
 
       <ul class="entry-benefits">
         <li>参加無料</li>
-        <li>服装自由</li>
-        <li>セガサミー本社で開催</li>
-        <li>1人参加歓迎</li>
-        <li>登壇なし・見学だけでも歓迎</li>
+        <li>大崎開催</li>
+        <li>見学だけでも歓迎</li>
       </ul>
 
-      <p>募集対象・参加方法・詳しいタイムテーブルは、決まり次第お知らせします。</p>
+      <p>申込方法は、決まり次第お知らせします。</p>
 
       <a class="button button-white registration-link" href="#entry">
         参加受付は近日公開
@@ -2177,8 +2072,8 @@
 
     <nav aria-label="フッターメニュー">
 
-      <a href="#about">
-        LiLi EXPOとは
+      <a href="#join-guide">
+        イベント概要
       </a>
 
       <a href="#schedule">
@@ -2218,9 +2113,9 @@
       var onlineEventContent = {
         eventDate: "2026.11.15 SUN",
         eventTime: "詳細決定後にお知らせ",
-        eventVenue: "セガサミー本社",
-        eventCapacity: "学生の発表 × 企業からのフィードバック・スカウト",
-        entryCapacity: "11月15日（日）開催・時間調整中"
+        eventVenue: "セガサミーグループ本社",
+        eventCapacity: "学生発表 × 企業スカウト",
+        entryCapacity: "2026.11.15 SUN"
       };
 
       Object.keys(onlineEventContent).forEach(function (id) {
@@ -2279,10 +2174,7 @@
         eventHighlights.innerHTML = `
           <li>大学生・大学院生対象</li>
           <li>参加無料</li>
-          <li>セガサミー本社で開催</li>
-          <li>服装自由</li>
-          <li>1人参加歓迎</li>
-          <li>登壇なし・見学だけでも歓迎</li>
+          <li>見学だけでも歓迎</li>
         `;
       }
 
@@ -2336,15 +2228,15 @@
       var chatReplies = {
         date: {
           label: "開催日時・参加方法",
-          answer: "2026年11月15日（日）に、セガサミー本社で開催します。開始・終了時刻と参加方法は、決まり次第このサイトでお知らせします。"
+          answer: "2026年11月15日（日）、セガサミーホールディングス株式会社 本社で開催します。時刻と申込方法は決まり次第お知らせします。"
         },
         schedule: {
           label: "当日のプログラム",
-          answer: "学生プレゼンテーションから始まり、企業からのフィードバックとスカウト、SEGA SAMMY LUXのダンスパフォーマンス、学生と企業の交流を予定しています。"
+          answer: "学生発表、企業との対話、SEGA SAMMY LUXのパフォーマンス、交流を予定しています。"
         },
         join: {
           label: "学生プレゼンについて",
-          answer: "LiLiテックアカデミーで学んだ学生たちが最初に登壇し、学びや実践、これから挑戦したいことを企業へ直接伝えます。"
+          answer: "学生が学びと挑戦を企業へ伝えます。見学だけの参加も歓迎です。"
         },
         camera: {
           label: "LUXの出演について",
@@ -2352,7 +2244,7 @@
         },
         november: {
           label: "会場・アクセス",
-          answer: "会場はセガサミー本社（東京都品川区西品川1-1-1 住友不動産大崎ガーデンタワー）です。JR・りんかい線の大崎駅南口から徒歩6分です。"
+          answer: "セガサミーホールディングス株式会社 本社です。大崎駅南口から徒歩6分です。"
         },
         entry: {
           label: "参加予約について",

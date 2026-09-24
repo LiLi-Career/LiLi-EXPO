@@ -7,7 +7,7 @@ const LILI_CONTENT = {
   event: {
     date: "2026.11.15 SUN",
     time: "詳細決定後にお知らせ",
-    venue: "セガサミー本社",
+    venue: "セガサミーグループ本社",
 
     address:
       "〒141-0033 東京都品川区西品川一丁目1-1\n住友不動産大崎ガーデンタワー",
@@ -19,15 +19,12 @@ const LILI_CONTENT = {
       "https://www.segasammy.co.jp/ja/corp/profile/access/",
 
     capacity:
-      "学生の発表 × 企業からのフィードバック・スカウト",
+      "学生発表 × 企業スカウト",
 
     highlights: [
       "大学生・大学院生対象",
       "参加無料",
-      "セガサミー本社で開催",
-      "服装自由",
-      "1人参加歓迎",
-      "登壇なし・見学だけでも歓迎"
+      "見学だけでも歓迎"
     ]
   },
 
