@@ -15,9 +15,9 @@
 
   <link rel="icon" href="assets/logo_dake.png">
 
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=2">
 
-  <script src="js/content.js?v=2" defer></script>
+  <script src="js/content.js?v=3" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -299,8 +299,8 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 48px;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
+      gap: clamp(32px, 4vw, 56px);
       align-items: end;
     }
 
@@ -332,6 +332,8 @@
 
     .november-details {
       display: grid;
+      width: 100%;
+      min-width: 0;
       gap: 12px;
       margin: 0;
       padding: 24px;
@@ -356,6 +358,62 @@
     .november-details dd {
       margin: 0;
       font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .november-map-card {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      margin-top: 32px;
+      border: 8px solid rgba(255, 255, 255, .72);
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(90, 61, 79, .12);
+    }
+
+    .november-map {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+    }
+
+    .november-map-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 20px;
+      background: #fff;
+    }
+
+    .november-map-caption strong,
+    .november-map-caption span {
+      display: block;
+    }
+
+    .november-map-caption span {
+      margin-top: 4px;
+      color: #7a7078;
+      font-size: 13px;
+    }
+
+    .november-map-caption a {
+      flex: 0 0 auto;
+      color: #df3f79;
+      font-weight: 900;
+    }
+
+    @media (max-width: 1180px) {
+      .november-event-content {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .november-details {
+        margin-top: 0;
+      }
     }
 
     .november-actions {
@@ -869,6 +927,19 @@
         margin-top: 28px;
       }
 
+      .november-map {
+        height: 300px;
+      }
+
+      .november-map-caption {
+        display: block;
+      }
+
+      .november-map-caption a {
+        display: inline-block;
+        margin-top: 14px;
+      }
+
       .november-event-section {
         margin-top: 44px;
         border-radius: 26px;
@@ -1015,8 +1086,8 @@
         </p>
 
         <h1>
-          学んだことを、<br class="mobile-break">
-          <em><span class="nowrap">次のチャンスへ。</span></em>
+          <span class="hero-title-line">学んだことを、</span><br>
+          <em><span class="hero-title-line">次のチャンスへ。</span></em>
         </h1>
 
         <p class="hero-description">
@@ -1545,18 +1616,18 @@
       </div>
 
 
-      <div class="flyer-grid flyer-grid-single">
+      <div class="flyer-grid">
 
         <article class="flyer-side">
 
           <div class="flyer-side-label">
 
             <span>
-              EVENT
+              FRONT
             </span>
 
             <strong>
-              チラシ案
+              表面
             </strong>
 
           </div>
@@ -1565,6 +1636,30 @@
           <div class="flyer-preview" id="flyerFrontPreview">
             <img src="assets/lili-expo-2026-11-15-draft.png" alt="LiLi EXPO 2026年11月15日スカウトイベント チラシ案" loading="lazy">
 
+          </div>
+
+        </article>
+
+        <article class="flyer-side">
+
+          <div class="flyer-side-label">
+
+            <span>
+              BACK
+            </span>
+
+            <strong>
+              裏面
+            </strong>
+
+          </div>
+
+          <div class="flyer-preview" id="flyerBackPreview">
+            <div class="flyer-placeholder">
+              <span>BACK SIDE</span>
+              <strong>裏面データ準備中</strong>
+              <p>完成後、この場所に掲載します。</p>
+            </div>
           </div>
 
         </article>
@@ -1695,6 +1790,24 @@
           </div>
         </dl>
 
+      </div>
+
+      <div class="november-map-card">
+        <iframe
+          class="november-map"
+          title="セガサミー本社周辺地図"
+          src="https://www.google.com/maps?q=%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%A4%A7%E5%B4%8E%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="november-map-caption">
+          <div>
+            <strong>セガサミー本社</strong>
+            <span>住友不動産大崎ガーデンタワー／大崎駅 南口から徒歩6分</span>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%A4%A7%E5%B4%8E%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener noreferrer">
+            Googleマップで開く ↗
+          </a>
+        </div>
       </div>
 
       <div class="november-actions">
@@ -2122,14 +2235,9 @@
       }
 
       var flyerFrontPreview = document.getElementById("flyerFrontPreview");
-      var flyerBackPreview = document.getElementById("flyerBackPreview");
 
       if (flyerFrontPreview) {
         flyerFrontPreview.innerHTML = '<img src="assets/lili-expo-2026-11-15-draft.png" alt="LiLi EXPO 2026年11月15日スカウトイベント チラシ案" loading="lazy">';
-      }
-
-      if (flyerBackPreview) {
-        flyerBackPreview.innerHTML = '<img src="assets/lux-logo.png" alt="SEGA SAMMY LUX" loading="lazy">';
       }
 
       /*
