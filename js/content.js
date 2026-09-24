@@ -5,9 +5,9 @@ const LILI_CONTENT = {
   // ==================== 開催情報 ====================
 
   event: {
-    date: "2026.09.13 SUN",
-    time: "11:00–18:00（予定）",
-    venue: "セガサミーグループ本社",
+    date: "2026.11.15 SUN",
+    time: "詳細決定後にお知らせ",
+    venue: "セガサミー本社",
 
     address:
       "〒141-0033 東京都品川区西品川一丁目1-1\n住友不動産大崎ガーデンタワー",
@@ -19,12 +19,12 @@ const LILI_CONTENT = {
       "https://www.segasammy.co.jp/ja/corp/profile/access/",
 
     capacity:
-      "限定200名・定員に達し次第受付終了予定",
+      "学生の発表 × 企業からのフィードバック・スカウト",
 
     highlights: [
       "大学生・大学院生対象",
       "参加無料",
-      "顔出しなしOK",
+      "セガサミー本社で開催",
       "服装自由",
       "1人参加歓迎"
     ]
@@ -46,7 +46,7 @@ const LILI_CONTENT = {
     url: "",
 
     buttonText:
-      "無料で参加予約する（準備中）",
+      "参加受付は近日公開",
 
     note:
       "参加予約フォームは準備が整い次第公開します。"
@@ -268,8 +268,8 @@ const LILI_CONTENT = {
   */
 
   flyer: {
-    frontImage: "",
-    backImage: "",
+    frontImage: "assets/lili-expo-2026-11-15-draft.png",
+    backImage: "assets/lux-logo.png",
     pdfUrl: ""
   },
 
