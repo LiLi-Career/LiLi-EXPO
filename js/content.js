@@ -428,6 +428,14 @@ const LILI_CONTENT = {
 
     {
       question:
+        "持ち物はありますか？",
+
+      answer:
+        "おにぎりなどの軽食、メモ、ペンをご持参ください。"
+    },
+
+    {
+      question:
         "服装に指定はありますか？",
 
       answer:

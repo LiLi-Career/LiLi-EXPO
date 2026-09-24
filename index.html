@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="css/style.css?v=2">
 
-  <script src="js/content.js?v=3" defer></script>
+  <script src="js/content.js?v=4" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -312,11 +312,16 @@
     }
 
     .november-event-section h2 em {
-      display: inline-block;
+      display: block;
       color: #ef5ca0;
       font-style: normal;
-      font-size: clamp(32px, 4.2vw, 58px);
+      font-size: clamp(32px, 3.6vw, 52px);
       letter-spacing: -.06em;
+      white-space: normal;
+    }
+
+    .november-event-section h2 em span {
+      display: block;
       white-space: nowrap;
     }
 
@@ -952,6 +957,10 @@
       .november-event-section h2 em {
         display: block;
         font-size: clamp(32px, 10vw, 44px);
+        white-space: normal;
+      }
+
+      .november-event-section h2 em span {
         white-space: normal;
       }
 
@@ -1762,7 +1771,7 @@
 
           <h2>
             学びを、企業へ直接届ける。<br>
-            <em>11月15日<br class="november-mobile-break">セガサミー本社で開催。</em>
+            <em><span>11月15日</span><span>セガサミー本社で開催。</span></em>
           </h2>
 
           <p class="november-lead">
@@ -1876,6 +1885,11 @@
         <details>
           <summary>登壇しなくても参加できますか？</summary>
           <p>はい。登壇せず、学生の発表や企業との交流、LUXのパフォーマンスを見学するだけの参加も歓迎です。</p>
+        </details>
+
+        <details>
+          <summary>持ち物はありますか？</summary>
+          <p>おにぎりなどの軽食、メモ、ペンをご持参ください。</p>
         </details>
       </div>
 
