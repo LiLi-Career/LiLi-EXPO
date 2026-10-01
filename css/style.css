@@ -504,7 +504,7 @@ summary:focus-visible {
 }
 
 
-/* ==================== 限定200名 ==================== */
+/* ==================== 参加予定人数 ==================== */
 
 .limited-section {
   display: grid;
@@ -1156,7 +1156,7 @@ summary:focus-visible {
 
 .lux-program-cell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: minmax(0, 1fr) 280px;
   align-items: center;
   gap: 24px;
 }
@@ -1171,12 +1171,33 @@ summary:focus-visible {
   display: block;
 }
 
-.lux-program-logo {
-  display: block;
-  width: 190px;
-  height: 140px;
-  object-fit: contain;
+.lux-program-media {
+  position: relative;
+  overflow: hidden;
+  width: 280px;
+  margin: 0;
   border-radius: 18px;
+  background: #111c35;
+}
+
+.lux-team-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 68%;
+}
+
+.lux-program-logo {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: block;
+  width: 86px;
+  height: 54px;
+  padding: 5px;
+  object-fit: contain;
+  border-radius: 8px;
   background: #fff;
 }
 
@@ -2357,10 +2378,14 @@ summary:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .lux-program-logo {
-    width: min(100%, 180px);
-    height: auto;
+  .lux-program-media {
+    width: min(100%, 420px);
     justify-self: start;
+  }
+
+  .lux-program-logo {
+    width: 82px;
+    height: 50px;
   }
 }
 
