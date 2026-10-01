@@ -504,7 +504,7 @@ summary:focus-visible {
 }
 
 
-/* ==================== 参加予定人数 ==================== */
+/* ==================== 参加案内 ==================== */
 
 .limited-section {
   display: grid;
@@ -2390,7 +2390,7 @@ summary:focus-visible {
 }
 
 
-/* ==================== LiLi tech academy 参加案内 ==================== */
+/* ==================== LiLi Tech Academy 紹介 ==================== */
 
 .academy-entry-section {
   display: grid;
@@ -2436,39 +2436,31 @@ summary:focus-visible {
   line-height: 1.45;
 }
 
-.academy-entry-action > p:not(.academy-entry-kicker) {
-  margin: 0 0 28px;
+.academy-entry-points {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.academy-entry-points li {
+  position: relative;
+  padding: 14px 0 14px 24px;
+  border-top: 1px solid rgba(46, 171, 217, .32);
   color: var(--ink-soft);
-  line-height: 1.8;
+  line-height: 1.65;
 }
 
-.academy-entry-action > a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px 0;
-  border-top: 1px solid var(--blue);
-  border-bottom: 1px solid var(--blue);
-  color: var(--blue);
-  font-size: 1.05rem;
-  font-weight: 900;
-}
-
-.academy-entry-action > a:hover {
-  color: var(--pink-dark);
-  border-color: var(--pink-dark);
-}
-
-.academy-entry-action > a span {
-  font-size: 1.5rem;
-}
-
-.academy-entry-action small {
-  display: block;
-  margin-top: 13px;
-  color: #7a7078;
-  line-height: 1.6;
+.academy-entry-points li::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
 }
 
 @media (max-width: 1050px) {
