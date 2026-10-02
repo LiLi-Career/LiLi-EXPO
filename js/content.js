@@ -19,12 +19,12 @@ const LILI_CONTENT = {
       "https://www.segasammy.co.jp/ja/corp/profile/access/",
 
     capacity:
-      "企業ブース × LUX × 先輩・個別相談",
+      "企業交流 × スカウト × 先輩・個別相談",
 
     highlights: [
       "女子学生対象・参加無料",
       "見学だけでも歓迎",
-      "交通費サポート予定"
+      "交通費補助あり"
     ]
   },
 
@@ -352,7 +352,7 @@ const LILI_CONTENT = {
       "",
 
     contact:
-      "お問い合わせ先は確認中"
+      "lili_internship_expo@lili.ne.jp / 03-4500-8254"
   },
 
 
