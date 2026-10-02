@@ -6,7 +6,7 @@ const LILI_CONTENT = {
 
   event: {
     date: "2026.11.15 SUN",
-    time: "一般学生 11:30受付",
+    time: "11:30受付",
     venue: "セガサミーホールディングス株式会社 本社",
 
     address:
