@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,137 +8,159 @@
   <title>登壇学生 当日ガイド｜LiLi EXPO for women</title>
   <link rel="icon" href="assets/logo_dake.png">
   <link rel="stylesheet" href="css/style.css?v=8">
-  <link rel="stylesheet" href="css/presenters.css?v=1">
+  <link rel="stylesheet" href="css/presenters.css?v=2">
 </head>
 
 <body class="presenter-page">
-  <header class="presenter-header">
-    <a class="presenter-logo" href="index.html" aria-label="LiLi EXPO公式サイトへ戻る">
+  <header class="site-header">
+    <a class="header-logo" href="index.html" aria-label="LiLi EXPO公式サイトへ戻る">
       <img src="assets/moziari%20logo.png" alt="LiLi EXPO for women">
     </a>
-    <nav aria-label="ページ内メニュー">
+    <nav class="presenter-nav" aria-label="登壇学生向けメニュー">
+      <a href="#guide">登壇案内</a>
       <a href="#schedule">当日の流れ</a>
       <a href="#belongings">持ち物</a>
-      <a href="#access">会場</a>
+      <a class="nav-entry" href="#access">会場を見る</a>
     </nav>
   </header>
 
   <main>
-    <section class="presenter-hero">
-      <div class="presenter-hero-copy">
-        <p class="presenter-eyebrow">FOR PRESENTERS</p>
-        <p class="presenter-event-name">LiLi EXPO for women</p>
-        <h1>登壇学生<br>当日ガイド</h1>
-        <p class="presenter-lead">学んだことを、自分の言葉で企業へ。<br>当日の集合時間と準備をまとめています。</p>
-      </div>
-      <figure class="presenter-hero-photo">
-        <img src="assets/event-scenes/tech-session.jpg?v=2" alt="笑顔で発表する学生たち">
-      </figure>
-    </section>
-
-    <section class="presenter-key-info" aria-label="開催情報">
-      <dl>
-        <div>
-          <dt>DATE</dt>
-          <dd>2026年11月15日（日）</dd>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">WOMEN × TECH × CAREER</p>
+        <p class="hero-name">LiLi EXPO <span>for women</span></p>
+        <p class="presenter-format-note">11.15 SUN｜PRESENTER GUIDE</p>
+        <h1>
+          <span class="hero-title-line">学びを伝える。</span><br>
+          <em><span class="hero-title-line">企業へ届ける。</span></em>
+        </h1>
+        <p class="hero-description">登壇学生の集合時間と、<br>当日の準備をまとめています。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#schedule">当日の流れを見る</a>
+          <a class="button button-outline" href="#belongings">持ち物を確認する</a>
         </div>
-        <div class="presenter-key-time">
-          <dt>MEET</dt>
-          <dd><strong>10:00集合</strong><span>10:30 発表開始</span></dd>
-        </div>
-        <div>
-          <dt>VENUE</dt>
-          <dd>セガサミーホールディングス株式会社 本社内会場</dd>
-        </div>
-      </dl>
-      <p>※ 登壇学生向けの集合時間です。イベント参加者の受付時間とは異なります。</p>
-    </section>
-
-    <section class="presenter-section" id="schedule">
-      <div class="presenter-section-heading">
-        <div>
-          <p class="section-label">PRESENTATION DAY</p>
-          <h2>当日の流れ</h2>
-        </div>
-        <p>到着後は運営スタッフが案内します。余裕をもって会場へ来てください。</p>
+        <ul class="hero-highlights" aria-label="登壇学生向け開催情報">
+          <li>10:00集合</li>
+          <li>10:30発表開始</li>
+          <li>18:00終了予定</li>
+        </ul>
       </div>
 
-      <ol class="presenter-timeline">
-        <li>
-          <time datetime="10:00">10:00</time>
-          <div>
-            <p class="presenter-step">MEETING</p>
-            <h3>集合・受付</h3>
-            <p>会場に到着したら、登壇学生用の受付へ。</p>
+      <div class="hero-visual">
+        <div class="orb orb-pink"></div>
+        <div class="orb orb-blue"></div>
+        <div class="orb orb-yellow"></div>
+        <span class="spark spark-left">✦</span>
+        <span class="spark spark-right">✦</span>
+        <div class="hero-card">
+          <p class="hero-card-top">LEARNING OPENS</p>
+          <div class="hero-card-brand">
+            <img class="hero-card-mark" src="assets/logo_dake.png" alt="">
+            <img class="hero-card-wordmark" src="assets/mozi%20dake.png" alt="LiLi EXPO for women">
           </div>
-        </li>
-        <li>
-          <time datetime="10:00">10:00〜</time>
-          <div>
-            <p class="presenter-step">PREPARATION</p>
-            <h3>発表準備・最終確認</h3>
-            <p>発表データや進行を確認します。</p>
-          </div>
-        </li>
-        <li class="presenter-timeline-main">
-          <time datetime="10:30">10:30〜</time>
-          <div>
-            <p class="presenter-step">PRESENTATION</p>
-            <h3>学生成果プレゼン</h3>
-            <p>LiLi Tech Academyで学んだことや取り組みを企業へ伝えます。</p>
-          </div>
-        </li>
-        <li>
-          <time datetime="12:00">12:00〜</time>
-          <div>
-            <p class="presenter-step">MAIN EVENT</p>
-            <h3>LiLi EXPOへ参加</h3>
-            <p>企業交流やLUXのパフォーマンスなど、午後のプログラムへ。</p>
-          </div>
-        </li>
-      </ol>
-      <p class="presenter-note">※ 内容・時刻は変更になる場合があります。最新情報は運営からの案内を確認してください。</p>
-    </section>
-
-    <section class="presenter-section presenter-belongings" id="belongings">
-      <div class="presenter-section-heading">
-        <div>
-          <p class="section-label">CHECK LIST</p>
-          <h2>当日の持ち物</h2>
+          <p class="hero-card-bottom">YOUR NEXT CHANCE</p>
         </div>
-        <p>前日までにひとつずつ確認しておくと安心です。</p>
       </div>
-
-      <ul class="presenter-check-list">
-        <li><span aria-hidden="true">01</span><strong>発表に必要なデータ</strong><small>最新版をすぐ開ける状態で準備</small></li>
-        <li><span aria-hidden="true">02</span><strong>PC・充電器</strong><small>発表で使用する人のみ</small></li>
-        <li><span aria-hidden="true">03</span><strong>昼食</strong><small>おにぎりなど、休憩中に食べやすいもの</small></li>
-        <li><span aria-hidden="true">04</span><strong>メモ・ペン</strong><small>企業の話やフィードバックの記録に</small></li>
-      </ul>
     </section>
 
-    <section class="presenter-access" id="access">
-      <div>
+    <section class="event-information" aria-label="登壇学生向け開催情報">
+      <div><span>DATE</span><strong>2026.11.15 SUN</strong></div>
+      <div><span>MEET</span><strong>10:00集合／10:30発表開始</strong></div>
+      <div><span>VENUE</span><strong>セガサミーホールディングス株式会社 本社</strong></div>
+    </section>
+
+    <section class="section join-guide-section" id="guide">
+      <div class="join-guide-heading">
+        <div>
+          <p class="section-label">FOR PRESENTERS</p>
+          <h2>自分の言葉で、<br><em>学びを伝える。</em></h2>
+        </div>
+        <p class="join-guide-lead">LiLi Tech Academyで取り組んだことを企業へ届ける日。準備から発表後まで、運営スタッフがサポートします。</p>
+      </div>
+      <div class="join-flow presenter-flow">
+        <div class="join-flow-grid">
+          <article class="join-flow-card">
+            <span class="join-flow-number">STEP 01</span>
+            <h4>集合する</h4>
+            <p>10:00に会場へ。受付後、発表の準備を始めます。</p>
+          </article>
+          <article class="join-flow-card">
+            <span class="join-flow-number">STEP 02</span>
+            <h4>発表する</h4>
+            <p>10:30から、学びや取り組みを企業へ伝えます。</p>
+          </article>
+          <article class="join-flow-card">
+            <span class="join-flow-number">STEP 03</span>
+            <h4>交流する</h4>
+            <p>発表後は企業や学生との交流に参加します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section schedule-section" id="schedule">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">TIMETABLE</p>
+          <h2>登壇学生の<br class="mobile-break">タイムスケジュール</h2>
+        </div>
+        <p><strong>10:00集合／10:30発表開始</strong><br>一般参加の学生とは集合時間が異なります。</p>
+      </div>
+      <div class="presenter-guide-band">
+        <div><strong>登壇学生スケジュール</strong><p>到着後は運営スタッフが案内します。余裕をもって会場へ来てください。</p></div>
+        <span>PRESENTER</span>
+      </div>
+      <div class="presenter-table-wrap" role="region" aria-label="登壇学生の当日スケジュール" tabindex="0">
+        <table class="presenter-table">
+          <thead><tr><th scope="col">時間</th><th scope="col">内容</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>集合</span><time>10:00</time></th><td><span>MEETING</span><strong>集合・受付</strong><small>登壇学生用の受付へお越しください</small></td></tr>
+            <tr><th scope="row"><span>準備</span><time>10:00〜</time></th><td><span>PREPARATION</span><strong>発表準備・最終確認</strong><small>発表データや当日の進行を確認します</small></td></tr>
+            <tr class="presenter-main-row"><th scope="row"><span>発表</span><time>10:30〜</time></th><td><span>PRESENTATION</span><strong>学生成果プレゼン</strong><small>LiLi Tech Academyでの学びや取り組みを企業へ伝えます</small></td></tr>
+            <tr><th scope="row"><span>本編</span><time>12:00〜</time></th><td><span>MAIN EVENT</span><strong>LiLi EXPOへ参加</strong><small>企業交流やLUXのパフォーマンスなど、午後のプログラムへ</small></td></tr>
+            <tr><th scope="row"><span>終了</span><time>18:00</time></th><td><span>CLOSE</span><strong>イベント終了</strong><small>気をつけてお帰りください</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="presenter-edit-note">※ 内容・時刻は変更になる場合があります。最新情報は運営からの案内を確認してください。</p>
+    </section>
+
+    <section class="section belongings-section" id="belongings">
+      <div class="section-heading">
+        <div><p class="section-label">CHECK LIST</p><h2>当日の持ち物</h2></div>
+        <p>前日までに確認しておくと安心です。</p>
+      </div>
+      <div class="belongings-grid">
+        <article><span>01</span><h3>発表データ</h3><p>最新版をすぐ開ける状態で準備</p></article>
+        <article><span>02</span><h3>PC・充電器</h3><p>発表で使用する人のみ</p></article>
+        <article><span>03</span><h3>昼食</h3><p>おにぎりなど、食べやすいもの</p></article>
+        <article><span>04</span><h3>メモ・ペン</h3><p>企業の話やフィードバックの記録に</p></article>
+      </div>
+    </section>
+
+    <section class="section access-section" id="access">
+      <div class="access-copy">
         <p class="section-label">ACCESS</p>
         <h2>会場・アクセス</h2>
-        <h3>セガサミーホールディングス株式会社<br>本社内会場</h3>
-        <p>東京都品川区西品川1-1-1<br>住友不動産大崎ガーデンタワー</p>
-        <p class="presenter-station">JR・りんかい線「大崎駅」南口から徒歩6分</p>
-        <a class="presenter-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%A4%A7%E5%B4%8E%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">Googleマップで見る ↗</a>
+        <p>登壇学生は<strong>10:00集合</strong>です。遅れそうな場合は、分かった時点で運営へ連絡してください。</p>
+        <dl>
+          <div><dt>会場</dt><dd>セガサミーホールディングス株式会社 本社内会場</dd></div>
+          <div><dt>住所</dt><dd>東京都品川区西品川1-1-1<br>住友不動産大崎ガーデンタワー</dd></div>
+          <div><dt>交通</dt><dd>JR・りんかい線「大崎駅」南口から徒歩6分</dd></div>
+        </dl>
       </div>
-      <div class="presenter-access-time">
-        <p>集合</p>
-        <strong>10:00</strong>
-        <span>遅れそうな場合は、分かった時点で運営へ連絡してください。</span>
-      </div>
+      <a class="presenter-access-card" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%A4%A7%E5%B4%8E%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">
+        <span>MEETING TIME</span><strong>10:00</strong><small>Googleマップで会場を見る ↗</small>
+      </a>
     </section>
   </main>
 
-  <footer class="presenter-footer">
+  <footer class="site-footer presenter-footer">
     <img src="assets/mozi%20dake.png" alt="LiLi EXPO for women">
-    <p>登壇学生向け当日ガイド</p>
-    <a href="index.html">イベント公式サイトへ戻る</a>
+    <nav aria-label="登壇学生向けフッターメニュー">
+      <a href="#guide">登壇案内</a><a href="#schedule">当日の流れ</a><a href="#belongings">持ち物</a><a href="#access">会場</a>
+    </nav>
+    <p>© 2026 LiLi Career</p>
   </footer>
 </body>
-
 </html>
