@@ -6,7 +6,7 @@ const LILI_CONTENT = {
 
   event: {
     date: "2026.11.15 SUN",
-    time: "11:30受付",
+    time: "11:30集合",
     venue: "セガサミーホールディングス株式会社 本社",
 
     address:
@@ -19,12 +19,12 @@ const LILI_CONTENT = {
       "https://www.segasammy.co.jp/ja/corp/profile/access/",
 
     capacity:
-      "企業交流 × スカウト × 先輩・個別相談",
+      "企業ブース × 先輩相談 × キャリア面談 × セミナー",
 
     highlights: [
       "女子学生対象・参加無料",
-      "見学だけでも歓迎",
-      "交通費補助あり"
+      "交通費支給あり",
+      "友達紹介特典あり"
     ]
   },
 

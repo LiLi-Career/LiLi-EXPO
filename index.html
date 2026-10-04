@@ -703,7 +703,7 @@
 
     .join-flow-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
       border-top: 1px solid #eadfe3;
       border-bottom: 1px solid #eadfe3;
@@ -756,6 +756,10 @@
     .join-guide-action .button {
       border-radius: 4px;
       box-shadow: none;
+    }
+
+    .student-hero-title {
+      font-size: clamp(2.25rem, 4.2vw, 5.3rem) !important;
     }
 
     @media (max-width: 760px) {
@@ -1107,14 +1111,14 @@
           11.15 SUN｜REAL SCOUT EVENT
         </p>
 
-        <h1>
-          <span class="hero-title-line">企業と話す。</span><br>
-          <em><span class="hero-title-line">先輩に聞く。</span></em>
+        <h1 class="student-hero-title">
+          <span class="hero-title-line">大手企業の人と、</span><br>
+          <em><span class="hero-title-line">少人数で話せる。</span></em>
         </h1>
 
         <p class="hero-description">
-          自分の未来を考える1日。<br>
-          就活前でも、初めてでも大丈夫。
+          企業・先輩・キャリアのプロと話して、<br>
+          自分に合う働き方を見つける一日。
         </p>
 
         <div class="hero-actions">
@@ -1133,8 +1137,8 @@
 
         <ul class="hero-highlights" id="eventHighlights" aria-label="参加条件">
           <li>女子学生対象・参加無料</li>
-          <li>見学だけでも歓迎</li>
-          <li>交通費補助あり</li>
+          <li>交通費支給あり</li>
+          <li>友達紹介特典あり</li>
         </ul>
 
       </div>
@@ -1209,14 +1213,14 @@
           </p>
 
           <h2>
-            直接話して、<br>
-            <em>未来を考える。</em>
+            話して、聞いて、<br>
+            <em>自分に合う会社を知る。</em>
           </h2>
         </div>
 
         <p class="join-guide-lead">
-          企業・先輩・キャリアのプロに、直接聞ける一日。
-          就活の疑問や不安を、ここで話せます。
+          大手企業の担当者や、内定者・社会人の先輩と直接話せます。
+          就活前でも、ひとりでも参加できます。
         </p>
 
       </div>
@@ -1226,21 +1230,27 @@
         <div class="join-flow-grid">
 
           <article class="join-flow-card">
-            <span class="join-flow-number">STEP 01</span>
-            <h4>企業と話す</h4>
-            <p>仕事のリアルを知り、スカウトのきっかけに。</p>
+            <span class="join-flow-number">01 / COMPANY</span>
+            <h4>企業ブース</h4>
+            <p>大手企業の担当者と少人数で話し、仕事内容や社風を知る。</p>
           </article>
 
           <article class="join-flow-card">
-            <span class="join-flow-number">STEP 02</span>
-            <h4>先輩に聞く</h4>
-            <p>就活経験や仕事選びのヒントを聞く。</p>
+            <span class="join-flow-number">02 / SENIOR</span>
+            <h4>先輩相談会</h4>
+            <p>内定者・社会人の先輩に、就活や働くリアルを聞く。</p>
           </article>
 
           <article class="join-flow-card">
-            <span class="join-flow-number">STEP 03</span>
-            <h4>プロに相談する</h4>
-            <p>就活や将来の悩みを一対一で相談。</p>
+            <span class="join-flow-number">03 / CAREER</span>
+            <h4>キャリア面談</h4>
+            <p>役員・管理職と基本1対1。これからのキャリアを相談。</p>
+          </article>
+
+          <article class="join-flow-card">
+            <span class="join-flow-number">04 / SEMINAR</span>
+            <h4>セミナー</h4>
+            <p>ゲスト企業から、仕事や働き方を直接聞く。</p>
           </article>
 
         </div>
@@ -1355,7 +1365,7 @@
 
     <!-- ==================== スカウトイベントの3つの特徴 ==================== -->
 
-    <section class="section experience-section" id="experience" hidden>
+    <section class="section experience-section" id="experience">
 
       <div class="section-heading">
 
@@ -1366,14 +1376,14 @@
           </p>
 
           <h2>
-            学びと企業をつなぐ、<br>
-            3つの特徴
+            参加して見つかる、<br>
+            3つのきっかけ
           </h2>
 
         </div>
 
         <p>
-          学生の学びと人柄を、発表と対話を通して企業へ届けます。
+          企業・先輩との出会いを、次の一歩につなげます。
         </p>
 
       </div>
@@ -1388,20 +1398,19 @@
           </span>
 
           <p class="experience-english">
-            STUDENT — PRESENTATION
+            COMPANY — TALK
           </p>
 
-          <h3>学生が最初に<br>登壇する</h3>
+          <h3>企業と少人数で<br>直接話せる</h3>
 
           <p>
-            イベントの最初は学生プレゼンテーション。
-            学び、実践、将来への想いを企業へ伝えます。
+            一日で複数の企業と話して、仕事内容や社風、リアルな働き方を知れます。
           </p>
 
           <ul>
-            <li>LiLiテックアカデミーでの学び</li>
-            <li>取り組みや成長をプレゼン</li>
-            <li>将来挑戦したいことを伝える</li>
+            <li>大手企業の担当者と対話</li>
+            <li>働くイメージをつかむ</li>
+            <li>仕事選びのこだわりを知る</li>
           </ul>
 
         </article>
@@ -1414,20 +1423,19 @@
           </span>
 
           <p class="experience-english">
-            FEEDBACK — AND SCOUT
+            SENIOR — CAREER
           </p>
 
-          <h3>企業と直接<br>対話できる</h3>
+          <h3>先輩・役員に<br>相談できる</h3>
 
           <p>
-            企業が発表を聞き、フィードバック。
-            学生と企業が互いを知る対話へつなげます。
+            内定者・社会人の先輩には就活の進め方を、役員・管理職にはキャリアを相談できます。
           </p>
 
           <ul>
-            <li>企業から直接フィードバック</li>
-            <li>履歴書だけでは見えない魅力</li>
-            <li>スカウトにつながるきっかけ</li>
+            <li>先輩相談会</li>
+            <li>キャリア面談は基本1対1</li>
+            <li>キャリア面談は要予約</li>
           </ul>
 
         </article>
@@ -1440,19 +1448,19 @@
           </span>
 
           <p class="experience-english">
-            SPECIAL — PERFORMANCE
+            SCOUT — AND GIFT
           </p>
 
-          <h3>プロの表現に<br>出会える</h3>
+          <h3>スカウトと<br>参加のお楽しみ</h3>
 
           <p>
-            SEGA SAMMY LUXによるスペシャルダンスパフォーマンスを予定しています。
+            企業からメッセージ付きのスカウトカードが届くかも。条件達成でコスメ抽選にも参加できます。
           </p>
 
           <ul>
-            <li>12:30〜13:00の出演を予定</li>
-            <li>プロダンスチームのパフォーマンス</li>
-            <li>会場だから味わえる特別な時間</li>
+            <li>プレミアムカードは各企業2〜3枚</li>
+            <li>特別選考につながる可能性も</li>
+            <li>コスメ抽選にチャレンジ</li>
           </ul>
 
         </article>
@@ -1509,7 +1517,7 @@
 
     <!-- ==================== イベントチラシ ==================== -->
 
-    <section class="section flyer-section" id="flyer" hidden>
+    <section class="section flyer-section" id="flyer">
 
       <div class="flyer-heading">
 
@@ -1530,8 +1538,7 @@
         <div class="flyer-description">
 
           <p>
-            学生の発表から企業とのスカウトへ。
-            今回のイベント概要をまとめたチラシ案です。
+            企業ブース、相談会、当日のプログラムをまとめた新規学生向けチラシです。
           </p>
 
         </div>
@@ -1557,7 +1564,7 @@
 
 
           <div class="flyer-preview" id="flyerFrontPreview">
-            <img src="assets/lili-expo-2026-11-15-draft.png" alt="LiLi EXPO 2026年11月15日スカウトイベント チラシ案" loading="lazy">
+            <img src="assets/new-student-flyer-front.jpg" alt="LiLi EXPO 2026年11月15日 新規学生向けチラシ 表面" loading="lazy">
 
           </div>
 
@@ -1578,11 +1585,7 @@
           </div>
 
           <div class="flyer-preview" id="flyerBackPreview">
-            <div class="flyer-placeholder">
-              <span>BACK SIDE</span>
-              <strong>裏面データ準備中</strong>
-              <p>完成後、この場所に掲載します。</p>
-            </div>
+            <img src="assets/new-student-flyer-back.jpg" alt="LiLi EXPO 2026年11月15日 新規学生向けチラシ 裏面" loading="lazy">
           </div>
 
         </article>
@@ -1645,7 +1648,7 @@
         </div>
 
         <p>
-          11:30受付／12:00開始〜18:00
+          11:30集合／12:00開始〜18:00
         </p>
 
       </div>
@@ -1654,7 +1657,7 @@
       <div class="timetable-guide">
         <div>
           <strong>参加スケジュール</strong>
-          <p>午前はLiLi Tech Academy受講生による成果プレゼンを開催します。</p>
+          <p>企業の話を聞き、少人数で交流し、先輩やキャリアのプロへ相談できます。</p>
         </div>
         <span>REAL EVENT</span>
       </div>
@@ -1674,8 +1677,8 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row"><span class="period-number">受付</span><time>11:30</time></th>
-              <td><span>RECEPTION</span><strong>受付開始</strong><small>初めての参加・見学だけの参加も歓迎</small></td>
+              <th scope="row"><span class="period-number">集合</span><time>11:30</time></th>
+              <td><span>RECEPTION</span><strong>集合・受付</strong><small>初めての参加・見学だけの参加も歓迎</small></td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">START</span><time>12:00〜12:30</time></th>
@@ -1696,8 +1699,8 @@
               </td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">表彰</span><time>13:00〜14:00</time></th>
-              <td><span>AWARD</span><strong>結果発表・キャリア交流</strong><small>成果発表の表彰と、企業・学生との交流</small></td>
+              <th scope="row"><span class="period-number">相談</span><time>13:00〜14:00</time></th>
+              <td><span>SENIOR TALK</span><strong>先輩面談〈調整中〉</strong><small>内定者・社会人の先輩に就活や働くリアルを聞く</small></td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">TALK</span><time>14:00〜14:30</time></th>
@@ -1708,12 +1711,12 @@
               <td><span>COMPANY BOOTH</span><strong>企業ブースでの交流</strong><small>担当者と直接話し、事業や仕事内容を知る</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">第3部</span><time>16:30〜17:30</time></th>
+              <th scope="row"><span class="period-number">第3部</span><time>16:30〜18:00</time></th>
               <td><span>NETWORKING</span><strong>大交流会・先輩相談会</strong><small>企業や学生と交流し、就活経験を先輩に聞く</small></td>
             </tr>
             <tr>
-              <th scope="row"><span class="period-number">相談</span><time>17:30〜18:00</time></th>
-              <td><span>CAREER COUNSELING</span><strong>個別キャリア面談</strong><small>就活やこれからのキャリアをプロに相談</small></td>
+              <th scope="row"><span class="period-number">相談</span><time>17:30〜</time></th>
+              <td><span>CAREER COUNSELING</span><strong>キャリア面談〈要予約〉</strong><small>役員・管理職と基本1対1。参加申込と同じフォームから予約</small></td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">閉会</span><time>18:00</time></th>
@@ -1723,7 +1726,7 @@
         </table>
       </div>
 
-      <p class="timetable-edit-note">※ 登壇学生向けの集合時間は別途ご案内します。内容・時刻は変更になる場合があります。</p>
+      <p class="timetable-edit-note">※ プログラム・時間は変更になる場合があります。キャリア面談は要予約です。</p>
 
     </section>
 
@@ -1756,7 +1759,7 @@
           </div>
           <div>
             <dt>TIME</dt>
-            <dd>11:30受付／12:00開始〜18:00</dd>
+            <dd>11:30集合／12:00開始〜18:00</dd>
           </div>
           <div>
             <dt>VENUE</dt>
@@ -1837,7 +1840,7 @@
 
         <details>
           <summary>開催時間は決まっていますか？</summary>
-          <p>受付は11:30、イベントは12:00開始・18:00終了の予定です。登壇学生には集合時間を別途ご案内します。</p>
+          <p>集合は11:30、イベントは12:00開始・18:00終了の予定です。登壇学生には集合時間を別途ご案内します。</p>
         </details>
 
         <details>
@@ -1857,7 +1860,17 @@
 
         <details>
           <summary>登壇しなくても参加できますか？</summary>
-          <p>はい。登壇せず、企業ブースやLUXのステージ、相談会を楽しむだけの参加も歓迎です。</p>
+          <p>はい。プレゼン発表は希望者のみです。企業ブースやLUXのステージ、相談会だけの参加も歓迎です。</p>
+        </details>
+
+        <details>
+          <summary>キャリア面談は予約が必要ですか？</summary>
+          <p>はい。キャリア面談は要予約です。イベント参加申込と同じフォームから予約できます。</p>
+        </details>
+
+        <details>
+          <summary>参加特典はありますか？</summary>
+          <p>友達紹介でQUOカード500円分をプレゼントします。企業ブース・キャリア面談を合計4つ組み合わせると、コスメ抽選に1回チャレンジできます。</p>
         </details>
 
         <details>
@@ -2060,11 +2073,11 @@
 
       <ul class="entry-benefits">
         <li>参加無料</li>
-        <li>見学だけでも歓迎</li>
-        <li>交通費補助あり</li>
+        <li>交通費支給あり</li>
+        <li>友達紹介特典あり</li>
       </ul>
 
-      <p>申込方法は、決まり次第お知らせします。</p>
+      <p>友達紹介でQUOカード500円分プレゼント。<br>交通費の支給条件は確認中です。</p>
 
       <a class="button button-white registration-link" href="#entry">
         参加受付は近日公開
@@ -2155,10 +2168,10 @@
     window.addEventListener("load", function () {
       var onlineEventContent = {
         eventDate: "2026.11.15 SUN",
-        eventTime: "11:30受付",
+        eventTime: "11:30集合",
         eventVenue: "セガサミーホールディングス株式会社 本社",
-        eventCapacity: "企業交流 × スカウト × 先輩・個別相談",
-        entryCapacity: "2026.11.15 SUN / 11:30受付・12:00開始"
+        eventCapacity: "企業ブース × 先輩相談 × キャリア面談 × セミナー",
+        entryCapacity: "2026.11.15 SUN / 11:30集合・12:00開始"
       };
 
       Object.keys(onlineEventContent).forEach(function (id) {
@@ -2216,8 +2229,8 @@
       if (eventHighlights) {
         eventHighlights.innerHTML = `
           <li>女子学生対象・参加無料</li>
-          <li>見学だけでも歓迎</li>
-          <li>交通費補助あり</li>
+          <li>交通費支給あり</li>
+          <li>友達紹介特典あり</li>
         `;
       }
 
@@ -2233,7 +2246,7 @@
       var flyerFrontPreview = document.getElementById("flyerFrontPreview");
 
       if (flyerFrontPreview) {
-        flyerFrontPreview.innerHTML = '<img src="assets/lili-expo-2026-11-15-draft.png" alt="LiLi EXPO 2026年11月15日スカウトイベント チラシ案" loading="lazy">';
+        flyerFrontPreview.innerHTML = '<img src="assets/new-student-flyer-front.jpg" alt="LiLi EXPO 2026年11月15日 新規学生向けチラシ 表面" loading="lazy">';
       }
 
       /*
@@ -2280,15 +2293,15 @@
       var chatReplies = {
         date: {
           label: "開催日時・参加方法",
-          answer: "2026年11月15日（日）、セガサミーホールディングス株式会社 本社内会場で開催します。受付は11:30、イベントは12:00開始・18:00終了の予定です。"
+          answer: "2026年11月15日（日）、セガサミーホールディングス株式会社 本社内会場で開催します。集合は11:30、イベントは12:00開始・18:00終了の予定です。"
         },
         schedule: {
           label: "当日のプログラム",
-          answer: "企業プレゼン、SEGA SAMMY LUXのステージ、企業ブース、大交流会、個別相談・先輩相談会を予定しています。"
+          answer: "企業プレゼン、SEGA SAMMY LUXのステージ、先輩面談、ゲスト企業トーク、企業ブース、大交流会・先輩相談会、予約制のキャリア面談を予定しています。"
         },
         join: {
           label: "学生プレゼンについて",
-          answer: "午前はLiLi Tech Academy受講生による成果プレゼンを行います。登壇学生以外の方は11:30受付、12:00から参加できます。"
+          answer: "午前はLiLi Tech Academy受講生による成果プレゼンを行います。新規参加の方は11:30集合、12:00から参加できます。"
         },
         camera: {
           label: "LUXの出演について",
@@ -2300,7 +2313,7 @@
         },
         entry: {
           label: "参加予約について",
-          answer: "参加受付は近日公開予定です。申込方法と交通費補助の対象・支給条件が決まり次第、このサイトでご案内します。"
+          answer: "参加受付は近日公開予定です。キャリア面談は参加申込と同じフォームから予約できます。交通費の支給条件も決まり次第ご案内します。"
         }
       };
 
