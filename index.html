@@ -235,6 +235,12 @@
       white-space: nowrap;
     }
 
+    .hero h1.student-hero-title {
+      font-size: clamp(2.15rem, 2.85vw, 3.1rem);
+      line-height: 1.16;
+      letter-spacing: -.055em;
+    }
+
     .lesson-timetable time {
       display: block;
       margin-top: 5px;
@@ -411,6 +417,23 @@
     }
 
     @media (max-width: 1180px) {
+      .hero h1.student-hero-title {
+        font-size: clamp(1.9rem, 3.8vw, 2.45rem);
+      }
+
+      .student-hero-title .hero-title-line {
+        display: block;
+        width: 100%;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .hero-description {
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
       .november-event-content {
         grid-template-columns: 1fr;
         align-items: start;
@@ -795,6 +818,23 @@
         letter-spacing: -.055em;
       }
 
+      .hero h1.student-hero-title {
+        font-size: clamp(2rem, 8.5vw, 2.65rem);
+      }
+
+      .student-hero-title .hero-title-line {
+        display: block;
+        width: 100%;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .hero-description {
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
       .hero h1 .nowrap {
         white-space: normal;
       }
@@ -1107,9 +1147,9 @@
           11.15 SUN｜REAL SCOUT EVENT
         </p>
 
-        <h1>
-          <span class="hero-title-line">企業と話す。</span><br>
-          <em><span class="hero-title-line">先輩に聞く。</span></em>
+        <h1 class="student-hero-title">
+          <span class="hero-title-line">「自分に合う会社がわからない」</span><br>
+          <em><span class="hero-title-line">そんなあなたのための1日！</span></em>
         </h1>
 
         <p class="hero-description">
