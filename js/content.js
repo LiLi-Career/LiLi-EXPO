@@ -266,9 +266,8 @@ const LILI_CONTENT = {
   */
 
   flyer: {
-    frontImage: "assets/lili-expo-2026-11-15-draft.png",
-    // 裏面完成後: backImage: "assets/lili-expo-2026-11-15-back.png",
-    backImage: "",
+    frontImage: "assets/lili-expo-2026-11-15-front.png",
+    backImage: "assets/lili-expo-2026-11-15-back.png",
     pdfUrl: ""
   },
 
