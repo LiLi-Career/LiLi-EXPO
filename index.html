@@ -15,9 +15,9 @@
 
   <link rel="icon" href="assets/logo_dake.png">
 
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
 
-  <script src="js/content.js?v=9" defer></script>
+  <script src="js/content.js?v=10" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -1118,7 +1118,7 @@
       <a href="#november">開催概要</a>
 
       <a class="nav-entry registration-link" href="#entry">
-        参加受付は近日公開
+        参加申し込みはこちら
       </a>
 
     </nav>
@@ -1160,7 +1160,7 @@
         <div class="hero-actions">
 
           <a class="button button-primary registration-link" href="#entry">
-            参加受付は近日公開
+            参加申し込みはこちら
           </a>
 
           <a class="button button-outline" href="#schedule">
@@ -1293,7 +1293,7 @@
 
         <div class="join-guide-action">
           <a class="button button-primary registration-link" href="#entry">
-            参加受付は近日公開
+            参加申し込みはこちら
           </a>
         </div>
 
@@ -1853,7 +1853,7 @@
       </div>
 
       <p class="november-note">
-        ※ 参加企業・申込方法は、決まり次第お知らせします。
+        ※ 参加申し込みは、ページ下部のフォームから受け付けています。
       </p>
 
     </section>
@@ -1901,8 +1901,8 @@
         </details>
 
         <details>
-          <summary>参加方法はいつ分かりますか？</summary>
-          <p>募集対象と参加方法は現在調整中です。詳細が決まり次第、本サイトでご案内します。</p>
+          <summary>参加申し込みはどこからできますか？</summary>
+          <p>ページ下部の参加申し込みフォームから予約できます。キャリア面談も同じフォームから申し込めます。</p>
         </details>
 
         <details>
@@ -2126,9 +2126,19 @@
 
       <p>友達紹介でQUOカード500円分プレゼント。<br>交通費の支給条件は確認中です。</p>
 
-      <a class="button button-white registration-link" href="#entry">
-        参加受付は近日公開
-      </a>
+      <div class="entry-form-shell">
+        <p class="entry-form-lead" id="entryNote">下のフォームから参加申し込みとキャリア面談の予約ができます。</p>
+        <iframe
+          class="entry-form-frame"
+          src="https://tayori.com/form/6d72842957f09933836fa5f31ac08201982e1f01/"
+          title="LiLi EXPO 参加申し込みフォーム"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+        <p class="entry-form-fallback">
+          フォームが表示されない場合は、<a href="https://tayori.com/form/6d72842957f09933836fa5f31ac08201982e1f01/" target="_blank" rel="noopener noreferrer">こちらから別画面で開いてください ↗</a>
+        </p>
+      </div>
 
     </section>
 
@@ -2267,8 +2277,8 @@
         link.removeAttribute("target");
         link.removeAttribute("rel");
         link.textContent = link.classList.contains("nav-entry")
-          ? "参加受付は近日公開"
-          : "参加受付は近日公開";
+          ? "参加申し込みはこちら"
+          : "参加申し込みはこちら";
       });
 
       var eventHighlights = document.getElementById("eventHighlights");
@@ -2360,7 +2370,7 @@
         },
         entry: {
           label: "参加予約について",
-          answer: "参加受付は近日公開予定です。キャリア面談は参加申込と同じフォームから予約できます。交通費の支給条件も決まり次第ご案内します。"
+          answer: "ページ内の参加申し込みフォームから予約できます。キャリア面談も同じフォームから申し込めます。交通費の支給条件は決まり次第ご案内します。"
         }
       };
 
