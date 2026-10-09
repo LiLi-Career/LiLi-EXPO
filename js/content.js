@@ -5,9 +5,9 @@ const LILI_CONTENT = {
   // ==================== 開催情報 ====================
 
   event: {
-    date: "2026.11.15 SUN",
-    time: "11:15集合",
-    venue: "セガサミーホールディングス株式会社 本社",
+    date: "2026年11月15日（日）",
+    time: "集合 11時15分",
+    venue: "住友不動産大崎ガーデンタワー",
 
     address:
       "〒141-0033 東京都品川区西品川一丁目1-1\n住友不動産大崎ガーデンタワー",
@@ -19,11 +19,11 @@ const LILI_CONTENT = {
       "https://www.segasammy.co.jp/ja/corp/profile/access/",
 
     capacity:
-      "企業ブース × 先輩相談 × キャリア面談 × セミナー",
+      "女子学生100名限定",
 
     highlights: [
-      "女子学生対象・参加無料",
-      "交通費支給あり",
+      "参加無料",
+      "地方学生は交通費支給あり",
       "友達紹介特典あり"
     ]
   },
@@ -366,23 +366,8 @@ const LILI_CONTENT = {
 
   socials: [
     {
-      label: "X（旧Twitter）",
-      url: ""
-    },
-
-    {
-      label: "Instagram 1",
-      url: ""
-    },
-
-    {
-      label: "Instagram 2",
-      url: ""
-    },
-
-    {
-      label: "TikTok",
-      url: ""
+      label: "Instagram｜LiLi Career",
+      url: "https://www.instagram.com/lili.career/"
     }
   ],
 
