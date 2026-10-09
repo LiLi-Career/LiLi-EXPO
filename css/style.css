@@ -2699,8 +2699,9 @@ summary:focus-visible {
   margin-top: clamp(38px, 6vw, 76px);
   padding: clamp(42px, 6vw, 76px);
   color: var(--ink);
-  background: #f6fbfd;
-  border: 1px solid #d9eef6;
+  background: #fff8fa;
+  border: 1px solid #f1dce4;
+  box-shadow: 0 22px 55px rgb(107 73 87 / 8%);
 }
 
 .participating-companies-section::before {
@@ -2708,9 +2709,9 @@ summary:focus-visible {
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(90px, 14vw, 180px);
-  height: 7px;
-  background: var(--pink);
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--pink) 0 34%, #f6c65f 34% 56%, #61bfdf 56% 100%);
 }
 
 .participating-companies-heading {
@@ -2719,7 +2720,7 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1fr) max-content;
   gap: clamp(30px, 6vw, 84px);
-  align-items: center;
+  align-items: end;
   margin-bottom: clamp(34px, 5vw, 62px);
 }
 
@@ -2730,7 +2731,7 @@ summary:focus-visible {
 .participating-companies-heading h2 {
   margin: 10px 0 18px;
   color: var(--ink);
-  font-size: clamp(2.7rem, 5vw, 4.8rem);
+  font-size: clamp(2.55rem, 4.5vw, 4.25rem);
   line-height: 1.1;
   letter-spacing: -.055em;
 }
@@ -2743,11 +2744,16 @@ summary:focus-visible {
 }
 
 .companies-update-note {
-  margin: 0;
+  min-width: 250px;
+  margin: 0 0 5px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--pink);
+  background: var(--white);
   color: var(--pink-dark);
   font-size: clamp(.95rem, 1.4vw, 1.08rem);
   font-weight: 800;
   letter-spacing: .03em;
+  box-shadow: 0 8px 24px rgb(107 73 87 / 6%);
 }
 
 .companies-update-note span {
@@ -2755,7 +2761,7 @@ summary:focus-visible {
   width: 9px;
   height: 9px;
   margin-right: 10px;
-  border-radius: 50%;
+  transform: rotate(45deg);
   background: var(--pink);
 }
 
@@ -2764,29 +2770,59 @@ summary:focus-visible {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(28px, 6vw, 72px);
+  counter-reset: company;
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 2px solid var(--blue);
+  overflow: hidden;
+  border: 1px solid #eadde3;
+  background: var(--white);
+  box-shadow: 0 16px 38px rgb(107 73 87 / 7%);
 }
 
 .company-name-list li {
-  display: flex;
+  counter-increment: company;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
   align-items: center;
-  min-height: 88px;
-  padding: 22px 8px;
-  border-bottom: 1px solid #bddfeb;
+  min-height: 104px;
+  padding: 24px 28px;
+  border-bottom: 1px solid #eadde3;
   color: var(--ink);
 }
 
-.company-name-list li:nth-child(even) {
-  border-left: 0;
+.company-name-list li:nth-child(odd) {
+  border-right: 1px solid #eadde3;
+}
+
+.company-name-list li:nth-child(4n + 2),
+.company-name-list li:nth-child(4n + 3) {
+  background: #fffcf6;
+}
+
+.company-name-list li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: 0;
+}
+
+.company-name-list li::before {
+  content: "0" counter(company);
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f4c4d2;
+  color: var(--pink-dark);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
 }
 
 .company-name-list li strong {
-  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-  font-weight: 700;
+  font-size: clamp(1.02rem, 1.55vw, 1.3rem);
+  font-weight: 800;
   letter-spacing: .01em;
 }
 
@@ -2796,8 +2832,11 @@ summary:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  align-items: flex-end;
-  margin-top: 22px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--blue);
+  background: #eef9fd;
 }
 
 .company-list-footer > p:first-child {
@@ -2811,7 +2850,7 @@ summary:focus-visible {
 
 .company-list-footer strong {
   color: var(--pink-dark);
-  font-size: 1rem;
+  font-size: 1.08rem;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -2830,11 +2869,13 @@ summary:focus-visible {
 
   .participating-companies-heading {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 22px;
   }
 
   .companies-update-note {
     justify-self: start;
+    min-width: 0;
+    width: 100%;
   }
 
   .company-name-list {
@@ -2847,12 +2888,31 @@ summary:focus-visible {
   }
 
   .company-name-list li {
-    min-height: 74px;
-    padding: 18px 4px;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 78px;
+    padding: 17px 16px;
+    border-right: 0;
+    background: var(--white);
+  }
+
+  .company-name-list li:nth-child(even) {
+    background: #fffcf6;
+  }
+
+  .company-name-list li:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .company-name-list li::before {
+    width: 36px;
+    height: 36px;
+    font-size: .7rem;
   }
 
   .company-list-footer {
     display: grid;
     gap: 12px;
+    padding: 17px 18px;
   }
 }
