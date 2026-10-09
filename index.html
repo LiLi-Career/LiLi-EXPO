@@ -228,6 +228,17 @@
       box-shadow: 0 8px 25px rgba(90, 61, 79, .06);
     }
 
+    .lesson-timetable .special-program-row th {
+      color: #a92c68;
+      background: #ffd9e9;
+    }
+
+    .lesson-timetable .special-program-row td {
+      background: #fff9fc;
+      border-color: #f4bad3;
+      box-shadow: 0 10px 28px rgba(200, 76, 130, .1);
+    }
+
     .lesson-timetable .period-number {
       display: block;
       font-size: 20px;
@@ -1755,8 +1766,8 @@
               <th scope="row"><span class="period-number">START</span><time>12:00〜12:30</time></th>
               <td><span>OPENING</span><strong>オープニング・企業プレゼン</strong><small>参加企業の事業や仕事を知る</small></td>
             </tr>
-            <tr>
-              <th scope="row"><span class="period-number">SPECIAL</span><time>12:30〜13:00</time></th>
+            <tr class="special-program-row">
+              <th scope="row"><span class="period-number">特別公演</span><time>12:30〜13:00</time></th>
               <td class="lux-program-cell">
                 <div class="lux-program-copy">
                   <span>SPECIAL PERFORMANCE</span>
@@ -1773,9 +1784,9 @@
               <th scope="row"><span class="period-number">相談</span><time>13:00〜14:00</time></th>
               <td><span>SENIOR TALK</span><strong>先輩面談</strong><small>内定者・社会人の先輩に就活や働くリアルを聞く</small></td>
             </tr>
-            <tr>
-              <th scope="row"><span class="period-number">TALK</span><time>14:00〜14:30</time></th>
-              <td><span>GUEST TALK</span><strong>ゲスト企業トークセッション</strong><small>企業の仕事やキャリアを知る時間</small></td>
+            <tr class="special-program-row">
+              <th scope="row"><span class="period-number">特別講演</span><time>14:00〜14:30</time></th>
+              <td><span>SPECIAL SESSION</span><strong>ゲスト企業による特別講演</strong><small>企業のリアルな仕事とキャリアを、担当者から直接聞く</small></td>
             </tr>
             <tr>
               <th scope="row"><span class="period-number">第2部</span><time>14:30〜16:30</time></th>
@@ -2362,7 +2373,7 @@
         },
         schedule: {
           label: "当日のプログラム",
-          answer: "企業プレゼン、SEGA SAMMY LUXのステージ、先輩面談、ゲスト企業トーク、企業ブース、大交流会・先輩相談会、予約制のキャリア面談を予定しています。"
+          answer: "企業プレゼン、SEGA SAMMY LUXの特別公演、先輩面談、ゲスト企業による特別講演、企業ブース、大交流会・先輩相談会、予約制のキャリア面談を予定しています。"
         },
         scout: {
           label: "スカウトカードについて",
