@@ -15,9 +15,9 @@
 
   <link rel="icon" href="assets/logo_dake.png">
 
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=12">
 
-  <script src="js/content.js?v=11" defer></script>
+  <script src="js/content.js?v=12" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -289,7 +289,7 @@
     }
 
     .november-event-section::after {
-      content: "OSAKI";
+      content: "LiLi";
       position: absolute;
       right: -18px;
       bottom: -55px;
@@ -1241,18 +1241,22 @@
         <div>
           <p class="section-label">PARTICIPATING COMPANIES</p>
           <h2 id="companiesTitle">参加予定企業</h2>
+          <p class="participating-companies-lead">大手企業をはじめ、さまざまな業界の担当者と直接話せます。</p>
         </div>
-        <p>さまざまな業界の企業担当者と、少人数で直接話せます。</p>
+        <p class="companies-update-note"><span>NEW</span>参加企業は<br>順次追加予定</p>
       </div>
-      <ul class="company-name-list" aria-label="参加予定企業一覧">
-        <li>KDDI</li>
-        <li>PwC</li>
-        <li>PERSOL</li>
-        <li>東京ガス</li>
-        <li>博報堂</li>
-        <li>セガサミーグループ</li>
+      <ul class="company-name-list" id="participatingCompanies" aria-label="参加予定企業一覧">
+        <li><span>01</span><strong>KDDI</strong></li>
+        <li><span>02</span><strong>PwC</strong></li>
+        <li><span>03</span><strong>PERSOL</strong></li>
+        <li><span>04</span><strong>東京ガス</strong></li>
+        <li><span>05</span><strong>博報堂</strong></li>
+        <li><span>06</span><strong>セガサミーグループ</strong></li>
       </ul>
-      <p class="company-list-note">※参加企業は一部です。変更になる場合があります。</p>
+      <div class="company-list-footer">
+        <p><strong id="participatingCompanyCount">現在6社を掲載中</strong><span>追加企業は決まり次第、このページでお知らせします。</span></p>
+        <p class="company-list-note">※参加企業は変更になる場合があります。</p>
+      </div>
     </section>
 
 
@@ -2277,6 +2281,29 @@
           <li>地方学生は交通費支給あり</li>
           <li>友達紹介特典あり</li>
         `;
+      }
+
+      var participatingCompanies = document.getElementById("participatingCompanies");
+
+      if (participatingCompanies && typeof LILI_CONTENT !== "undefined" && Array.isArray(LILI_CONTENT.participatingCompanies)) {
+        participatingCompanies.replaceChildren();
+
+        LILI_CONTENT.participatingCompanies.forEach(function (company, index) {
+          var item = document.createElement("li");
+          var number = document.createElement("span");
+          var name = document.createElement("strong");
+
+          number.textContent = String(index + 1).padStart(2, "0");
+          name.textContent = company;
+          item.append(number, name);
+          participatingCompanies.appendChild(item);
+        });
+
+        var participatingCompanyCount = document.getElementById("participatingCompanyCount");
+
+        if (participatingCompanyCount) {
+          participatingCompanyCount.textContent = "現在" + LILI_CONTENT.participatingCompanies.length + "社を掲載中";
+        }
       }
 
       var organizationContact = document.getElementById("organizationContact");
