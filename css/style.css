@@ -2699,30 +2699,25 @@ summary:focus-visible {
   margin-top: clamp(38px, 6vw, 76px);
   padding: clamp(42px, 6vw, 76px);
   color: var(--ink);
-  background: #fff5f8;
-  border-top: 8px solid var(--pink);
-  border-left: 1px solid #f6ccd8;
-  box-shadow: 0 30px 80px rgba(113, 76, 91, .12);
+  background: #f6fbfd;
+  border: 1px solid #d9eef6;
 }
 
-.participating-companies-section::after {
-  content: "COMPANIES";
+.participating-companies-section::before {
+  content: "";
   position: absolute;
-  top: -32px;
-  right: -18px;
-  color: rgba(241, 111, 145, .075);
-  font-size: clamp(5rem, 13vw, 11rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -.06em;
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: clamp(90px, 14vw, 180px);
+  height: 7px;
+  background: var(--pink);
 }
 
 .participating-companies-heading {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) max-content;
   gap: clamp(30px, 6vw, 84px);
   align-items: center;
   margin-bottom: clamp(34px, 5vw, 62px);
@@ -2748,26 +2743,20 @@ summary:focus-visible {
 }
 
 .companies-update-note {
-  min-width: 220px;
   margin: 0;
-  padding: 22px 28px;
-  color: var(--ink);
-  background: #fff;
-  border: 2px solid var(--pink);
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  color: var(--pink-dark);
+  font-size: clamp(.95rem, 1.4vw, 1.08rem);
   font-weight: 800;
-  line-height: 1.5;
+  letter-spacing: .03em;
 }
 
 .companies-update-note span {
-  display: block;
-  width: fit-content;
-  margin-bottom: 8px;
-  padding: 2px 10px;
-  color: #fff;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 10px;
+  border-radius: 50%;
   background: var(--pink);
-  font-size: .68rem;
-  letter-spacing: .14em;
 }
 
 .company-name-list {
@@ -2775,39 +2764,29 @@ summary:focus-visible {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(28px, 6vw, 72px);
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 3px solid var(--blue);
+  border-top: 2px solid var(--blue);
 }
 
 .company-name-list li {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 18px;
+  display: flex;
   align-items: center;
-  min-height: 104px;
-  padding: 24px 20px;
-  border-bottom: 1px solid #e8cfd7;
+  min-height: 88px;
+  padding: 22px 8px;
+  border-bottom: 1px solid #bddfeb;
   color: var(--ink);
-  background: rgba(255, 255, 255, .56);
 }
 
 .company-name-list li:nth-child(even) {
-  border-left: 1px solid #e8cfd7;
-  background: rgba(237, 249, 253, .72);
-}
-
-.company-name-list li span {
-  color: var(--pink);
-  font-size: .75rem;
-  font-weight: 900;
-  letter-spacing: .12em;
+  border-left: 0;
 }
 
 .company-name-list li strong {
-  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
-  font-weight: 800;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  font-weight: 700;
   letter-spacing: .01em;
 }
 
@@ -2831,7 +2810,10 @@ summary:focus-visible {
 }
 
 .company-list-footer strong {
-  color: var(--ink);
+  color: var(--pink-dark);
+  font-size: 1rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 .company-list-note {
@@ -2844,7 +2826,6 @@ summary:focus-visible {
   .participating-companies-section {
     width: min(calc(100% - 28px), var(--max-width));
     padding: 38px 22px;
-    border-top-width: 6px;
   }
 
   .participating-companies-heading {
@@ -2853,12 +2834,12 @@ summary:focus-visible {
   }
 
   .companies-update-note {
-    min-width: 0;
-    padding: 18px 20px;
+    justify-self: start;
   }
 
   .company-name-list {
     grid-template-columns: 1fr;
+    column-gap: 0;
   }
 
   .company-name-list li:nth-child(even) {
@@ -2866,8 +2847,8 @@ summary:focus-visible {
   }
 
   .company-name-list li {
-    min-height: 82px;
-    padding: 18px 8px;
+    min-height: 74px;
+    padding: 18px 4px;
   }
 
   .company-list-footer {

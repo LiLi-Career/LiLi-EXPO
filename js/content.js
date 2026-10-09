@@ -32,15 +32,16 @@ const LILI_CONTENT = {
   // ==================== 参加予定企業 ====================
 
   /*
-    企業が増えたら、下の一覧へ "企業名" を1行追加してください。
-    サイト側の番号と掲載社数は自動で更新されます。
+    企業が増えたら、下の一覧へ "正式な企業名" を1行追加してください。
+    サイトの企業一覧へ自動で反映されます。
   */
   participatingCompanies: [
-    "KDDI",
-    "PwC",
-    "PERSOL",
-    "東京ガス",
-    "博報堂",
+    "KDDI株式会社",
+    "PwCコンサルティング合同会社",
+    "富士通株式会社",
+    "株式会社博報堂",
+    "パーソルテンプスタッフ株式会社",
+    "東京ガスiネット株式会社",
     "セガサミーグループ"
   ],
 
@@ -282,8 +283,8 @@ const LILI_CONTENT = {
   */
 
   flyer: {
-    frontImage: "assets/lili-expo-2026-11-15-front.png",
-    backImage: "assets/lili-expo-2026-11-15-back.png",
+    frontImage: "assets/lili-expo-2026-11-15-front.png?v=2",
+    backImage: "assets/lili-expo-2026-11-15-back.png?v=2",
     pdfUrl: ""
   },
 
