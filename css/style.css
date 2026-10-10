@@ -2797,9 +2797,12 @@ summary:focus-visible {
 }
 
 .company-name-list li strong {
+  min-width: 0;
   font-size: clamp(1rem, 1.35vw, 1.2rem);
   font-weight: 800;
+  line-height: 1.55;
   letter-spacing: .01em;
+  overflow-wrap: anywhere;
 }
 
 .company-list-footer {
@@ -2833,6 +2836,12 @@ summary:focus-visible {
   margin: 0;
   color: var(--ink-soft);
   font-size: .76rem;
+}
+
+@media (max-width: 1080px) and (min-width: 761px) {
+  .company-name-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
