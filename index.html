@@ -15,9 +15,9 @@
 
   <link rel="icon" href="assets/logo_dake.png">
 
-  <link rel="stylesheet" href="css/style.css?v=17">
+  <link rel="stylesheet" href="css/style.css?v=19">
 
-  <script src="js/content.js?v=14" defer></script>
+  <script src="js/content.js?v=15" defer></script>
 
   <script src="js/script.js?v=1" defer></script>
 
@@ -1260,13 +1260,28 @@
         <p class="companies-update-note"><span aria-hidden="true"></span>参加企業は順次追加予定</p>
       </div>
       <ul class="company-name-list" id="participatingCompanies" aria-label="参加予定企業一覧">
-        <li><strong>KDDI株式会社</strong></li>
-        <li><strong>PwCコンサルティング合同会社</strong></li>
+        <li><strong>パーソルクロステクノロジー株式会社</strong></li>
+        <li><strong>株式会社KDDIウェブコミュニケーションズ</strong></li>
+        <li><strong>セガサミーホールディングス株式会社</strong></li>
+        <li><strong>株式会社ダイヤモンド・ビジネス企画</strong></li>
         <li><strong>富士通株式会社</strong></li>
-        <li><strong>株式会社博報堂</strong></li>
-        <li><strong>パーソルテンプスタッフ株式会社</strong></li>
-        <li><strong>東京ガスiネット株式会社</strong></li>
-        <li><strong>セガサミーグループ</strong></li>
+        <li><strong>サミー株式会社</strong></li>
+        <li><strong>株式会社Smile Holdings</strong></li>
+        <li><strong>PwCコンサルティング合同会社</strong></li>
+        <li><strong>株式会社ペイロール</strong></li>
+        <li><strong>株式会社GCC</strong></li>
+        <li><strong>東京ガスｉネット株式会社</strong></li>
+        <li><strong>楽天モバイル株式会社</strong></li>
+        <li><strong>株式会社SHIFT</strong></li>
+        <li><strong>株式会社ミライル</strong></li>
+        <li><strong>株式会社NTT ExCパートナー</strong></li>
+        <li><strong>株式会社ドリーム・アーツ</strong></li>
+        <li><strong>株式会社SuBir</strong></li>
+        <li><strong>株式会社HIROTSUバイオサイエンス</strong></li>
+        <li><strong>レゾナンスパートナーズ株式会社</strong></li>
+        <li><strong>キッコーマンこころダイニング株式会社</strong></li>
+        <li><strong>株式会社FESTEEM</strong></li>
+        <li><strong>ECOTONE株式会社（博報堂グループ）</strong></li>
       </ul>
       <div class="company-list-footer">
         <p><strong>and more</strong><span>追加企業は決まり次第、このページでお知らせします。</span></p>
@@ -2302,8 +2317,33 @@
         LILI_CONTENT.participatingCompanies.forEach(function (company) {
           var item = document.createElement("li");
           var name = document.createElement("strong");
+          var legalTypes = ["株式会社", "合同会社"];
+          var breakIndex = -1;
 
-          name.textContent = company;
+          legalTypes.some(function (legalType) {
+            if (company.startsWith(legalType) && company.length > legalType.length) {
+              breakIndex = legalType.length;
+              return true;
+            }
+
+            if (company.endsWith(legalType) && company.length > legalType.length) {
+              breakIndex = company.length - legalType.length;
+              return true;
+            }
+
+            return false;
+          });
+
+          if (breakIndex > 0) {
+            name.append(
+              document.createTextNode(company.slice(0, breakIndex)),
+              document.createElement("wbr"),
+              document.createTextNode(company.slice(breakIndex))
+            );
+          } else {
+            name.textContent = company;
+          }
+
           item.append(name);
           participatingCompanies.appendChild(item);
         });
